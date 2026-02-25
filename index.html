@@ -212,49 +212,89 @@
             opacity: 0.5;
         }
 
-        /* RESPONSIVE MOBILE - Hero Section */
+/* ========== RESPONSIVE MOBILE ========== */
 @media (max-width: 768px) {
-    .hero {
-        min-height: auto !important; /* Enlève la hauteur 100vh */
-        height: auto !important;
-        padding: 3rem 2rem 1,5rem 1rem !important; /* Beaucoup moins de padding */
+    /* Navigation */
+    nav .container {
+        padding: 0 1.5rem;
     }
     
-    /* Si vous avez un titre h1 dans le hero */
-    .hero h1 {
+    nav ul {
+        display: flex;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+    }
+    
+    nav a {
+        font-size: 0.75rem;
+    }
+    
+    /* Logo : cache le texte */
+    .logo div {
+        display: none;
+    }
+    
+    .logo img {
+        height: 35px;
+    }
+    
+    /* Hero compact */
+    .hero {
+        min-height: auto !important;
+        height: auto !important;
+        padding: 3rem 1rem 2rem !important;
+    }
+    
+    .hero-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .hero-text h1 {
         font-size: 2rem !important;
         line-height: 1.2;
     }
     
-    /* Si vous avez un paragraphe dans le hero */
-    .hero p {
+    .hero-text p {
         font-size: 1rem !important;
     }
     
-    /* Si vous avez une image dans le hero */
     .hero-image {
         height: 250px !important;
         max-height: 40vh !important;
     }
-}
-
-@media (max-width: 768px) {
-    nav ul {
-        gap: 0.5rem !important;
+    
+    /* Sections */
+    section {
+        padding: 4rem 1.5rem;
     }
     
-    nav a {
-        font-size: 0.8rem !important;
-    }
-}
-
-@media (max-width: 768px) {
-    .logo div {
-        display: none !important; /* Cache "Activité Physique Adaptée & Yogathérapie" */
+    .section-title {
+        font-size: 2.25rem;
     }
     
-    .logo img {
-        height: 35px !important;
+    /* Grilles */
+    .cards-grid,
+    .benefices-list,
+    .services-grid,
+    .about-content,
+    .contact-grid,
+    .tarifs-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    /* Boutons */
+    .cta-button {
+        width: 100%;
+        justify-content: center;
+        padding: 1rem 2rem;
+    }
+    
+    /* Footer */
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
     }
 }
         
