@@ -211,6 +211,32 @@
             background-size: 200px;
             opacity: 0.5;
         }
+
+        /* RESPONSIVE MOBILE - Hero Section */
+@media (max-width: 768px) {
+    .hero {
+        min-height: auto !important; /* Enlève la hauteur 100vh */
+        height: auto !important;
+        padding: 5rem 1rem 2rem 1rem !important; /* Beaucoup moins de padding */
+    }
+    
+    /* Si vous avez un titre h1 dans le hero */
+    .hero h1 {
+        font-size: 2rem !important;
+        line-height: 1.2;
+    }
+    
+    /* Si vous avez un paragraphe dans le hero */
+    .hero p {
+        font-size: 1rem !important;
+    }
+    
+    /* Si vous avez une image dans le hero */
+    .hero-image {
+        height: 250px !important;
+        max-height: 40vh !important;
+    }
+}
         
         .cta-button {
             display: inline-flex;
