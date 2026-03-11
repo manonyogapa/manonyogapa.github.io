@@ -274,23 +274,6 @@ html, body {
 
 /* ========== RESPONSIVE MOBILE ========== */
 @media (max-width: 768px) {
-    /* Cache le texte à côté du logo */
-    .logo div {
-        display: none !important;
-    }
-    
-    /* Réduit la taille du logo */
-    .logo img {
-        height: 35px !important;
-    }
-    
-    /* Réduit l'espace autour du logo */
-    .logo {
-        gap: 0 !important;
-    }
-}
-
-@media (max-width: 768px) {
     /* Navigation fixe */
     nav {
         position: fixed !important;
@@ -315,12 +298,14 @@ html, body {
         z-index: 10001 !important;
     }
     
-    .logo img {
-        height: 30px !important;
-    }
-    
     .logo div {
-        display: none !important;
+    display: none !important;
+}
+
+.logo img {
+    height: 35px !important;
+}
+```
     }
     
     /* Afficher le bouton hamburger */
