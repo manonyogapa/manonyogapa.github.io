@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
@@ -89,6 +90,30 @@ html, body {
             text-decoration: none;
             letter-spacing: 0.5px;
         }
+
+        <nav>
+    <div class="container">
+        <a href="#accueil" class="logo">
+            <img src="logo-nav.png" alt="Logo">
+        </a>
+        
+        <!-- AJOUTEZ CE BOUTON ICI ↓ -->
+        <button class="mobile-menu-btn" onclick="toggleMenu()" aria-label="Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <!-- FIN DE L'AJOUT ↑ -->
+        
+        <ul id="mobile-menu">
+            <li><a href="#accueil" onclick="closeMenu()">Accueil</a></li>
+            <li><a href="#services" onclick="closeMenu()">Services</a></li>
+            <li><a href="#tarifs" onclick="closeMenu()">Tarifs</a></li>
+            <li><a href="#apropos" onclick="closeMenu()">À propos</a></li>
+            <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
+        </ul>
+    </div>
+</nav>
         
         nav ul {
             display: flex;
@@ -125,14 +150,38 @@ html, body {
             width: 100%;
         }
         
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            color: var(--texte-fonce);
-            cursor: pointer;
-        }
+        /* Bouton hamburger */
+.mobile-menu-btn {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    padding: 0.5rem;
+    cursor: pointer;
+    z-index: 10001;
+}
+
+.mobile-menu-btn span {
+    width: 25px;
+    height: 3px;
+    background: var(--texte-fonce);
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+/* Animation quand le menu est ouvert */
+.mobile-menu-btn.active span:nth-child(1) {
+    transform: rotate(45deg) translate(7px, 7px);
+}
+
+.mobile-menu-btn.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-btn.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+}
         
         /* Hero Section - Élégant et aéré */
         .hero {
@@ -225,68 +274,95 @@ html, body {
 
 /* ========== RESPONSIVE MOBILE ========== */
 @media (max-width: 768px) {
-    /* Anti-débordement */
-    body, html {
-        overflow-x: hidden !important;
-        width: 100% !important;
-    }
-    
-    * {
-        max-width: 100%;
-    }
-    
-    /* Navigation fixe visible */
+    /* Navigation fixe */
     nav {
         position: fixed !important;
         top: 0 !important;
         width: 100% !important;
         z-index: 9999 !important;
-        background: rgba(250, 247, 242, 0.98) !important;
+        background: white !important;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1) !important;
         padding: 0.75rem 0 !important;
     }
     
     nav .container {
         padding: 0 1rem !important;
-    }
-    
-    nav ul {
         display: flex !important;
-        gap: 0.4rem !important;
-        flex-wrap: wrap !important;
-        justify-content: center !important;
+        justify-content: space-between !important;
+        align-items: center !important;
     }
     
-    nav a {
-        font-size: 0.7rem !important;
-        padding: 0.3rem 0.6rem !important;
-    }
-    
+    /* Logo */
     .logo {
         font-size: 1rem !important;
-    }
-    
-    .logo div {
-        display: none !important;
+        z-index: 10001 !important;
     }
     
     .logo img {
         height: 30px !important;
     }
     
-    /* Hero ultra-compact */
-    .hero {
-        min-height: auto !important;
-        padding: 6rem 1rem 2rem !important;
-        width: 100% !important;
+    .logo div {
+        display: none !important;
     }
     
-    .hero-content {
-        grid-template-columns: 1fr !important;
+    /* Afficher le bouton hamburger */
+    .mobile-menu-btn {
+        display: flex !important;
+    }
+    
+    /* Menu caché par défaut */
+    nav ul {
+        position: fixed !important;
+        top: 0 !important;
+        right: -100% !important; /* Caché à droite */
+        width: 70% !important;
+        max-width: 300px !important;
+        height: 100vh !important;
+        background: white !important;
+        flex-direction: column !important;
+        padding: 5rem 2rem 2rem !important;
         gap: 1.5rem !important;
+        transition: right 0.3s ease !important;
+        box-shadow: -5px 0 15px rgba(0,0,0,0.1) !important;
+        z-index: 10000 !important;
     }
     
-    .hero-text {
+    /* Menu ouvert */
+    nav ul.active {
+        right: 0 !important; /* Visible */
+    }
+    
+    nav li {
         width: 100% !important;
+    }
+    
+    nav a {
+        font-size: 1.1rem !important;
+        padding: 0.75rem 0 !important;
+        display: block !important;
+        border-bottom: 1px solid var(--sable-clair) !important;
+    }
+    
+    /* Overlay sombre quand menu ouvert */
+    body.menu-open::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 9998;
+    }
+    
+    body.menu-open {
+        overflow: hidden; /* Empêche le scroll */
+    }
+    
+    /* Hero avec espace pour navigation */
+    .hero {
+        padding: 6rem 1rem 2rem !important;
     }
     
     .hero-text h1 {
@@ -297,7 +373,6 @@ html, body {
     
     .hero-text p {
         font-size: 0.9rem !important;
-        line-height: 1.5 !important;
     }
     
     .hero-image {
@@ -307,24 +382,18 @@ html, body {
     .cta-button {
         width: 100% !important;
         padding: 1rem !important;
-        font-size: 1rem !important;
     }
     
     /* Sections */
     section {
         padding: 3rem 1rem !important;
-        width: 100% !important;
-    }
-    
-    .container {
-        padding: 0 1rem !important;
     }
     
     .section-title {
         font-size: 1.8rem !important;
     }
     
-    /* Grilles en 1 colonne */
+    /* Grilles */
     .cards-grid,
     .services-grid,
     .tarifs-grid,
@@ -1709,4 +1778,40 @@ Mon objectif est de préserver l’autonomie, prévenir les chutes et favoriser 
         });
     </script>
 </body>
+<script>
+// Ouvrir/Fermer le menu mobile
+function toggleMenu() {
+    const menu = document.getElementById('mobile-menu');
+    const btn = document.querySelector('.mobile-menu-btn');
+    const body = document.body;
+    
+    menu.classList.toggle('active');
+    btn.classList.toggle('active');
+    body.classList.toggle('menu-open');
+}
+
+// Fermer le menu quand on clique sur un lien
+function closeMenu() {
+    const menu = document.getElementById('mobile-menu');
+    const btn = document.querySelector('.mobile-menu-btn');
+    const body = document.body;
+    
+    menu.classList.remove('active');
+    btn.classList.remove('active');
+    body.classList.remove('menu-open');
+}
+
+// Fermer le menu si on clique en dehors
+document.addEventListener('click', function(event) {
+    const menu = document.getElementById('mobile-menu');
+    const btn = document.querySelector('.mobile-menu-btn');
+    const nav = document.querySelector('nav');
+    
+    if (!nav.contains(event.target) && menu.classList.contains('active')) {
+        closeMenu();
+    }
+});
+</script>
+</body>
+</html>
 </html>
