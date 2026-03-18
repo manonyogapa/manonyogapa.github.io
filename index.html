@@ -923,6 +923,14 @@
             color: rgba(255, 255, 255, 0.6);
         }
 
+        .social-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
         /* Responsive Fixes */
         @media (max-width: 1024px) {
             .hero-content {
@@ -1069,8 +1077,18 @@
             .benefices-list,
             .about-content,
             .contact-grid,
-            .footer-content {
+            .footer-content,
+            .social-grid {
                 grid-template-columns: 1fr !important;
+            }
+
+            .contact-info,
+            .contact-form-container {
+                padding: 1.5rem !important;
+            }
+
+            .reseaux-sociaux {
+                padding: 3rem 1rem !important;
             }
 
             /* Sections */
@@ -1567,8 +1585,7 @@
                 Instagram et TikTok. Rejoignez la communauté ! 🌿
             </p>
 
-            <div
-                style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 3rem; max-width: 900px; margin: 0 auto;">
+            <div class="social-grid">
 
                 <!-- Carte Instagram -->
                 <div
