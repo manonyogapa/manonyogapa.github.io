@@ -925,9 +925,9 @@
 
         .social-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 3rem;
-            max-width: 900px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+            max-width: 1200px;
             margin: 0 auto;
         }
 
@@ -944,6 +944,16 @@
 
             .tarifs-grid {
                 grid-template-columns: repeat(2, 1fr);
+            }
+
+            .social-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .social-grid>*:last-child {
+                grid-column: 1 / -1;
+                max-width: 400px;
+                margin: 0 auto;
             }
         }
 
@@ -1623,6 +1633,22 @@
                     <p style="margin-top: 1rem; color: var(--terracotta); font-weight: 600; font-size: 0.95rem;">
                         @manonyogapa
                     </p>
+                </div>
+
+                <!-- Carte Studio -->
+                <div
+                    style="background: white; border-radius: 20px; padding: 2.5rem; text-align: center; box-shadow: 0 10px 40px rgba(74, 66, 56, 0.15); transition: transform 0.3s ease;">
+                    <div style="font-size: 4rem; margin-bottom: 1rem;">💻</div>
+                    <h3
+                        style="font-family: 'Cormorant Garamond', serif; font-size: 2rem; margin-bottom: 1rem; color: var(--texte-fonce);">
+                        Studio en Ligne</h3>
+                    <p style="color: var(--texte-secondaire); margin-bottom: 1.5rem; line-height: 1.7;">
+                        Découvrez le planning, réservez vos séances en visio et pratiquez avec moi depuis chez vous !
+                    </p>
+                    <a href="../html1/studio-yogapa.html" target="_blank"
+                        style="display: inline-block; background: linear-gradient(135deg, var(--vert-sauge), #4b6650); color: white; padding: 1rem 2rem; border-radius: 30px; text-decoration: none; font-weight: 600; transition: transform 0.3s ease;">
+                        Découvrir le Studio
+                    </a>
                 </div>
 
             </div>
