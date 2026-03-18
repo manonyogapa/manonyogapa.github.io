@@ -1,31 +1,36 @@
 <!DOCTYPE html>
 
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Activité Physique Adaptée & Yogathérapie</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Montserrat:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
     <style>
         /* Empêcher le débordement sur toute la page */
-* {
-    box-sizing: border-box;
-}
+        * {
+            box-sizing: border-box;
+        }
 
-html, body {
-    width: 100%;
-    overflow-x: hidden;
-    margin: 0;
-    padding: 0;
-}
+        html,
+        body {
+            width: 100%;
+            overflow-x: hidden;
+            margin: 0;
+            padding: 0;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         :root {
             --sable-clair: #E8DCC4;
             --beige-rose: #D4C4B0;
@@ -35,11 +40,11 @@ html, body {
             --blanc-casse: #FAF7F2;
             --vert-sauge: #A8B5A0;
         }
-        
+
         html {
             scroll-behavior: smooth;
         }
-        
+
         body {
             font-family: 'Montserrat', sans-serif;
             color: var(--texte-fonce);
@@ -47,13 +52,16 @@ html, body {
             line-height: 1.7;
             overflow-x: hidden;
         }
-        
-        h1, h2, h3, h4 {
+
+        h1,
+        h2,
+        h3,
+        h4 {
             font-family: 'Cormorant Garamond', serif;
             font-weight: 600;
             line-height: 1.2;
         }
-        
+
         /* Navigation élégante */
         nav {
             position: fixed;
@@ -67,12 +75,12 @@ html, body {
             border-bottom: 1px solid var(--sable-clair);
             transition: all 0.3s ease;
         }
-        
+
         nav.scrolled {
             padding: 1rem 0;
             box-shadow: 0 4px 20px rgba(74, 66, 56, 0.08);
         }
-        
+
         nav .container {
             display: flex;
             justify-content: space-between;
@@ -81,7 +89,7 @@ html, body {
             margin: 0 auto;
             padding: 0 3rem;
         }
-        
+
         .logo {
             font-family: 'Cormorant Garamond', serif;
             font-size: 1.8rem;
@@ -91,36 +99,12 @@ html, body {
             letter-spacing: 0.5px;
         }
 
-        <nav>
-    <div class="container">
-        <a href="#accueil" class="logo">
-            <img src="logo-nav.png" alt="Logo">
-        </a>
-        
-        <!-- AJOUTEZ CE BOUTON ICI ↓ -->
-        <button class="mobile-menu-btn" onclick="toggleMenu()" aria-label="Menu">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-        <!-- FIN DE L'AJOUT ↑ -->
-        
-        <ul id="mobile-menu">
-            <li><a href="#accueil" onclick="closeMenu()">Accueil</a></li>
-            <li><a href="#services" onclick="closeMenu()">Services</a></li>
-            <li><a href="#tarifs" onclick="closeMenu()">Tarifs</a></li>
-            <li><a href="#apropos" onclick="closeMenu()">À propos</a></li>
-            <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
-        </ul>
-    </div>
-</nav>
-        
         nav ul {
             display: flex;
             list-style: none;
             gap: 3rem;
         }
-        
+
         nav a {
             color: var(--texte-secondaire);
             text-decoration: none;
@@ -130,11 +114,11 @@ html, body {
             transition: color 0.3s ease;
             position: relative;
         }
-        
+
         nav a:hover {
             color: var(--terracotta);
         }
-        
+
         nav a::after {
             content: '';
             position: absolute;
@@ -145,44 +129,44 @@ html, body {
             background: var(--terracotta);
             transition: width 0.3s ease;
         }
-        
+
         nav a:hover::after {
             width: 100%;
         }
-        
+
         /* Bouton hamburger */
-.mobile-menu-btn {
-    display: none;
-    flex-direction: column;
-    gap: 5px;
-    background: none;
-    border: none;
-    padding: 0.5rem;
-    cursor: pointer;
-    z-index: 10001;
-}
+        .mobile-menu-btn {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            padding: 0.5rem;
+            cursor: pointer;
+            z-index: 10001;
+        }
 
-.mobile-menu-btn span {
-    width: 25px;
-    height: 3px;
-    background: var(--texte-fonce);
-    border-radius: 3px;
-    transition: all 0.3s ease;
-}
+        .mobile-menu-btn span {
+            width: 25px;
+            height: 3px;
+            background: var(--texte-fonce);
+            border-radius: 3px;
+            transition: all 0.3s ease;
+        }
 
-/* Animation quand le menu est ouvert */
-.mobile-menu-btn.active span:nth-child(1) {
-    transform: rotate(45deg) translate(7px, 7px);
-}
+        /* Animation quand le menu est ouvert */
+        .mobile-menu-btn.active span:nth-child(1) {
+            transform: rotate(45deg) translate(7px, 7px);
+        }
 
-.mobile-menu-btn.active span:nth-child(2) {
-    opacity: 0;
-}
+        .mobile-menu-btn.active span:nth-child(2) {
+            opacity: 0;
+        }
 
-.mobile-menu-btn.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(7px, -7px);
-}
-        
+        .mobile-menu-btn.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+
         /* Hero Section - Élégant et aéré */
         .hero {
             min-height: 100vh;
@@ -193,7 +177,7 @@ html, body {
             background: linear-gradient(135deg, var(--blanc-casse) 0%, var(--sable-clair) 100%);
             overflow: hidden;
         }
-        
+
         .hero::before {
             content: '';
             position: absolute;
@@ -205,12 +189,19 @@ html, body {
             border-radius: 50%;
             animation: float 20s ease-in-out infinite;
         }
-        
+
         @keyframes float {
-            0%, 100% { transform: translate(0, 0) rotate(0deg); }
-            50% { transform: translate(-20px, 20px) rotate(5deg); }
+
+            0%,
+            100% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+
+            50% {
+                transform: translate(-20px, 20px) rotate(5deg);
+            }
         }
-        
+
         .hero-content {
             max-width: 1400px;
             margin: 0 auto;
@@ -221,7 +212,7 @@ html, body {
             position: relative;
             z-index: 1;
         }
-        
+
         .hero-text h1 {
             font-size: 4.5rem;
             margin-bottom: 2rem;
@@ -230,12 +221,12 @@ html, body {
             font-weight: 600;
             animation: fadeInUp 1s ease-out;
         }
-        
+
         .hero-text h1 .accent {
             color: var(--terracotta);
             font-style: italic;
         }
-        
+
         .hero-text p {
             font-size: 1.25rem;
             line-height: 1.8;
@@ -243,12 +234,12 @@ html, body {
             color: var(--texte-secondaire);
             animation: fadeInUp 1s ease-out 0.2s both;
         }
-        
+
         .hero-image {
             position: relative;
             animation: fadeIn 1s ease-out 0.5s both;
         }
-        
+
         .hero-image-placeholder {
             aspect-ratio: 4/5;
             background: linear-gradient(135deg, var(--beige-rose) 0%, var(--sable-clair) 100%);
@@ -262,7 +253,7 @@ html, body {
             position: relative;
             overflow: hidden;
         }
-        
+
         .hero-image-placeholder::before {
             content: '';
             position: absolute;
@@ -272,155 +263,154 @@ html, body {
             opacity: 0.5;
         }
 
-/* ========== RESPONSIVE MOBILE ========== */
-@media (max-width: 768px) {
-    /* Navigation fixe */
-    nav {
-        position: fixed !important;
-        top: 0 !important;
-        width: 100% !important;
-        z-index: 9999 !important;
-        background: white !important;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.1) !important;
-        padding: 0.75rem 0 !important;
-    }
-    
-    nav .container {
-        padding: 0 1rem !important;
-        display: flex !important;
-        justify-content: space-between !important;
-        align-items: center !important;
-    }
-    
-    /* Logo */
-    .logo {
-        font-size: 1rem !important;
-        z-index: 10001 !important;
-    }
-    
-    .logo div {
-    display: none !important;
-}
+        /* ========== RESPONSIVE MOBILE ========== */
+        @media (max-width: 768px) {
 
-.logo img {
-    height: 35px !important;
-}
+            /* Navigation fixe */
+            nav {
+                position: fixed !important;
+                top: 0 !important;
+                width: 100% !important;
+                z-index: 9999 !important;
+                background: white !important;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1) !important;
+                padding: 0.75rem 0 !important;
+            }
 
-    }
-    
-    /* Afficher le bouton hamburger */
-    .mobile-menu-btn {
-        display: flex !important;
-    }
-    
-    /* Menu caché par défaut */
-    nav ul {
-        position: fixed !important;
-        top: 0 !important;
-        right: -100% !important; /* Caché à droite */
-        width: 70% !important;
-        max-width: 300px !important;
-        height: 100vh !important;
-        background: white !important;
-        flex-direction: column !important;
-        padding: 5rem 2rem 2rem !important;
-        gap: 1.5rem !important;
-        transition: right 0.3s ease !important;
-        box-shadow: -5px 0 15px rgba(0,0,0,0.1) !important;
-        z-index: 10000 !important;
-    }
-    
-    /* Menu ouvert */
-    nav ul.active {
-        right: 0 !important; /* Visible */
-    }
-    
-    nav li {
-        width: 100% !important;
-    }
-    
-    nav a {
-        font-size: 1.1rem !important;
-        padding: 0.75rem 0 !important;
-        display: block !important;
-        border-bottom: 1px solid var(--sable-clair) !important;
-    }
-    
-    /* Overlay sombre quand menu ouvert */
-    body.menu-open::before {
-        content: '';
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.5);
-        z-index: 9998;
-    }
-    
-    body.menu-open {
-        overflow: hidden; /* Empêche le scroll */
-    }
-    
-    /* Hero avec espace pour navigation */
-    .hero {
-        padding: 6rem 1rem 2rem !important;
-    }
-    
-    .hero-text h1 {
-        font-size: 1.6rem !important;
-        line-height: 1.3 !important;
-        word-break: break-word !important;
-    }
-    
-    .hero-text p {
-        font-size: 0.9rem !important;
-    }
-    
-    .hero-image {
-        display: none !important;
-    }
-    
-    .cta-button {
-        width: 100% !important;
-        padding: 1rem !important;
-    }
-    
-    /* Sections */
-    section {
-        padding: 3rem 1rem !important;
-    }
-    
-    .section-title {
-        font-size: 1.8rem !important;
-    }
-    
-    /* Grilles */
-    .cards-grid,
-    .services-grid,
-    .tarifs-grid,
-    .benefices-list,
-    .about-content,
-    .contact-grid,
-    .footer-content {
-        grid-template-columns: 1fr !important;
-    }
-}
-    
-    /* Boutons */
-    .cta-button {
-        width: 100%;
-        justify-content: center;
-        padding: 1rem 2rem;
-    }
-    
-    /* Footer */
-    .footer-content {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-}
-        
+            nav .container {
+                padding: 0 1rem !important;
+                display: flex !important;
+                justify-content: space-between !important;
+                align-items: center !important;
+            }
+
+            /* Logo */
+            .logo {
+                font-size: 1rem !important;
+                z-index: 10001 !important;
+            }
+
+            .logo span {
+                display: none !important;
+            }
+
+            .logo img {
+                height: 35px !important;
+            }
+
+            /* Afficher le bouton hamburger */
+            .mobile-menu-btn {
+                display: flex !important;
+            }
+
+            /* Menu caché par défaut */
+            nav ul {
+                position: fixed !important;
+                top: 0 !important;
+                right: -100% !important;
+                /* Caché à droite */
+                width: 70% !important;
+                max-width: 300px !important;
+                height: 100vh !important;
+                background: white !important;
+                flex-direction: column !important;
+                padding: 5rem 2rem 2rem !important;
+                gap: 1.5rem !important;
+                transition: right 0.3s ease !important;
+                box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1) !important;
+                z-index: 10000 !important;
+            }
+
+            /* Menu ouvert */
+            nav ul.active {
+                right: 0 !important;
+                /* Visible */
+            }
+
+            nav li {
+                width: 100% !important;
+            }
+
+            nav a {
+                font-size: 1.1rem !important;
+                padding: 0.75rem 0 !important;
+                display: block !important;
+                border-bottom: 1px solid var(--sable-clair) !important;
+            }
+
+            /* Overlay sombre quand menu ouvert */
+            body.menu-open::before {
+                content: '';
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.5);
+                z-index: 9998;
+            }
+
+            body.menu-open {
+                overflow: hidden;
+                /* Empêche le scroll */
+            }
+
+            /* Hero avec espace pour navigation */
+            .hero {
+                padding: 6rem 1rem 2rem !important;
+            }
+
+            .hero-text h1 {
+                font-size: 1.6rem !important;
+                line-height: 1.3 !important;
+                word-break: break-word !important;
+            }
+
+            .hero-text p {
+                font-size: 0.9rem !important;
+            }
+
+
+
+            .cta-button {
+                width: 100% !important;
+                padding: 1rem !important;
+            }
+
+            /* Sections */
+            section {
+                padding: 3rem 1rem !important;
+            }
+
+            .section-title {
+                font-size: 1.8rem !important;
+            }
+
+            /* Grilles */
+            .cards-grid,
+            .services-grid,
+            .tarifs-grid,
+            .benefices-list,
+            .about-content,
+            .contact-grid,
+            .footer-content {
+                grid-template-columns: 1fr !important;
+            }
+
+            /* Boutons */
+            .cta-button {
+                width: 100%;
+                justify-content: center;
+                padding: 1rem 2rem;
+            }
+
+            /* Footer */
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+
         .cta-button {
             display: inline-flex;
             align-items: center;
@@ -437,39 +427,45 @@ html, body {
             box-shadow: 0 10px 30px rgba(201, 169, 142, 0.3);
             animation: fadeInUp 1s ease-out 0.4s both;
         }
-        
+
         .cta-button:hover {
             transform: translateY(-3px);
             box-shadow: 0 15px 40px rgba(201, 169, 142, 0.4);
             background: #B89380;
         }
-        
+
         @keyframes fadeInUp {
             from {
                 opacity: 0;
                 transform: translateY(30px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
             }
         }
-        
+
         @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
         }
-        
+
         /* Sections */
         section {
             padding: 6rem 3rem;
         }
-        
+
         .container {
             max-width: 1400px;
             margin: 0 auto;
         }
-        
+
         .section-title {
             font-size: 3rem;
             text-align: center;
@@ -477,7 +473,7 @@ html, body {
             color: var(--texte-fonce);
             position: relative;
         }
-        
+
         .section-title::after {
             content: '';
             position: absolute;
@@ -488,19 +484,19 @@ html, body {
             height: 3px;
             background: linear-gradient(90deg, transparent, var(--terracotta), transparent);
         }
-        
+
         /* Problématiques - Cards élégantes */
         .problemes {
             background: white;
         }
-        
+
         .cards-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 3rem;
             margin-top: 4rem;
         }
-        
+
         .icon-card {
             text-align: center;
             padding: 3rem 2rem;
@@ -510,7 +506,7 @@ html, body {
             position: relative;
             overflow: hidden;
         }
-        
+
         .icon-card::before {
             content: '';
             position: absolute;
@@ -522,46 +518,46 @@ html, body {
             transform: scaleX(0);
             transition: transform 0.4s ease;
         }
-        
+
         .icon-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 20px 50px rgba(74, 66, 56, 0.1);
         }
-        
+
         .icon-card:hover::before {
             transform: scaleX(1);
         }
-        
+
         .icon {
             font-size: 4rem;
             margin-bottom: 1.5rem;
             display: block;
         }
-        
+
         .icon-card h3 {
             font-size: 1.75rem;
             margin-bottom: 1rem;
             color: var(--terracotta);
         }
-        
+
         .icon-card p {
             color: var(--texte-secondaire);
             line-height: 1.8;
             font-size: 1.05rem;
         }
-        
+
         /* Services - Layout luxueux */
         .services {
             background: linear-gradient(180deg, var(--blanc-casse) 0%, white 100%);
         }
-        
+
         .services-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 3rem;
             margin-top: 4rem;
         }
-        
+
         .service-card {
             background: white;
             border-radius: 25px;
@@ -570,12 +566,12 @@ html, body {
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             position: relative;
         }
-        
+
         .service-card:hover {
             transform: translateY(-8px);
             box-shadow: 0 20px 60px rgba(74, 66, 56, 0.12);
         }
-        
+
         .service-card-image {
             height: 300px;
             background: linear-gradient(135deg, var(--sable-clair), var(--beige-rose));
@@ -587,41 +583,39 @@ html, body {
             position: relative;
             overflow: hidden;
         }
-        
+
         .service-card-image::before {
             content: '';
             position: absolute;
             inset: 0;
-            background: repeating-linear-gradient(
-                45deg,
-                transparent,
-                transparent 10px,
-                rgba(255, 255, 255, 0.03) 10px,
-                rgba(255, 255, 255, 0.03) 20px
-            );
+            background: repeating-linear-gradient(45deg,
+                    transparent,
+                    transparent 10px,
+                    rgba(255, 255, 255, 0.03) 10px,
+                    rgba(255, 255, 255, 0.03) 20px);
         }
-        
+
         .service-card-content {
             padding: 2.5rem;
         }
-        
+
         .service-card h3 {
             font-size: 2rem;
             margin-bottom: 1rem;
             color: var(--texte-fonce);
         }
-        
+
         .service-card p {
             color: var(--texte-secondaire);
             line-height: 1.8;
             margin-bottom: 1.5rem;
         }
-        
+
         .service-features {
             list-style: none;
             margin-top: 1.5rem;
         }
-        
+
         .service-features li {
             padding: 0.75rem 0;
             color: var(--texte-secondaire);
@@ -630,17 +624,17 @@ html, body {
             gap: 0.75rem;
             border-bottom: 1px solid var(--sable-clair);
         }
-        
+
         .service-features li:last-child {
             border-bottom: none;
         }
-        
+
         .service-features li::before {
             content: '◆';
             color: var(--terracotta);
             font-size: 0.7rem;
         }
-        
+
         .price-badge {
             display: inline-block;
             background: linear-gradient(135deg, var(--terracotta), #B89380);
@@ -651,7 +645,7 @@ html, body {
             font-size: 1.1rem;
             margin-top: 1.5rem;
         }
-        
+
         /* Bénéfices - Style éditorial */
         .benefices {
             background: var(--vert-sauge);
@@ -659,7 +653,7 @@ html, body {
             position: relative;
             overflow: hidden;
         }
-        
+
         .benefices::before {
             content: '';
             position: absolute;
@@ -670,15 +664,15 @@ html, body {
             background: radial-gradient(circle, rgba(255, 255, 255, 0.05) 0%, transparent 70%);
             border-radius: 50%;
         }
-        
+
         .benefices .section-title {
             color: white;
         }
-        
+
         .benefices .section-title::after {
             background: linear-gradient(90deg, transparent, white, transparent);
         }
-        
+
         .benefices-list {
             max-width: 900px;
             margin: 0 auto;
@@ -687,7 +681,7 @@ html, body {
             grid-template-columns: repeat(2, 1fr);
             gap: 2rem;
         }
-        
+
         .benefices-list li {
             padding: 2rem;
             background: rgba(255, 255, 255, 0.1);
@@ -699,12 +693,12 @@ html, body {
             gap: 1rem;
             transition: all 0.3s ease;
         }
-        
+
         .benefices-list li:hover {
             background: rgba(255, 255, 255, 0.15);
             transform: translateX(10px);
         }
-        
+
         .benefices-list li::before {
             content: '✓';
             font-size: 1.5rem;
@@ -719,19 +713,19 @@ html, body {
             align-items: center;
             justify-content: center;
         }
-        
+
         /* Tarifs - Clean & lisible */
         .tarifs {
             background: white;
         }
-        
+
         .tarifs-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 2.5rem;
             margin-top: 4rem;
         }
-        
+
         .tarif-card {
             background: var(--blanc-casse);
             padding: 3rem 2rem;
@@ -741,31 +735,31 @@ html, body {
             position: relative;
             border: 2px solid transparent;
         }
-        
+
         .tarif-card.featured {
             background: linear-gradient(135deg, var(--terracotta), #B89380);
             color: white;
             transform: scale(1.05);
         }
-        
+
         .tarif-card.featured .tarif-name,
         .tarif-card.featured .tarif-price,
         .tarif-card.featured .tarif-features li {
             color: white;
         }
-        
+
         .tarif-card:hover:not(.featured) {
             border-color: var(--terracotta);
             transform: translateY(-5px);
         }
-        
+
         .tarif-name {
             font-size: 1.75rem;
             margin-bottom: 1.5rem;
             color: var(--texte-fonce);
             font-weight: 600;
         }
-        
+
         .tarif-price {
             font-size: 3rem;
             font-weight: 600;
@@ -773,23 +767,23 @@ html, body {
             margin-bottom: 0.5rem;
             font-family: 'Cormorant Garamond', serif;
         }
-        
+
         .tarif-duration {
             color: var(--texte-secondaire);
             margin-bottom: 2rem;
             font-size: 0.95rem;
         }
-        
+
         .tarif-card.featured .tarif-duration {
             color: rgba(255, 255, 255, 0.9);
         }
-        
+
         .tarif-features {
             list-style: none;
             margin: 2rem 0;
             text-align: left;
         }
-        
+
         .tarif-features li {
             padding: 0.75rem 0;
             color: var(--texte-secondaire);
@@ -797,22 +791,22 @@ html, body {
             display: flex;
             gap: 0.75rem;
         }
-        
+
         .tarif-features li::before {
             content: '•';
             color: var(--terracotta);
             font-weight: bold;
         }
-        
+
         .tarif-card.featured .tarif-features li::before {
             color: white;
         }
-        
+
         /* À propos - Layout magazine */
         .about {
             background: linear-gradient(180deg, white 0%, var(--blanc-casse) 100%);
         }
-        
+
         .about-content {
             display: grid;
             grid-template-columns: 1fr 1.5fr;
@@ -820,12 +814,12 @@ html, body {
             align-items: start;
             margin-top: 4rem;
         }
-        
+
         .about-image {
             position: sticky;
             top: 120px;
         }
-        
+
         .about-image-placeholder {
             aspect-ratio: 3/4;
             background: linear-gradient(135deg, var(--sable-clair), var(--beige-rose));
@@ -836,20 +830,20 @@ html, body {
             color: var(--texte-secondaire);
             box-shadow: 0 20px 60px rgba(74, 66, 56, 0.15);
         }
-        
+
         .about-text h3 {
             font-size: 2.25rem;
             margin-bottom: 1.5rem;
             color: var(--terracotta);
         }
-        
+
         .about-text p {
             margin-bottom: 1.5rem;
             font-size: 1.1rem;
             line-height: 1.9;
             color: var(--texte-secondaire);
         }
-        
+
         .diplomes {
             margin-top: 3rem;
             padding: 2.5rem;
@@ -857,17 +851,17 @@ html, body {
             border-radius: 20px;
             border-left: 4px solid var(--terracotta);
         }
-        
+
         .diplomes h4 {
             font-size: 1.75rem;
             margin-bottom: 1.5rem;
             color: var(--texte-fonce);
         }
-        
+
         .diplomes ul {
             list-style: none;
         }
-        
+
         .diplomes li {
             padding: 1rem 0;
             border-bottom: 1px solid var(--sable-clair);
@@ -876,47 +870,47 @@ html, body {
             align-items: center;
             gap: 1rem;
         }
-        
+
         .diplomes li:last-child {
             border-bottom: none;
         }
-        
+
         .diplomes li::before {
             content: '🎓';
             font-size: 1.5rem;
         }
-        
+
         /* Contact - Élégant et fonctionnel */
         .contact {
             background: white;
         }
-        
+
         .contact-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 4rem;
             margin-top: 4rem;
         }
-        
+
         .contact-info {
             background: var(--blanc-casse);
             padding: 3rem;
             border-radius: 20px;
         }
-        
+
         .contact-info h3 {
             font-size: 2rem;
             margin-bottom: 2rem;
             color: var(--texte-fonce);
         }
-        
+
         .contact-item {
             display: flex;
             align-items: flex-start;
             gap: 1.5rem;
             margin-bottom: 2rem;
         }
-        
+
         .contact-icon {
             width: 50px;
             height: 50px;
@@ -928,50 +922,50 @@ html, body {
             font-size: 1.5rem;
             flex-shrink: 0;
         }
-        
+
         .contact-details h4 {
             font-size: 1.1rem;
             margin-bottom: 0.5rem;
             color: var(--texte-fonce);
         }
-        
+
         .contact-details p {
             color: var(--texte-secondaire);
             line-height: 1.6;
         }
-        
+
         .contact-details a {
             color: var(--terracotta);
             text-decoration: none;
         }
-        
+
         .contact-details a:hover {
             text-decoration: underline;
         }
-        
+
         .contact-form-container {
             background: var(--blanc-casse);
             padding: 3rem;
             border-radius: 20px;
         }
-        
+
         .contact-form-container h3 {
             font-size: 2rem;
             margin-bottom: 2rem;
             color: var(--texte-fonce);
         }
-        
+
         .form-group {
             margin-bottom: 1.5rem;
         }
-        
+
         .form-group label {
             display: block;
             margin-bottom: 0.5rem;
             color: var(--texte-fonce);
             font-weight: 500;
         }
-        
+
         .form-group input,
         .form-group textarea {
             width: 100%;
@@ -983,19 +977,19 @@ html, body {
             transition: all 0.3s ease;
             background: white;
         }
-        
+
         .form-group input:focus,
         .form-group textarea:focus {
             outline: none;
             border-color: var(--terracotta);
             box-shadow: 0 0 0 3px rgba(201, 169, 142, 0.1);
         }
-        
+
         .form-group textarea {
             min-height: 150px;
             resize: vertical;
         }
-        
+
         .submit-btn {
             background: var(--terracotta);
             color: white;
@@ -1008,20 +1002,20 @@ html, body {
             transition: all 0.3s ease;
             font-family: 'Montserrat', sans-serif;
         }
-        
+
         .submit-btn:hover {
             background: #B89380;
             transform: translateY(-2px);
             box-shadow: 0 10px 30px rgba(201, 169, 142, 0.3);
         }
-        
+
         /* Footer - Raffiné */
         footer {
             background: var(--texte-fonce);
             color: rgba(255, 255, 255, 0.8);
             padding: 4rem 3rem 2rem;
         }
-        
+
         .footer-content {
             max-width: 1400px;
             margin: 0 auto;
@@ -1030,42 +1024,42 @@ html, body {
             gap: 4rem;
             margin-bottom: 3rem;
         }
-        
+
         .footer-about h3 {
             color: white;
             font-size: 1.5rem;
             margin-bottom: 1rem;
         }
-        
+
         .footer-about p {
             line-height: 1.8;
             margin-bottom: 1.5rem;
         }
-        
+
         .footer-links h4 {
             color: white;
             font-size: 1.2rem;
             margin-bottom: 1.5rem;
         }
-        
+
         .footer-links ul {
             list-style: none;
         }
-        
+
         .footer-links li {
             margin-bottom: 0.75rem;
         }
-        
+
         .footer-links a {
             color: rgba(255, 255, 255, 0.7);
             text-decoration: none;
             transition: color 0.3s ease;
         }
-        
+
         .footer-links a:hover {
             color: var(--terracotta);
         }
-        
+
         .footer-bottom {
             max-width: 1400px;
             margin: 0 auto;
@@ -1074,166 +1068,163 @@ html, body {
             text-align: center;
             color: rgba(255, 255, 255, 0.6);
         }
-        
+
         /* Responsive */
         @media (max-width: 1024px) {
             .hero-content {
                 grid-template-columns: 1fr;
                 gap: 3rem;
             }
-            
+
             .hero-text h1 {
                 font-size: 3.5rem;
             }
-            
+
             .services-grid,
             .about-content,
             .contact-grid {
                 grid-template-columns: 1fr;
             }
-            
+
             .about-image {
                 position: relative;
                 top: 0;
             }
-            
+
             .tarifs-grid {
                 grid-template-columns: 1fr;
             }
-            
+
             .footer-content {
                 grid-template-columns: 1fr;
                 gap: 2rem;
             }
         }
-        
+
         @media (max-width: 768px) {
-    /* Empêcher le débordement horizontal */
-    body {
-        overflow-x: hidden !important;
-    }
-    
-    /* Navigation fixe en haut */
-    nav {
-        position: fixed !important;
-        top: 0 !important;
-        left: 0 !important;
-        right: 0 !important;
-        width: 100% !important;
-        z-index: 9999 !important;
-        background: white !important;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.1) !important;
-    }
-    
-    nav .container {
-        padding: 0.5rem 1rem !important;
-    }
-    
-    nav ul {
-        display: flex !important;
-        gap: 0.3rem !important;
-        flex-wrap: wrap !important;
-    }
-    
-    nav a {
-        font-size: 0.7rem !important;
-        padding: 0.25rem 0.5rem !important;
-    }
-    
-    /* Logo encore plus petit */
-    .logo {
-        font-size: 1rem !important;
-    }
-    
-    .logo img {
-        height: 30px !important;
-    }
-    
-    .logo div {
-        display: none !important;
-    }
-    
-    /* Hero TRÈS compact */
-    .hero {
-        min-height: auto !important;
-        height: auto !important;
-        max-height: none !important;
-        padding: 5rem 1rem 2rem 1rem !important; /* Espace pour le menu fixe */
-        overflow: visible !important;
-        width: 100% !important;
-    }
-    
-    .hero-content {
-        grid-template-columns: 1fr !important;
-        gap: 1.5rem !important;
-        max-width: 100% !important;
-        width: 100% !important;
-    }
-    
-    /* Titre qui ne déborde pas */
-    .hero-text {
-        width: 100% !important;
-        overflow: hidden !important;
-    }
-    
-    .hero-text h1 {
-        font-size: 1.5rem !important;
-        line-height: 1.2 !important;
-        margin-bottom: 1rem !important;
-        word-wrap: break-word !important;
-        overflow-wrap: break-word !important;
-    }
-    
-    .hero-text p {
-        font-size: 0.9rem !important;
-        line-height: 1.5 !important;
-        margin-bottom: 1rem !important;
-    }
-    
-    /* Cacher l'image sur mobile */
-    .hero-image,
-    .hero-image-placeholder {
-        display: none !important;
-    }
-    
-    /* Bouton plus petit */
-    .cta-button {
-        width: 100% !important;
-        padding: 1rem !important;
-        font-size: 0.95rem !important;
-        margin-top: 1rem !important;
-    }
-    
-    /* Toutes les sections */
-    section {
-        padding: 3rem 1rem !important;
-        width: 100% !important;
-        overflow-x: hidden !important;
-    }
-    
-    .container {
-        max-width: 100% !important;
-        padding: 0 1rem !important;
-    }
-}
+
+            /* Empêcher le débordement horizontal */
+            body {
+                overflow-x: hidden !important;
+            }
+
+            /* Navigation fixe en haut */
+            nav {
+                position: fixed !important;
+                top: 0 !important;
+                left: 0 !important;
+                right: 0 !important;
+                width: 100% !important;
+                z-index: 9999 !important;
+                background: white !important;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1) !important;
+            }
+
+            nav .container {
+                padding: 0.5rem 1rem !important;
+            }
+
+
+
+            /* Logo encore plus petit */
+            .logo {
+                font-size: 1rem !important;
+            }
+
+            .logo img {
+                height: 30px !important;
+            }
+
+            .logo span {
+                display: none !important;
+            }
+
+            /* Hero TRÈS compact */
+            .hero {
+                min-height: auto !important;
+                height: auto !important;
+                max-height: none !important;
+                padding: 5rem 1rem 2rem 1rem !important;
+                /* Espace pour le menu fixe */
+                overflow: visible !important;
+                width: 100% !important;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr !important;
+                gap: 1.5rem !important;
+                max-width: 100% !important;
+                width: 100% !important;
+            }
+
+            /* Titre qui ne déborde pas */
+            .hero-text {
+                width: 100% !important;
+                overflow: hidden !important;
+            }
+
+            .hero-text h1 {
+                font-size: 1.5rem !important;
+                line-height: 1.2 !important;
+                margin-bottom: 1rem !important;
+                word-wrap: break-word !important;
+                overflow-wrap: break-word !important;
+            }
+
+            .hero-text p {
+                font-size: 0.9rem !important;
+                line-height: 1.5 !important;
+                margin-bottom: 1rem !important;
+            }
+
+
+
+            /* Bouton plus petit */
+            .cta-button {
+                width: 100% !important;
+                padding: 1rem !important;
+                font-size: 0.95rem !important;
+                margin-top: 1rem !important;
+            }
+
+            /* Toutes les sections */
+            section {
+                padding: 3rem 1rem !important;
+                width: 100% !important;
+                overflow-x: hidden !important;
+            }
+
+            .container {
+                max-width: 100% !important;
+                padding: 0 1rem !important;
+            }
+        }
     </style>
 </head>
+
 <body>
     <!-- Navigation -->
     <nav id="navbar">
         <div class="container">
-            <a href="#accueil" class="logo" style="display: flex; align-items: center; gap: 50px; text-decoration: none;">
-    <img src="logo.png" alt="Logo" style="height: 70px; width: auto;">
-    <span style="font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-weight: 600; color: var(--texte-fonce); letter-spacing: 0.5px;">Activité Physique Adaptée & Yogathérapie</span>
-</a>
-            <ul>
-    <li><a href="#accueil">Accueil</a></li>
-    <li><a href="#services">Services</a></li>
-    <li><a href="#tarifs">Tarifs</a></li>
-    <li><a href="#apropos">À propos</a></li>
-    <li><a href="#contact">Contact</a></li>
-</ul>
-            <button class="mobile-menu-btn">☰</button>
+            <a href="#accueil" class="logo"
+                style="display: flex; align-items: center; gap: 50px; text-decoration: none;">
+                <img src="logo.png" alt="Logo" style="height: 70px; width: auto;">
+                <span
+                    style="font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-weight: 600; color: var(--texte-fonce); letter-spacing: 0.5px;">Activité
+                    Physique Adaptée & Yogathérapie</span>
+            </a>
+            <ul id="mobile-menu">
+                <li><a href="#accueil" onclick="closeMenu()">Accueil</a></li>
+                <li><a href="#services" onclick="closeMenu()">Services</a></li>
+                <li><a href="#tarifs" onclick="closeMenu()">Tarifs</a></li>
+                <li><a href="#apropos" onclick="closeMenu()">À propos</a></li>
+                <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-btn" onclick="toggleMenu()" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
     </nav>
 
@@ -1242,15 +1233,19 @@ html, body {
         <div class="hero-content">
             <div class="hero-text">
                 <h1>Retrouver le <span class="accent">mouvement</span>,<br>même avec des douleurs ou une pathologie</h1>
-                <p>Je m'appelle Manon, je suis spécialiste en Activité Physique Adaptée et en yogathérapie. J’accompagne les personnes souffrant de douleurs chroniques, de pathologies ou de limitations physiques à retrouver un corps plus fonctionnel, plus apaisé et plus fort.</p>
-                <p>Que vous soyez senior, en reprise après une maladie, salarié en entreprise ou simplement à la recherche d’un accompagnement adapté, je vous aide à bouger en toute sécurité.</p>
+                <p>Je m'appelle Manon, je suis spécialiste en Activité Physique Adaptée et en yogathérapie. J’accompagne
+                    les personnes souffrant de douleurs chroniques, de pathologies ou de limitations physiques à
+                    retrouver un corps plus fonctionnel, plus apaisé et plus fort.</p>
+                <p>Que vous soyez senior, en reprise après une maladie, salarié en entreprise ou simplement à la
+                    recherche d’un accompagnement adapté, je vous aide à bouger en toute sécurité.</p>
                 <a href="#contact" class="cta-button">
                     <span>Me contacter</span>
                     <span>→</span>
                 </a>
             </div>
             <div class="hero-image">
-                <img src="acceuil.jpg" alt="Ma photo" style="width: 100%; height: 100%; object-fit: cover; border-radius: 300px 300px 20px 20px; box-shadow: 0 30px 60px rgba(74, 66, 56, 0.15);">
+                <img src="acceuil.jpg" alt="Ma photo"
+                    style="width: 100%; height: 100%; object-fit: cover; border-radius: 300px 300px 20px 20px; box-shadow: 0 30px 60px rgba(74, 66, 56, 0.15);">
             </div>
         </div>
     </section>
@@ -1268,7 +1263,8 @@ html, body {
                 <div class="icon-card">
                     <span class="icon">🏥</span>
                     <h3>Pathologies</h3>
-                    <p>Cancer, maladies cardiovasculaires, diabète... Vous avez besoin d'un accompagnement adapté et sécurisé.</p>
+                    <p>Cancer, maladies cardiovasculaires, diabète... Vous avez besoin d'un accompagnement adapté et
+                        sécurisé.</p>
                 </div>
                 <div class="icon-card">
                     <span class="icon">👴</span>
@@ -1298,123 +1294,189 @@ html, body {
             <h2 class="section-title">Un accompagnement sur-mesure</h2>
             <div class="services-grid">
                 <div class="service-card">
-                    <div class="service-card-image" style="height: 300px; overflow: hidden; background: none; padding: 0;">
-    <img src="trx.png" alt="Activité Physique Adaptée" style="width: 100%; height: 100%; object-fit: cover; display: block;">
-</div>
+                    <div class="service-card-image"
+                        style="height: 300px; overflow: hidden; background: none; padding: 0;">
+                        <img src="trx.png" alt="Activité Physique Adaptée"
+                            style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                    </div>
                     <div class="service-card-content">
                         <h3>Activité Physique Adaptée</h3>
-                        <p>L’Activité Physique Adaptée (APA) est une pratique encadrée et sécurisée qui permet de maintenir ou d’améliorer la force, l’équilibre, la mobilité et l’endurance, tout en tenant compte des pathologies, douleurs chroniques ou limitations physiques.
+                        <p>L’Activité Physique Adaptée (APA) est une pratique encadrée et sécurisée qui permet de
+                            maintenir ou d’améliorer la force, l’équilibre, la mobilité et l’endurance, tout en tenant
+                            compte des pathologies, douleurs chroniques ou limitations physiques.
 
-Chaque programme est conçu sur-mesure, avec des exercices modulables pour progresser à votre rythme, renforcer votre autonomie et prévenir les complications liées à la sédentarité ou aux pathologies.</p>
+                            Chaque programme est conçu sur-mesure, avec des exercices modulables pour progresser à votre
+                            rythme, renforcer votre autonomie et prévenir les complications liées à la sédentarité ou
+                            aux pathologies.</p>
                         <ul class="service-features">
-                            <li>Personnalisation : Exercices adaptés aux capacités, pathologies et objectifs de chacun.</li>
-                            <li>Prévention : Limitation des risques liés à la sédentarité et aux complications de santé.</li>
-                            <li>Renforcement et mobilité : Maintien et amélioration de la force, de l’équilibre et de la mobilité.</li>
-                            <li>Sécurité et progression : Accompagnement encadré pour évoluer efficacement tout en respectant vos limites.</li>
+                            <li>Personnalisation : Exercices adaptés aux capacités, pathologies et objectifs de chacun.
+                            </li>
+                            <li>Prévention : Limitation des risques liés à la sédentarité et aux complications de santé.
+                            </li>
+                            <li>Renforcement et mobilité : Maintien et amélioration de la force, de l’équilibre et de la
+                                mobilité.</li>
+                            <li>Sécurité et progression : Accompagnement encadré pour évoluer efficacement tout en
+                                respectant vos limites.</li>
                         </ul>
-                        <a href="#contact" class="price-badge" style="display: inline-block; text-decoration: none; cursor: pointer;">Réserver</a>
+                        <a href="#contact" class="price-badge"
+                            style="display: inline-block; text-decoration: none; cursor: pointer;">Réserver</a>
                     </div>
                 </div>
 
                 <div class="service-card">
-                    <div class="service-card-image" style="height: 300px; overflow: hidden; background: none; padding: 0;">
-    <img src="yoga.jpg" alt="Yogathérapie" style="width: 100%; height: 100%; object-fit: cover; display: block;">
-</div>
+                    <div class="service-card-image"
+                        style="height: 300px; overflow: hidden; background: none; padding: 0;">
+                        <img src="yoga.jpg" alt="Yogathérapie"
+                            style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                    </div>
                     <div class="service-card-content">
                         <h3>Yogathérapie</h3>
-                        <p>La yogathérapie est une approche douce et adaptée qui utilise les postures, la respiration et la conscience corporelle pour améliorer le bien-être physique et mental. Elle permet de soulager les douleurs chroniques, de restaurer la mobilité, de réduire le stress et d’accompagner certaines pathologies.
+                        <p>La yogathérapie est une approche douce et adaptée qui utilise les postures, la respiration et
+                            la conscience corporelle pour améliorer le bien-être physique et mental. Elle permet de
+                            soulager les douleurs chroniques, de restaurer la mobilité, de réduire le stress et
+                            d’accompagner certaines pathologies.
 
-Chaque séance est conçue pour répondre aux besoins spécifiques de la personne, avec des ajustements grâce à différents supports, afin d’allier sécurité, efficacité et confort.</p>
+                            Chaque séance est conçue pour répondre aux besoins spécifiques de la personne, avec des
+                            ajustements grâce à différents supports, afin d’allier sécurité, efficacité et confort.</p>
                         <ul class="service-features">
-                            <li>Approche adaptée : Postures, respiration et techniques modulées selon vos besoins et limitations.</li>
-                            <li>Bien-être global : Favorise la mobilité, la détente, la gestion du stress et l’équilibre corporel.</li>
-                            <li>Accompagnement personnalisé : Séances ajustées pour soulager les douleurs, soutenir les pathologies et progresser en toute sécurité.</li>
+                            <li>Approche adaptée : Postures, respiration et techniques modulées selon vos besoins et
+                                limitations.</li>
+                            <li>Bien-être global : Favorise la mobilité, la détente, la gestion du stress et l’équilibre
+                                corporel.</li>
+                            <li>Accompagnement personnalisé : Séances ajustées pour soulager les douleurs, soutenir les
+                                pathologies et progresser en toute sécurité.</li>
                         </ul>
-                        <a href="#contact" class="price-badge" style="display: inline-block; text-decoration: none; cursor: pointer;">Réserver</a>
+                        <a href="#contact" class="price-badge"
+                            style="display: inline-block; text-decoration: none; cursor: pointer;">Réserver</a>
                     </div>
                 </div>
 
                 <div class="service-card">
-                    <div class="service-card-image" style="height: 300px; overflow: hidden; background: none; padding: 0;">
-    <img src="bilan.jpg" alt="Bilan physique Personnalisé" style="width: 100%; height: 100%; object-fit: cover; display: block;">
-</div>
+                    <div class="service-card-image"
+                        style="height: 300px; overflow: hidden; background: none; padding: 0;">
+                        <img src="bilan.jpg" alt="Bilan physique Personnalisé"
+                            style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                    </div>
                     <div class="service-card-content">
                         <h3>Bilan Physique Personnalisé</h3>
-                        <p>Le bilan physique est la première étape essentielle pour comprendre votre condition actuelle et définir un programme adapté. Il permet d’évaluer la mobilité, la force, l’équilibre, l’endurance et les éventuelles limitations liées aux pathologies ou douleurs chroniques.
+                        <p>Le bilan physique est la première étape essentielle pour comprendre votre condition actuelle
+                            et définir un programme adapté. Il permet d’évaluer la mobilité, la force, l’équilibre,
+                            l’endurance et les éventuelles limitations liées aux pathologies ou douleurs chroniques.
 
-À partir de cette évaluation complète, je peux concevoir un accompagnement personnalisé, sécuritaire et progressif, en accord avec vos objectifs et votre rythme. Le bilan sert également de référence pour mesurer vos progrès et ajuster le programme au fil du temps.</p>
+                            À partir de cette évaluation complète, je peux concevoir un accompagnement personnalisé,
+                            sécuritaire et progressif, en accord avec vos objectifs et votre rythme. Le bilan sert
+                            également de référence pour mesurer vos progrès et ajuster le programme au fil du temps.</p>
                         <ul class="service-features">
                             <li>Durée : 90 minutes</li>
-                            <li>Évaluation complète : Mobilité, force, équilibre et endurance mesurés selon votre profil.</li>
-                            <li>Personnalisation : Base pour construire un programme adapté et sécurisé à vos besoins.</li>
-                            <li>Suivi de progression : Permet de mesurer les résultats et ajuster le programme pour maximiser les bénéfices.</li>
+                            <li>Évaluation complète : Mobilité, force, équilibre et endurance mesurés selon votre
+                                profil.</li>
+                            <li>Personnalisation : Base pour construire un programme adapté et sécurisé à vos besoins.
+                            </li>
+                            <li>Suivi de progression : Permet de mesurer les résultats et ajuster le programme pour
+                                maximiser les bénéfices.</li>
                         </ul>
-                        <a href="#contact" class="price-badge" style="display: inline-block; text-decoration: none; cursor: pointer;">Réserver</a>
+                        <a href="#contact" class="price-badge"
+                            style="display: inline-block; text-decoration: none; cursor: pointer;">Réserver</a>
                     </div>
                 </div>
 
                 <div class="service-card">
-                    <div class="service-card-image" style="height: 300px; overflow: hidden; background: none; padding: 0;">
-    <img src="programme.jpg" alt="Programmes" style="width: 100%; height: 100%; object-fit: cover; display: block;">
-</div>
+                    <div class="service-card-image"
+                        style="height: 300px; overflow: hidden; background: none; padding: 0;">
+                        <img src="programme.jpg" alt="Programmes"
+                            style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                    </div>
                     <div class="service-card-content">
                         <h3>Programmes</h3>
-                        <p>Je propose un programme d’accompagnement hybride, alliant autonomie et suivi personnalisé, pour vous permettre de progresser efficacement tout en conservant de la flexibilité.
+                        <p>Je propose un programme d’accompagnement hybride, alliant autonomie et suivi personnalisé,
+                            pour vous permettre de progresser efficacement tout en conservant de la flexibilité.
 
-Selon l’option choisie, vous bénéficiez d’une séance hebdomadaire en présentiel ou en visioconférence, complétée par un accès à des vidéos explicatives, des supports PDF, des conseils pratiques et des routines adaptées à votre situation.
+                            Selon l’option choisie, vous bénéficiez d’une séance hebdomadaire en présentiel ou en
+                            visioconférence, complétée par un accès à des vidéos explicatives, des supports PDF, des
+                            conseils pratiques et des routines adaptées à votre situation.
 
-Le programme inclut un bilan initial afin d’évaluer vos besoins, vos capacités et vos objectifs, ainsi qu’un bilan final pour mesurer vos progrès et ajuster la suite de votre parcours.
+                            Le programme inclut un bilan initial afin d’évaluer vos besoins, vos capacités et vos
+                            objectifs, ainsi qu’un bilan final pour mesurer vos progrès et ajuster la suite de votre
+                            parcours.
 
-Un suivi motivationnel est également assuré via WhatsApp, pour répondre à vos questions, vous accompagner dans les moments de doute et maintenir votre engagement tout au long du programme.
+                            Un suivi motivationnel est également assuré via WhatsApp, pour répondre à vos questions,
+                            vous accompagner dans les moments de doute et maintenir votre engagement tout au long du
+                            programme.
 
-Objectif : un accompagnement structuré, flexible et durable, centré sur vos résultats et votre autonomie.</p>
+                            Objectif : un accompagnement structuré, flexible et durable, centré sur vos résultats et
+                            votre autonomie.</p>
                         <ul class="service-features">
-                            <li>Personnalisation complète : Programme construit à partir d’un bilan initial et ajusté selon vos besoins, capacités et objectifs.</li>
-                            <li>Flexibilité : Séance hebdomadaire en présentiel ou en visioconférence, selon l’option choisie.</li>
-                            <li>Ressources incluses : Accès à des vidéos, PDF, conseils pratiques et routines pour progresser en autonomie.</li>
-                            <li>Suivi et motivation : Accompagnement continu via WhatsApp et bilan final pour mesurer vos progrès.</li>
+                            <li>Personnalisation complète : Programme construit à partir d’un bilan initial et ajusté
+                                selon vos besoins, capacités et objectifs.</li>
+                            <li>Flexibilité : Séance hebdomadaire en présentiel ou en visioconférence, selon l’option
+                                choisie.</li>
+                            <li>Ressources incluses : Accès à des vidéos, PDF, conseils pratiques et routines pour
+                                progresser en autonomie.</li>
+                            <li>Suivi et motivation : Accompagnement continu via WhatsApp et bilan final pour mesurer
+                                vos progrès.</li>
                         </ul>
-                        <a href="#contact" class="price-badge" style="display: inline-block; text-decoration: none; cursor: pointer;">Réserver</a>
+                        <a href="#contact" class="price-badge"
+                            style="display: inline-block; text-decoration: none; cursor: pointer;">Réserver</a>
                     </div>
                 </div>
 
                 <div class="service-card">
-                    <div class="service-card-image" style="height: 300px; overflow: hidden; background: none; padding: 0;">
-    <img src="entreprise.jpg" alt="Entreprise" style="width: 100%; height: 100%; object-fit: cover; display: block;">
-</div>
+                    <div class="service-card-image"
+                        style="height: 300px; overflow: hidden; background: none; padding: 0;">
+                        <img src="entreprise.jpg" alt="Entreprise"
+                            style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                    </div>
                     <div class="service-card-content">
                         <h3>Entreprise (QVT, TMS)</h3>
-                        <p>J’interviens en entreprise dans une démarche de Qualité de Vie au Travail (QVT) afin de prévenir les Troubles Musculo-Squelettiques (TMS) et les effets de la sédentarité.
-À travers des ateliers et séances adaptées aux postes de travail, j’accompagne les collaborateurs pour améliorer posture, mobilité et gestion des tensions.
-Une action concrète de prévention qui contribue à la santé des équipes, à la réduction des risques professionnels et à la performance durable de l’entreprise.</p>
+                        <p>J’interviens en entreprise dans une démarche de Qualité de Vie au Travail (QVT) afin de
+                            prévenir les Troubles Musculo-Squelettiques (TMS) et les effets de la sédentarité.
+                            À travers des ateliers et séances adaptées aux postes de travail, j’accompagne les
+                            collaborateurs pour améliorer posture, mobilité et gestion des tensions.
+                            Une action concrète de prévention qui contribue à la santé des équipes, à la réduction des
+                            risques professionnels et à la performance durable de l’entreprise.</p>
                         <ul class="service-features">
                             <li>Durée : 60 minutes</li>
-                            <li>Prévention des TMS : Réduction des douleurs liées aux postures prolongées et aux gestes répétitifs.</li>
-                            <li>Amélioration de la QVT : Diminution du stress, meilleure énergie et climat de travail positif.</li>
-                            <li>Performance durable : Moins d’absentéisme, collaborateurs plus engagés et plus efficaces.</li>
+                            <li>Prévention des TMS : Réduction des douleurs liées aux postures prolongées et aux gestes
+                                répétitifs.</li>
+                            <li>Amélioration de la QVT : Diminution du stress, meilleure énergie et climat de travail
+                                positif.</li>
+                            <li>Performance durable : Moins d’absentéisme, collaborateurs plus engagés et plus
+                                efficaces.</li>
                         </ul>
-                        <a href="#contact" class="price-badge" style="display: inline-block; text-decoration: none; cursor: pointer;">Réserver</a>
+                        <a href="#contact" class="price-badge"
+                            style="display: inline-block; text-decoration: none; cursor: pointer;">Réserver</a>
                     </div>
                 </div>
 
                 <div class="service-card">
-                    <div class="service-card-image" style="height: 300px; overflow: hidden; background: none; padding: 0;">
-    <img src="structure.jpg" alt="Structure" style="width: 100%; height: 100%; object-fit: cover; display: block;">
-</div>
+                    <div class="service-card-image"
+                        style="height: 300px; overflow: hidden; background: none; padding: 0;">
+                        <img src="structure.jpg" alt="Structure"
+                            style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                    </div>
                     <div class="service-card-content">
                         <h3>Structures</h3>
-                        <p>J’interviens au sein des structures telles que les maisons de retraite, résidences seniors et établissements médico-sociaux afin de maintenir et stimuler les capacités physiques des résidents.
+                        <p>J’interviens au sein des structures telles que les maisons de retraite, résidences seniors et
+                            établissements médico-sociaux afin de maintenir et stimuler les capacités physiques des
+                            résidents.
 
-À travers des séances d’Activité Physique Adaptée, sécurisées et progressives, je travaille l’équilibre, la mobilité, la coordination et le renforcement musculaire, tout en respectant le rythme et les pathologies de chacun.
+                            À travers des séances d’Activité Physique Adaptée, sécurisées et progressives, je travaille
+                            l’équilibre, la mobilité, la coordination et le renforcement musculaire, tout en respectant
+                            le rythme et les pathologies de chacun.
 
-Mon objectif est de préserver l’autonomie, prévenir les chutes et favoriser le lien social, dans une approche bienveillante et adaptée à chaque personne.</p>
+                            Mon objectif est de préserver l’autonomie, prévenir les chutes et favoriser le lien social,
+                            dans une approche bienveillante et adaptée à chaque personne.</p>
                         <ul class="service-features">
                             <li>Durée : 60 minutes ou demi-journée (entre 2h et 3h)</li>
-                            <li>Maintien de l’autonomie : Préserver les capacités physiques pour favoriser l’indépendance au quotidien.</li>
-                            <li>Prévention des chutes : Travail de l’équilibre, de la coordination et du renforcement musculaire en toute sécurité.</li>
-                            <li>Lien social et bien-être : Séances collectives favorisant la convivialité, la stimulation et la confiance en soi.</li>
+                            <li>Maintien de l’autonomie : Préserver les capacités physiques pour favoriser
+                                l’indépendance au quotidien.</li>
+                            <li>Prévention des chutes : Travail de l’équilibre, de la coordination et du renforcement
+                                musculaire en toute sécurité.</li>
+                            <li>Lien social et bien-être : Séances collectives favorisant la convivialité, la
+                                stimulation et la confiance en soi.</li>
                         </ul>
-                        <a href="#contact" class="price-badge" style="display: inline-block; text-decoration: none; cursor: pointer;">Réserver</a>
+                        <a href="#contact" class="price-badge"
+                            style="display: inline-block; text-decoration: none; cursor: pointer;">Réserver</a>
                     </div>
                 </div>
 
@@ -1531,13 +1593,17 @@ Mon objectif est de préserver l’autonomie, prévenir les chutes et favoriser 
                 </div>
 
             </div>
-            
-            <div id="aides" style="text-align: center; margin-top: 3rem; padding: 2rem; background: var(--blanc-casse); border-radius: 20px;">
+
+            <div id="aides"
+                style="text-align: center; margin-top: 3rem; padding: 2rem; background: var(--blanc-casse); border-radius: 20px;">
                 <h3 style="font-size: 1.75rem; margin-bottom: 1.5rem;">A SAVOIR</h3>
                 <p style="color: var(--texte-secondaire); font-size: 1.1rem; line-height: 1.8;">
                     <strong>💳 Prise en charge possible par mutuelles : </strong>A voir avec votre mutuelle<br>
                     <strong>Prescription médicale : </strong>En cas d'ALD. Demander à votre médecin<br>
-                    <strong>💰 50% Crédit d'impôt :</strong> Manon MONIN - <a href="https://www.sportsantedomicile.fr/carte-france/coach/manon-monin" target="_blank" style="color: var(--terracotta); text-decoration: underline; font-weight: 600;">Réserver sur Sport Santé Domicile</a><br>
+                    <strong>💰 50% Crédit d'impôt :</strong> Manon MONIN - <a
+                        href="https://www.sportsantedomicile.fr/carte-france/coach/manon-monin" target="_blank"
+                        style="color: var(--terracotta); text-decoration: underline; font-weight: 600;">Réserver sur
+                        Sport Santé Domicile</a><br>
                     <strong>Paiement en plusieurs fois disponible : </strong> Fonctionne sur les forfaits et programmes
                 </p>
                 <p style="margin-top: 1.5rem; color: var(--terracotta); font-weight: 600;">
@@ -1553,15 +1619,20 @@ Mon objectif est de préserver l’autonomie, prévenir les chutes et favoriser 
             <h2 class="section-title">À propos</h2>
             <div class="about-content">
                 <div class="about-image">
-                    <img src="photo.jpg" alt="Photo de profil" style="width: 100%; height: 100%; object-fit: cover; border-radius: 20px; box-shadow: 0 20px 60px rgba(74, 66, 56, 0.15);">
+                    <img src="photo.jpg" alt="Photo de profil"
+                        style="width: 100%; height: 100%; object-fit: cover; border-radius: 20px; box-shadow: 0 20px 60px rgba(74, 66, 56, 0.15);">
                 </div>
                 <div class="about-text">
                     <h3>Mon parcours</h3>
-                    <p>Enseignante en Activité Physique Adaptée depuis 2015 et de Yoga en 2017, j'ai à cœur d'accompagner les personnes qui pensent que bouger n'est plus possible.</p>
-                    
-                    <p>Ma conviction : le mouvement est un droit, pas un privilège. Même avec des douleurs, des pathologies ou des limitations, il est possible de retrouver un corps fonctionnel et apaisé.</p>
-                    
-                    <p>Mon approche combine la rigueur scientifique de l'APA avec la dimension holistique de la yogathérapie, le renforcement doux du Pilates pour un accompagnement complet qui respecte votre singularité.</p>
+                    <p>Enseignante en Activité Physique Adaptée depuis 2015 et de Yoga en 2017, j'ai à cœur
+                        d'accompagner les personnes qui pensent que bouger n'est plus possible.</p>
+
+                    <p>Ma conviction : le mouvement est un droit, pas un privilège. Même avec des douleurs, des
+                        pathologies ou des limitations, il est possible de retrouver un corps fonctionnel et apaisé.</p>
+
+                    <p>Mon approche combine la rigueur scientifique de l'APA avec la dimension holistique de la
+                        yogathérapie, le renforcement doux du Pilates pour un accompagnement complet qui respecte votre
+                        singularité.</p>
 
                     <div class="diplomes">
                         <h4>Mes certifications</h4>
@@ -1573,8 +1644,10 @@ Mon objectif est de préserver l’autonomie, prévenir les chutes et favoriser 
                         </ul>
                     </div>
 
-                    <div style="margin-top: 3rem; padding: 2rem; background: white; border-radius: 15px; border-left: 4px solid var(--vert-sauge);">
-                        <h4 style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--texte-fonce);">Ma philosophie</h4>
+                    <div
+                        style="margin-top: 3rem; padding: 2rem; background: white; border-radius: 15px; border-left: 4px solid var(--vert-sauge);">
+                        <h4 style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--texte-fonce);">Ma philosophie
+                        </h4>
                         <p style="color: var(--texte-secondaire); font-size: 1.05rem; line-height: 1.8;">
                             <strong>Bienveillance</strong> : Respect de votre rythme et de vos limites<br>
                             <strong>Adaptation</strong> : Chaque corps est unique, chaque programme aussi<br>
@@ -1585,64 +1658,81 @@ Mon objectif est de préserver l’autonomie, prévenir les chutes et favoriser 
             </div>
         </div>
     </section>
-<!-- Réseaux Sociaux -->
-<section class="reseaux-sociaux" id="reseaux" style="background: linear-gradient(135deg, var(--vert-sauge) 0%, var(--beige-rose) 100%); padding: 5rem 2rem; position: relative; overflow: hidden;">
-    <!-- Effet de fond décoratif -->
-    <div style="position: absolute; top: -10%; right: -5%; width: 40%; height: 120%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); border-radius: 50%;"></div>
-    
-    <div class="container" style="position: relative; z-index: 1;">
-        <h2 class="section-title" style="color: white;">Suivez mes mini-séances APA</h2>
-        <p style="text-align: center; color: white; font-size: 1.2rem; margin-bottom: 3rem; max-width: 700px; margin-left: auto; margin-right: auto;">
-            Tous les <strong>dimanches matin à 9h30</strong>, je partage des exercices adaptés gratuits sur Instagram et TikTok. Rejoignez la communauté ! 🌿
-        </p>
-        
-        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 3rem; max-width: 900px; margin: 0 auto;">
-            
-            <!-- Carte Instagram -->
-            <div style="background: white; border-radius: 20px; padding: 2.5rem; text-align: center; box-shadow: 0 10px 40px rgba(74, 66, 56, 0.15); transition: transform 0.3s ease;">
-                <div style="font-size: 4rem; margin-bottom: 1rem;">📸</div>
-                <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 2rem; margin-bottom: 1rem; color: var(--texte-fonce);">Instagram</h3>
-                <p style="color: var(--texte-secondaire); margin-bottom: 1.5rem; line-height: 1.7;">
-                    Mini-séances d'APA, conseils posturaux et inspiration bien-être
+    <!-- Réseaux Sociaux -->
+    <section class="reseaux-sociaux" id="reseaux"
+        style="background: linear-gradient(135deg, var(--vert-sauge) 0%, var(--beige-rose) 100%); padding: 5rem 2rem; position: relative; overflow: hidden;">
+        <!-- Effet de fond décoratif -->
+        <div
+            style="position: absolute; top: -10%; right: -5%; width: 40%; height: 120%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); border-radius: 50%;">
+        </div>
+
+        <div class="container" style="position: relative; z-index: 1;">
+            <h2 class="section-title" style="color: white;">Suivez mes mini-séances APA</h2>
+            <p
+                style="text-align: center; color: white; font-size: 1.2rem; margin-bottom: 3rem; max-width: 700px; margin-left: auto; margin-right: auto;">
+                Tous les <strong>dimanches matin à 9h30</strong>, je partage des exercices adaptés gratuits sur
+                Instagram et TikTok. Rejoignez la communauté ! 🌿
+            </p>
+
+            <div
+                style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 3rem; max-width: 900px; margin: 0 auto;">
+
+                <!-- Carte Instagram -->
+                <div
+                    style="background: white; border-radius: 20px; padding: 2.5rem; text-align: center; box-shadow: 0 10px 40px rgba(74, 66, 56, 0.15); transition: transform 0.3s ease;">
+                    <div style="font-size: 4rem; margin-bottom: 1rem;">📸</div>
+                    <h3
+                        style="font-family: 'Cormorant Garamond', serif; font-size: 2rem; margin-bottom: 1rem; color: var(--texte-fonce);">
+                        Instagram</h3>
+                    <p style="color: var(--texte-secondaire); margin-bottom: 1.5rem; line-height: 1.7;">
+                        Mini-séances d'APA, conseils posturaux et inspiration bien-être
+                    </p>
+                    <a href="https://instagram.com/manon_yogapa" target="_blank"
+                        style="display: inline-block; background: linear-gradient(135deg, #833AB4, #E1306C, #F56040); color: white; padding: 1rem 2rem; border-radius: 30px; text-decoration: none; font-weight: 600; transition: transform 0.3s ease;">
+                        📱 Suivre sur Instagram
+                    </a>
+                    <p style="margin-top: 1rem; color: var(--terracotta); font-weight: 600; font-size: 0.95rem;">
+                        @manon_yogapa
+                    </p>
+                </div>
+
+                <!-- Carte TikTok -->
+                <div
+                    style="background: white; border-radius: 20px; padding: 2.5rem; text-align: center; box-shadow: 0 10px 40px rgba(74, 66, 56, 0.15); transition: transform 0.3s ease;">
+                    <div style="font-size: 4rem; margin-bottom: 1rem;">🎵</div>
+                    <h3
+                        style="font-family: 'Cormorant Garamond', serif; font-size: 2rem; margin-bottom: 1rem; color: var(--texte-fonce);">
+                        TikTok</h3>
+                    <p style="color: var(--texte-secondaire); margin-bottom: 1.5rem; line-height: 1.7;">
+                        Exercices courts et dynamiques, accessibles à tous
+                    </p>
+                    <a href="https://tiktok.com/@manonyogapa" target="_blank"
+                        style="display: inline-block; background: linear-gradient(135deg, #000000, #00F2EA); color: white; padding: 1rem 2rem; border-radius: 30px; text-decoration: none; font-weight: 600; transition: transform 0.3s ease;">
+                        🎥 Suivre sur TikTok
+                    </a>
+                    <p style="margin-top: 1rem; color: var(--terracotta); font-weight: 600; font-size: 0.95rem;">
+                        @manonyogapa
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- Badge "Rendez-vous" -->
+            <div
+                style="text-align: center; margin-top: 3rem; padding: 2rem; background: rgba(255,255,255,0.2); backdrop-filter: blur(10px); border-radius: 20px; max-width: 600px; margin-left: auto; margin-right: auto;">
+                <div style="font-size: 2.5rem; margin-bottom: 1rem;">⏰</div>
+                <h4
+                    style="color: white; font-size: 1.5rem; margin-bottom: 0.5rem; font-family: 'Cormorant Garamond', serif;">
+                    Rendez-vous hebdomadaire</h4>
+                <p style="color: white; font-size: 1.2rem; font-weight: 600;">
+                    Tous les dimanches à 9h30
                 </p>
-                <a href="https://instagram.com/manon_yogapa" target="_blank" style="display: inline-block; background: linear-gradient(135deg, #833AB4, #E1306C, #F56040); color: white; padding: 1rem 2rem; border-radius: 30px; text-decoration: none; font-weight: 600; transition: transform 0.3s ease;">
-                    📱 Suivre sur Instagram
-                </a>
-                <p style="margin-top: 1rem; color: var(--terracotta); font-weight: 600; font-size: 0.95rem;">
-                    @manon_yogapa
+                <p style="color: rgba(255,255,255,0.9); margin-top: 0.5rem;">
+                    Des exercices gratuits pour bien commencer la semaine
                 </p>
             </div>
-            
-            <!-- Carte TikTok -->
-            <div style="background: white; border-radius: 20px; padding: 2.5rem; text-align: center; box-shadow: 0 10px 40px rgba(74, 66, 56, 0.15); transition: transform 0.3s ease;">
-                <div style="font-size: 4rem; margin-bottom: 1rem;">🎵</div>
-                <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 2rem; margin-bottom: 1rem; color: var(--texte-fonce);">TikTok</h3>
-                <p style="color: var(--texte-secondaire); margin-bottom: 1.5rem; line-height: 1.7;">
-                    Exercices courts et dynamiques, accessibles à tous
-                </p>
-                <a href="https://tiktok.com/@manonyogapa" target="_blank" style="display: inline-block; background: linear-gradient(135deg, #000000, #00F2EA); color: white; padding: 1rem 2rem; border-radius: 30px; text-decoration: none; font-weight: 600; transition: transform 0.3s ease;">
-                    🎥 Suivre sur TikTok
-                </a>
-                <p style="margin-top: 1rem; color: var(--terracotta); font-weight: 600; font-size: 0.95rem;">
-                    @manonyogapa
-                </p>
-            </div>
-            
         </div>
-        
-        <!-- Badge "Rendez-vous" -->
-        <div style="text-align: center; margin-top: 3rem; padding: 2rem; background: rgba(255,255,255,0.2); backdrop-filter: blur(10px); border-radius: 20px; max-width: 600px; margin-left: auto; margin-right: auto;">
-            <div style="font-size: 2.5rem; margin-bottom: 1rem;">⏰</div>
-            <h4 style="color: white; font-size: 1.5rem; margin-bottom: 0.5rem; font-family: 'Cormorant Garamond', serif;">Rendez-vous hebdomadaire</h4>
-            <p style="color: white; font-size: 1.2rem; font-weight: 600;">
-                Tous les dimanches à 9h30
-            </p>
-            <p style="color: rgba(255,255,255,0.9); margin-top: 0.5rem;">
-                Des exercices gratuits pour bien commencer la semaine
-            </p>
-        </div>
-    </div>
-</section>
+    </section>
 
     <!-- Contact -->
     <section class="contact" id="contact">
@@ -1651,18 +1741,18 @@ Mon objectif est de préserver l’autonomie, prévenir les chutes et favoriser 
             <div class="contact-grid">
                 <div class="contact-info">
                     <h3>Coordonnées</h3>
-                    
+
                     <div class="contact-item">
                         <div class="contact-icon">📍</div>
                         <div class="contact-details">
                             <h4>Adresse</h4>
                             <p>Domaine Mille petits<br>11800 Trèbes</p>
-                        
+
                             <h4>Localisation</h4>
-        <p>
-            <strong>À domicile :</strong> AUDE (11) Alentours de Carcassonne / Narbonne <br>
-            <strong>En ligne :</strong> Visioconférence disponible partout en France
-        </p>
+                            <p>
+                                <strong>À domicile :</strong> AUDE (11) Alentours de Carcassonne / Narbonne <br>
+                                <strong>En ligne :</strong> Visioconférence disponible partout en France
+                            </p>
                         </div>
                     </div>
 
@@ -1692,31 +1782,31 @@ Mon objectif est de préserver l’autonomie, prévenir les chutes et favoriser 
                 </div>
 
                 <div class="contact-form-container">
-    <h3>Envoyez-moi un message</h3>
-    <form class="contact-form" action="https://formspree.io/f/xrealwrg" method="POST">
-        <div class="form-group">
-            <label for="name">Nom complet *</label>
-            <input type="text" id="name" name="name" required>
-        </div>
+                    <h3>Envoyez-moi un message</h3>
+                    <form class="contact-form" action="https://formspree.io/f/xrealwrg" method="POST">
+                        <div class="form-group">
+                            <label for="name">Nom complet *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
 
-        <div class="form-group">
-            <label for="email">Email *</label>
-            <input type="email" id="email" name="email" required>
-        </div>
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
 
-        <div class="form-group">
-            <label for="phone">Téléphone</label>
-            <input type="tel" id="phone" name="phone">
-        </div>
+                        <div class="form-group">
+                            <label for="phone">Téléphone</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
 
-        <div class="form-group">
-            <label for="message">Votre message *</label>
-            <textarea id="message" name="message" required></textarea>
-        </div>
+                        <div class="form-group">
+                            <label for="message">Votre message *</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
 
-        <button type="submit" class="submit-btn">Envoyer le message</button>
-    </form>
-</div>
+                        <button type="submit" class="submit-btn">Envoyer le message</button>
+                    </form>
+                </div>
             </div>
         </div>
     </section>
@@ -1726,7 +1816,8 @@ Mon objectif est de préserver l’autonomie, prévenir les chutes et favoriser 
         <div class="footer-content">
             <div class="footer-about">
                 <h3>APA & Yogathérapie</h3>
-                <p>Accompagnement personnalisé pour retrouver le mouvement en toute sécurité. Spécialiste en Activité Physique Adaptée et Yogathérapie.</p>
+                <p>Accompagnement personnalisé pour retrouver le mouvement en toute sécurité. Spécialiste en Activité
+                    Physique Adaptée et Yogathérapie.</p>
             </div>
 
             <div class="footer-links">
@@ -1741,13 +1832,13 @@ Mon objectif est de préserver l’autonomie, prévenir les chutes et favoriser 
             </div>
 
             <div class="footer-links">
-    <h4>Informations</h4>
-    <ul>
-        <li><a href="mentions-legales.html">Mentions légales</a></li>
-        <li><a href="politique-confidentialite.html">Politique de confidentialité</a></li>
-        <li><a href="#aides">Aides financières</a></li>
-    </ul>
-</div>
+                <h4>Informations</h4>
+                <ul>
+                    <li><a href="mentions-legales.html">Mentions légales</a></li>
+                    <li><a href="politique-confidentialite.html">Politique de confidentialité</a></li>
+                    <li><a href="#aides">Aides financières</a></li>
+                </ul>
+            </div>
         </div>
 
         <div class="footer-bottom">
@@ -1778,42 +1869,39 @@ Mon objectif est de préserver l’autonomie, prévenir les chutes et favoriser 
                 }
             });
         });
+        // Ouvrir/Fermer le menu mobile
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const btn = document.querySelector('.mobile-menu-btn');
+            const body = document.body;
+
+            if (menu) menu.classList.toggle('active');
+            if (btn) btn.classList.toggle('active');
+            if (body) body.classList.toggle('menu-open');
+        }
+
+        // Fermer le menu quand on clique sur un lien
+        function closeMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const btn = document.querySelector('.mobile-menu-btn');
+            const body = document.body;
+
+            if (menu) menu.classList.remove('active');
+            if (btn) btn.classList.remove('active');
+            if (body) body.classList.remove('menu-open');
+        }
+
+        // Fermer le menu si on clique en dehors
+        document.addEventListener('click', function (event) {
+            const menu = document.getElementById('mobile-menu');
+            const nav = document.querySelector('nav');
+
+            if (nav && menu && !nav.contains(event.target) && menu.classList.contains('active')) {
+                closeMenu();
+            }
+        });
     </script>
 </body>
-<script>
-// Ouvrir/Fermer le menu mobile
-function toggleMenu() {
-    const menu = document.getElementById('mobile-menu');
-    const btn = document.querySelector('.mobile-menu-btn');
-    const body = document.body;
-    
-    menu.classList.toggle('active');
-    btn.classList.toggle('active');
-    body.classList.toggle('menu-open');
-}
 
-// Fermer le menu quand on clique sur un lien
-function closeMenu() {
-    const menu = document.getElementById('mobile-menu');
-    const btn = document.querySelector('.mobile-menu-btn');
-    const body = document.body;
-    
-    menu.classList.remove('active');
-    btn.classList.remove('active');
-    body.classList.remove('menu-open');
-}
-
-// Fermer le menu si on clique en dehors
-document.addEventListener('click', function(event) {
-    const menu = document.getElementById('mobile-menu');
-    const btn = document.querySelector('.mobile-menu-btn');
-    const nav = document.querySelector('nav');
-    
-    if (!nav.contains(event.target) && menu.classList.contains('active')) {
-        closeMenu();
-    }
-});
-</script>
-</body>
 </html>
 ```
