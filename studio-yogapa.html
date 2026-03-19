@@ -1,0 +1,1917 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Découvrez le Studio YOGAPA par Manon. Cours d'Activité Physique Adaptée (APA), de Pilates et de Yogathérapie en visio. Prenez soin de vous, à votre rythme.">
+  <link rel="icon" type="image/png" href="LOGO.png">
+  <title>Studio YOGAPA — par Manon</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --sage: #7a9e7e;
+      --sage-light: #b5ceb8;
+      --sage-pale: #e8f0e9;
+      --sage-deep: #4a6e4f;
+      --sand: #e8ddd0;
+      --sand-deep: #c9b9a7;
+      --clay: #c4845a;
+      --cream: #faf7f2;
+      --warm-white: #f5f0ea;
+      --text-dark: #2a2520;
+      --text-mid: #6b5e52;
+      --text-light: #9e9188;
+      --radius: 20px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--cream);
+      color: var(--text-dark);
+      overflow-x: hidden;
+      font-size: 18px;
+    }
+
+    /* HERO */
+    header {
+      position: relative;
+      min-height: 75vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 100px 24px 120px;
+      overflow: hidden;
+    }
+
+    header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 20% 80%, rgba(181, 206, 184, .35) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 50% at 80% 20%, rgba(196, 132, 90, .12) 0%, transparent 55%),
+        radial-gradient(ellipse 90% 70% at 50% 50%, rgba(232, 221, 208, .4) 0%, transparent 70%);
+      z-index: 0;
+    }
+
+    .blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(60px);
+      opacity: .14;
+      z-index: 0;
+      animation: drift 12s ease-in-out infinite;
+    }
+
+    .blob-1 {
+      width: 500px;
+      height: 500px;
+      background: var(--sage);
+      top: -100px;
+      left: -150px;
+    }
+
+    .blob-2 {
+      width: 350px;
+      height: 350px;
+      background: var(--clay);
+      top: 40%;
+      right: -80px;
+      animation-delay: -4s;
+    }
+
+    .blob-3 {
+      width: 400px;
+      height: 300px;
+      background: var(--sand-deep);
+      bottom: -50px;
+      left: 20%;
+      animation-delay: -8s;
+    }
+
+    @keyframes drift {
+
+      0%,
+      100% {
+        transform: translate(0, 0) scale(1);
+      }
+
+      33% {
+        transform: translate(20px, -30px) scale(1.05);
+      }
+
+      66% {
+        transform: translate(-15px, 20px) scale(.97);
+      }
+    }
+
+    .deco-ring {
+      position: absolute;
+      border: 1px solid rgba(122, 158, 126, .15);
+      border-radius: 50%;
+      z-index: 0;
+    }
+
+    .ring-1 {
+      width: 500px;
+      height: 500px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .ring-2 {
+      width: 700px;
+      height: 700px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .header-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .logo-tag {
+      display: inline-block;
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--sage-deep);
+      background: rgba(122, 158, 126, .12);
+      border: 1px solid rgba(122, 158, 126, .25);
+      padding: 8px 20px;
+      border-radius: 100px;
+      margin-bottom: 28px;
+      animation: fadeUp .8s ease both;
+    }
+
+    h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(44px, 16vw, 180px);
+      font-weight: 300;
+      line-height: 1;
+      letter-spacing: -.02em;
+      animation: fadeUp .8s ease .1s both;
+      width: 100%;
+    }
+
+    h1 em {
+      font-style: italic;
+      color: var(--sage-deep);
+    }
+
+    .byline {
+      font-size: 20px;
+      font-weight: 300;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--text-light);
+      margin-top: 14px;
+      animation: fadeUp .8s ease .2s both;
+    }
+
+    .studio-tagline {
+      font-size: 16px;
+      font-weight: 400;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--sage-deep);
+      margin-top: 16px;
+      opacity: .85;
+      animation: fadeUp .8s ease .25s both;
+    }
+
+    .hero-desc {
+      max-width: 650px;
+      margin: 28px auto 0;
+      font-size: 20px;
+      font-weight: 300;
+      line-height: 1.85;
+      color: var(--text-mid);
+      animation: fadeUp .8s ease .3s both;
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* CALENDRIER */
+    .cal-section {
+      padding: 80px 0 100px;
+    }
+
+    .cal-header {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      gap: 24px;
+    }
+
+    .cal-title-block .section-label {
+      font-size: 16px;
+      font-weight: 500;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--sage);
+      margin-bottom: 12px;
+    }
+
+    .cal-title-block h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(32px, 8vw, 72px);
+      font-weight: 300;
+      line-height: 1.1;
+      width: 100%;
+    }
+
+    .cal-title-block h2 em {
+      font-style: italic;
+      color: var(--sage-deep);
+    }
+
+    .week-nav {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .week-label {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 19px;
+      font-weight: 300;
+      color: var(--text-dark);
+      min-width: 190px;
+      text-align: center;
+    }
+
+    .nav-btn {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border: 1px solid rgba(122, 158, 126, .25);
+      background: var(--warm-white);
+      color: var(--sage-deep);
+      font-size: 15px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all .2s;
+    }
+
+    .nav-btn:hover {
+      background: var(--sage-deep);
+      color: white;
+      border-color: var(--sage-deep);
+    }
+
+    .today-btn {
+      padding: 8px 16px;
+      border-radius: 100px;
+      border: 1px solid rgba(122, 158, 126, .25);
+      background: var(--warm-white);
+      color: var(--sage-deep);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all .2s;
+    }
+
+    .today-btn:hover {
+      background: var(--sage-pale);
+    }
+
+    /* GRILLE */
+    .cal-wrapper {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      overflow-x: auto;
+    }
+
+    .cal-grid {
+      display: grid;
+      grid-template-columns: 64px repeat(7, 1fr);
+      min-width: 700px;
+      border: 2px solid rgba(122, 158, 126, .6);
+      border-radius: 16px;
+      overflow: hidden;
+      background: #fff;
+      box-shadow: 0 4px 30px rgba(42, 37, 32, .1);
+    }
+
+    /* En-têtes */
+    .cal-corner {
+      background: #fafaf8;
+      border-bottom: 3px solid rgba(122, 158, 126, .6);
+    }
+
+    .day-header {
+      padding: 16px 6px 14px;
+      text-align: center;
+      border-bottom: 3px solid rgba(122, 158, 126, .6);
+      border-left: 2px solid rgba(122, 158, 126, .4);
+      background: #fafaf8;
+    }
+
+    .day-name {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--text-light);
+      margin-bottom: 6px;
+    }
+
+    .day-num {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20px;
+      font-weight: 400;
+      color: var(--text-dark);
+      transition: all .2s;
+    }
+
+    .day-num.today {
+      background: var(--sage-deep);
+      color: white;
+    }
+
+    /* Colonne heures */
+    .time-slot {
+      height: 60px;
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-end;
+      padding: 6px 12px 0 0;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-dark);
+      border-bottom: 1px solid rgba(122, 158, 126, .4);
+      background: #fafaf8;
+      letter-spacing: .02em;
+    }
+
+    .time-slot:last-child {
+      border-bottom: none;
+    }
+
+    /* Colonnes jours */
+    .day-col {
+      border-left: 2px solid rgba(122, 158, 126, .4);
+      position: relative;
+      background: #fff;
+    }
+
+    .day-cell {
+      height: 60px;
+      border-bottom: 1px solid rgba(122, 158, 126, .4);
+    }
+
+    .day-cell.half {
+      border-bottom: 1px dashed rgba(122, 158, 126, .2);
+    }
+
+    .day-cell:last-child {
+      border-bottom: none;
+    }
+
+    /* Bloc cours */
+    .cours-block {
+      position: absolute;
+      left: 5px;
+      right: 5px;
+      border-radius: 10px;
+      padding: 9px 11px;
+      cursor: pointer;
+      z-index: 2;
+      transition: all .25s ease;
+      overflow: hidden;
+      border-left-width: 3px !important;
+      border-left-style: solid !important;
+    }
+
+    .cours-block.abdos {
+      background: rgba(122, 158, 126, .1);
+      border: 1px solid rgba(122, 158, 126, .22);
+      border-left-color: var(--sage-deep) !important;
+    }
+
+    .cours-block.apa {
+      background: rgba(196, 132, 90, .08);
+      border: 1px solid rgba(196, 132, 90, .22);
+      border-left-color: var(--clay) !important;
+    }
+
+    .cours-block:hover {
+      transform: translateY(-1px) scale(1.01);
+      box-shadow: 0 6px 20px rgba(42, 37, 32, .1);
+      z-index: 3;
+    }
+
+    .cours-block.apa .cours-block-name {
+      color: var(--clay);
+    }
+
+    .cours-block.apa .cours-block-places {
+      color: var(--clay);
+      opacity: .7;
+    }
+
+    .cours-block-name {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--sage-deep);
+      line-height: 1.3;
+    }
+
+    .cours-block-time {
+      font-size: 11px;
+      color: var(--text-light);
+      margin-top: 3px;
+    }
+
+    .cours-block-places {
+      font-size: 10px;
+      color: var(--sage);
+      margin-top: 3px;
+    }
+
+    /* Ligne maintenant */
+    .now-line {
+      position: absolute;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: var(--clay);
+      z-index: 4;
+      pointer-events: none;
+    }
+
+    .now-dot {
+      position: absolute;
+      left: -4px;
+      top: -4px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--clay);
+    }
+
+    /* BIENTÔT */
+    .soon-section {
+      background: var(--warm-white);
+      border-top: 1px solid rgba(122, 158, 126, .1);
+      padding: 80px 24px;
+    }
+
+    .soon-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-size: 16px;
+      font-weight: 500;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--sage);
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(32px, 9vw, 84px);
+      font-weight: 300;
+      line-height: 1.1;
+      margin-bottom: 44px;
+      width: 100%;
+    }
+
+    .section-title em {
+      font-style: italic;
+      color: var(--sage-deep);
+    }
+
+    .soon-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 16px;
+    }
+
+    .soon-card {
+      background: var(--cream);
+      border: 1px dashed rgba(122, 158, 126, .25);
+      border-radius: var(--radius);
+      padding: 28px;
+      position: relative;
+    }
+
+    .soon-card::after {
+      content: 'Bientôt';
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      font-size: 9px;
+      font-weight: 500;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--text-light);
+      background: var(--warm-white);
+      padding: 4px 10px;
+      border-radius: 100px;
+      border: 1px solid rgba(122, 158, 126, .15);
+    }
+
+    .soon-icon {
+      font-size: 24px;
+      margin-bottom: 14px;
+      opacity: .5;
+    }
+
+    .soon-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 30px;
+      font-weight: 300;
+      color: var(--text-mid);
+      margin-bottom: 6px;
+    }
+
+    .soon-desc {
+      font-size: 16px;
+      font-weight: 300;
+      color: var(--text-light);
+      line-height: 1.6;
+    }
+
+    /* MODAL */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(42, 37, 32, .52);
+      backdrop-filter: blur(8px);
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .3s ease;
+    }
+
+    .modal-overlay.open {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .modal {
+      background: var(--cream);
+      border-radius: 28px;
+      max-width: 540px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      padding: 44px;
+      position: relative;
+      transform: translateY(20px) scale(.97);
+      transition: transform .3s ease;
+      border: 1px solid rgba(122, 158, 126, .15);
+    }
+
+    .modal-overlay.open .modal {
+      transform: translateY(0) scale(1);
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: var(--sage-pale);
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      color: var(--text-mid);
+      transition: all .2s;
+    }
+
+    .modal-close:hover {
+      background: var(--sage-light);
+      color: white;
+    }
+
+    .modal-icon {
+      width: 56px;
+      height: 56px;
+      background: var(--sage-pale);
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+      margin-bottom: 18px;
+    }
+
+    .modal-tag {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--sage-deep);
+      background: rgba(122, 158, 126, .12);
+      border: 1px solid rgba(122, 158, 126, .22);
+      padding: 5px 12px;
+      border-radius: 100px;
+      margin-bottom: 14px;
+    }
+
+    .modal-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 38px;
+      font-weight: 300;
+      line-height: 1.1;
+      margin-bottom: 4px;
+    }
+
+    .modal-title em {
+      font-style: italic;
+      color: var(--sage-deep);
+    }
+
+    .modal-datetime {
+      font-size: 13px;
+      color: var(--text-light);
+      font-weight: 300;
+      margin-bottom: 4px;
+    }
+
+    .modal-desc {
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 1.8;
+      color: var(--text-mid);
+      margin: 16px 0 22px;
+    }
+
+    .modal-infos {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 22px;
+    }
+
+    .info-block {
+      background: var(--warm-white);
+      border: 1px solid rgba(122, 158, 126, .12);
+      border-radius: 12px;
+      padding: 13px 15px;
+    }
+
+    .info-label {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: var(--text-light);
+      margin-bottom: 3px;
+    }
+
+    .info-value {
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--text-dark);
+    }
+
+    .modal-adapt {
+      background: rgba(122, 158, 126, .08);
+      border: 1px solid rgba(122, 158, 126, .18);
+      border-radius: 12px;
+      padding: 15px 17px;
+      margin-bottom: 22px;
+      font-size: 13px;
+      line-height: 1.7;
+      color: var(--text-mid);
+    }
+
+    .modal-adapt strong {
+      display: block;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--sage-deep);
+      margin-bottom: 5px;
+    }
+
+    .modal-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .btn-primary {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 22px;
+      background: var(--sage-deep);
+      color: white;
+      border: none;
+      border-radius: 100px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all .25s;
+      text-decoration: none;
+    }
+
+    .btn-primary:hover {
+      background: var(--text-dark);
+      transform: translateY(-1px);
+      box-shadow: 0 8px 24px rgba(42, 37, 32, .15);
+    }
+
+    .btn-secondary {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 13px 22px;
+      background: transparent;
+      color: var(--sage-deep);
+      border: 1px solid rgba(122, 158, 126, .35);
+      border-radius: 100px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all .25s;
+      text-decoration: none;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(122, 158, 126, .08);
+      border-color: var(--sage);
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 56px 24px;
+      border-top: 1px solid rgba(122, 158, 126, .1);
+    }
+
+    .footer-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 26px;
+      font-weight: 300;
+      margin-bottom: 6px;
+    }
+
+    .footer-logo em {
+      font-style: italic;
+      color: var(--sage-deep);
+    }
+
+    .footer-sub {
+      font-size: 11px;
+      font-weight: 300;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: var(--text-light);
+    }
+
+    /* BIO */
+    .bio-section {
+      padding: 100px 24px;
+      background: var(--cream);
+    }
+
+    .bio-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1.6fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .bio-left {
+      position: sticky;
+      top: 40px;
+    }
+
+    .bio-photo {
+      width: 100%;
+      aspect-ratio: 3/4;
+      border-radius: 24px;
+      background: linear-gradient(160deg, var(--sage-pale) 0%, var(--sand) 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      border: 1px solid rgba(122, 158, 126, .15);
+      position: relative;
+      overflow: hidden;
+      object-fit: cover;
+    }
+
+    .bio-photo-placeholder::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 80% 60% at 30% 70%, rgba(122, 158, 126, .2) 0%, transparent 60%);
+    }
+
+    .photo-icon {
+      font-size: 48px;
+      opacity: .35;
+      position: relative;
+      z-index: 1;
+    }
+
+    .photo-hint {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: var(--text-light);
+      position: relative;
+      z-index: 1;
+    }
+
+    .bio-name-card {
+      margin-top: 20px;
+      padding: 20px 22px;
+      background: var(--warm-white);
+      border-radius: 16px;
+      border: 1px solid rgba(122, 158, 126, .12);
+    }
+
+    .bio-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 36px;
+      font-weight: 400;
+      color: var(--text-dark);
+      margin-bottom: 4px;
+    }
+
+    .bio-name em {
+      font-style: italic;
+      color: var(--sage-deep);
+    }
+
+    .bio-role {
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: var(--text-light);
+    }
+
+
+
+    .bio-intro {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(28px, 7vw, 56px);
+      font-weight: 300;
+      line-height: 1.3;
+      color: var(--text-dark);
+      margin-bottom: 32px;
+      width: 100%;
+    }
+
+    .bio-intro em {
+      font-style: italic;
+      color: var(--sage-deep);
+    }
+
+    .bio-conviction {
+      background: rgba(122, 158, 126, .07);
+      border-left: 3px solid var(--sage);
+      border-radius: 0 12px 12px 0;
+      padding: 20px 24px;
+      margin-bottom: 36px;
+    }
+
+    .bio-conviction p {
+      font-size: 20px;
+      font-weight: 300;
+      line-height: 1.8;
+      color: var(--text-mid);
+      font-style: italic;
+    }
+
+    .bio-text {
+      font-size: 18px;
+      font-weight: 300;
+      line-height: 1.85;
+      color: var(--text-mid);
+      margin-bottom: 40px;
+    }
+
+    .bio-certifs {
+      margin-bottom: 40px;
+    }
+
+    .bio-certifs-title {
+      font-size: 16px;
+      font-weight: 500;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--sage);
+      margin-bottom: 16px;
+    }
+
+    .certif-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .certif-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 14px 18px;
+      background: var(--warm-white);
+      border: 1px solid rgba(122, 158, 126, .12);
+      border-radius: 12px;
+    }
+
+    .certif-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--sage);
+      flex-shrink: 0;
+    }
+
+    .certif-text {
+      font-size: 17px;
+      font-weight: 400;
+      color: var(--text-dark);
+    }
+
+    .bio-valeurs {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .valeur-card {
+      padding: 20px 18px;
+      background: var(--warm-white);
+      border: 1px solid rgba(122, 158, 126, .12);
+      border-radius: 16px;
+      text-align: center;
+    }
+
+    .valeur-icon {
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+
+    .valeur-titre {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 24px;
+      font-weight: 400;
+      color: var(--text-dark);
+      margin-bottom: 6px;
+    }
+
+    .valeur-desc {
+      font-size: 16px;
+      font-weight: 300;
+      color: var(--text-light);
+      line-height: 1.6;
+    }
+
+    @media(max-width:860px) {
+      .bio-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .bio-left {
+        position: static;
+      }
+
+      .bio-photo-placeholder {
+        aspect-ratio: 16/9;
+      }
+
+      .bio-valeurs {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media(max-width:600px) {
+      .modal {
+        padding: 28px 20px;
+      }
+
+      .modal-infos {
+        grid-template-columns: 1fr;
+      }
+
+      .week-label {
+        min-width: 130px;
+        font-size: 15px;
+      }
+
+      header {
+        padding: 60px 16px 80px !important;
+      }
+
+      .cal-section,
+      .soon-section,
+      .bio-section,
+      .tarifs-section,
+      .testi-section,
+      .how-section,
+      .faq-section {
+        padding: 60px 16px !important;
+      }
+
+      footer {
+        padding: 60px 16px 40px !important;
+      }
+
+      .hero-desc {
+        font-size: 17px;
+      }
+
+      .tarif-card {
+        padding: 30px 20px !important;
+      }
+
+      .bio-photo {
+        aspect-ratio: 4/5;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HERO -->
+  <header>
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+    <div class="deco-ring ring-1"></div>
+    <div class="deco-ring ring-2"></div>
+    <div class="header-content">
+      <div class="logo-tag">Studio en ligne</div>
+      <h1 style="margin: 24px 0;"><img src="LOGO.png" alt="Studio YOGAPA"
+          style="width: 100%; max-width: 500px; max-height: 200px; object-fit: contain; margin: 0 auto; display: block; animation: fadeUp .8s ease .1s both;">
+      </h1>
+      <p class="byline">par Manon</p>
+      <p class="studio-tagline">Studio d'activité physique adaptée &amp; yogathérapie</p>
+      <p class="hero-desc">Des cours en visio, doux et adaptés à chacun, pour prendre soin de votre corps où que vous
+        soyez.</p>
+      <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-top: 40px;">
+        <a href="#planning" class="btn-primary" style="font-size:16px; padding:18px 36px;">Découvrir le planning ↓</a>
+        <a href="../html/index.html" class="btn-secondary" style="font-size:16px; padding:18px 36px;">Visiter mon site
+          internet</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- BIO -->
+  <section class="bio-section">
+    <div class="bio-inner">
+
+      <!-- Colonne gauche : photo + nom -->
+      <div class="bio-left">
+        <img src="photo.jpg" class="bio-photo" alt="Manon">
+        <div class="bio-name-card">
+          <p class="bio-name"><em>Manon</em></p>
+          <p class="bio-role">Enseignante APA &amp; Yogathérapeute</p>
+        </div>
+      </div>
+
+      <!-- Colonne droite : contenu -->
+      <div class="bio-right">
+        <p class="section-label">À propos</p>
+        <h2 class="bio-intro">Bouger est un droit,<br><em>pas un privilège.</em></h2>
+
+        <div class="bio-conviction">
+          <p>J'accompagne les personnes qui pensent que bouger n'est plus possible — parce qu'avec les bons outils, le
+            mouvement reste accessible à chacun.</p>
+        </div>
+
+        <p class="bio-text">Enseignante en Activité Physique Adaptée depuis 2015 et en Yoga depuis 2017, mon approche
+          combine la rigueur scientifique de l'APA avec la dimension holistique de la yogathérapie et le renforcement
+          doux du Pilates. Même avec des douleurs, des pathologies ou des limitations, il est possible de retrouver un
+          corps fonctionnel et apaisé.</p>
+
+        <div class="bio-certifs">
+          <p class="bio-certifs-title">Certifications</p>
+          <div class="certif-list">
+            <div class="certif-item">
+              <div class="certif-dot"></div><span class="certif-text">Licence STAPS — Activité Physique Adaptée et
+                Santé</span>
+            </div>
+            <div class="certif-item">
+              <div class="certif-dot"></div><span class="certif-text">Certification Yoga — École de yoga en Inde</span>
+            </div>
+            <div class="certif-item">
+              <div class="certif-dot"></div><span class="certif-text">Formation ETP (Éducation Thérapeutique du
+                Patient)</span>
+            </div>
+            <div class="certif-item">
+              <div class="certif-dot"></div><span class="certif-text">Pilates niveau I</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="bio-valeurs">
+          <div class="valeur-card">
+            <div class="valeur-icon">🤍</div>
+            <p class="valeur-titre">Bienveillance</p>
+            <p class="valeur-desc">Respect de votre rythme et de vos limites</p>
+          </div>
+          <div class="valeur-card">
+            <div class="valeur-icon">🎯</div>
+            <p class="valeur-titre">Adaptation</p>
+            <p class="valeur-desc">Chaque corps est unique, chaque programme aussi</p>
+          </div>
+          <div class="valeur-card">
+            <div class="valeur-icon">🔬</div>
+            <p class="valeur-titre">Professionnalisme</p>
+            <p class="valeur-desc">Approche basée sur les sciences et l'expérience</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- TARIFS -->
+  <section class="tarifs-section" id="tarifs"
+    style="padding: 100px 24px; background: var(--warm-white); border-top: 1px solid rgba(122,158,126,.1);">
+    <div class="tarifs-inner" style="max-width: 1100px; margin: 0 auto;">
+      <div style="text-align:center; margin-bottom: 60px;">
+        <p class="section-label">Investir en soi</p>
+        <h2 class="section-title">Tarifs & <em>Formules</em></h2>
+      </div>
+      <div class="tarifs-grid"
+        style="display:grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px;">
+
+        <div class="tarif-card"
+          style="background:var(--cream); padding: 40px; border-radius: var(--radius); border: 1px solid rgba(122,158,126,.15); text-align:center; transition: transform 0.3s ease;">
+          <h3
+            style="font-family:'Cormorant Garamond',serif; font-size: 32px; color: var(--text-dark); margin-bottom: 8px;">
+            À la séance</h3>
+          <p style="font-size:16px; color:var(--text-light); margin-bottom: 24px;">Pour une pratique libre et ponctuelle
+          </p>
+          <div
+            style="font-size: 48px; font-family: 'DM Sans', sans-serif; font-weight: 300; color: var(--sage-deep); margin-bottom: 32px;">
+            15€ <span style="font-size: 16px; color: var(--text-light);">/ séance</span></div>
+          <a href="https://buy.stripe.com/cNieV63e00KPaag3mu3ZK00" target="_blank" class="btn-secondary"
+            style="width: 100%;">Acheter une séance</a>
+        </div>
+
+        <div class="tarif-card"
+          style="background:var(--sage-deep); color: white; padding: 40px; border-radius: var(--radius); position:relative; text-align:center; box-shadow: 0 12px 40px rgba(74,110,79,.2); transition: transform 0.3s ease; transform: scale(1.02);">
+          <div
+            style="position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background: var(--clay); color: white; padding: 6px 16px; border-radius: 100px; font-size: 12px; font-weight: 500; text-transform: uppercase;">
+            Le plus choisi</div>
+          <h3 style="font-family:'Cormorant Garamond',serif; font-size: 32px; margin-bottom: 8px;">Au mois</h3>
+          <p style="font-size:16px; color:var(--sage-pale); margin-bottom: 24px;">4 séances pour une routine régulière
+          </p>
+          <div style="font-size: 48px; font-family: 'DM Sans', sans-serif; font-weight: 300; margin-bottom: 32px;">55€
+            <span style="font-size: 16px; color: var(--sage-pale);">/ mois</span>
+          </div>
+          <a href="https://buy.stripe.com/cNi7sE7ug8dhgyE8GO3ZK02" target="_blank" class="btn-primary"
+            style="width: 100%; background: white; color: var(--sage-deep);">Souscrire</a>
+        </div>
+
+        <div class="tarif-card"
+          style="background:var(--cream); padding: 40px; border-radius: var(--radius); border: 1px solid rgba(122,158,126,.15); text-align:center; transition: transform 0.3s ease;">
+          <h3
+            style="font-family:'Cormorant Garamond',serif; font-size: 32px; color: var(--text-dark); margin-bottom: 8px;">
+            Au trimestre</h3>
+          <p style="font-size:16px; color:var(--text-light); margin-bottom: 24px;">12 séances pour des résultats
+            durables
+          </p>
+          <div
+            style="font-size: 48px; font-family: 'DM Sans', sans-serif; font-weight: 300; color: var(--sage-deep); margin-bottom: 32px;">
+            150€ <span style="font-size: 16px; color: var(--text-light);">/ trimestre</span></div>
+          <a href="https://buy.stripe.com/cNi00c3e0gJN6Y4aOW3ZK03" target="_blank" class="btn-secondary"
+            style="width: 100%;">Souscrire</a>
+        </div>
+
+        <div class="tarif-card"
+          style="background:var(--cream); padding: 40px; border-radius: var(--radius); border: 1px solid rgba(122,158,126,.15); text-align:center; transition: transform 0.3s ease;">
+          <h3
+            style="font-family:'Cormorant Garamond',serif; font-size: 32px; color: var(--text-dark); margin-bottom: 8px;">
+            Bilan physique</h3>
+          <p style="font-size:16px; color:var(--text-light); margin-bottom: 24px;">1h de bilan + compte rendu complet
+            avec conseils par mail
+          </p>
+          <div
+            style="font-size: 48px; font-family: 'DM Sans', sans-serif; font-weight: 300; color: var(--sage-deep); margin-bottom: 32px;">
+            60€</div>
+          <a href="mailto:manon.yogapa@gmail.com" class="btn-secondary" style="width: 100%;">Me contacter</a>
+        </div>
+
+      </div>
+
+      <!-- Sécurité paiement -->
+      <div
+        style="text-align: center; margin-top: 50px; display: flex; align-items: center; justify-content: center; gap: 12px; opacity: 0.85;">
+        <span style="font-size: 24px;">🔒</span>
+        <p style="font-size: 15px; color: var(--text-mid); font-weight: 500;">Paiements 100% sécurisés par carte
+          bancaire (via Stripe)</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- TEMOIGNAGES -->
+  <section class="testi-section" style="padding: 100px 24px; background: var(--cream);">
+    <div class="testi-inner" style="max-width: 900px; margin: 0 auto;">
+      <div style="text-align:center; margin-bottom: 50px;">
+        <p class="section-label">Vos retours</p>
+        <h2 class="section-title">Elles nous font <em>confiance</em></h2>
+      </div>
+
+      <!-- Avis existants -->
+      <div
+        style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-bottom: 80px;">
+        <div
+          style="background: white; padding: 40px 30px; border-radius: var(--radius); border: 1px solid rgba(122,158,126,.15); text-align: left; box-shadow: 0 10px 30px rgba(42,37,32,.03);">
+          <div style="color: #f5b041; font-size: 20px; margin-bottom: 16px;">★★★★★</div>
+          <p
+            style="font-size: 16px; color: var(--text-mid); font-style: italic; line-height: 1.7; margin-bottom: 24px;">
+            "Les cours d'APA en visio de Manon sont un vrai bonheur. Elle adapte chaque mouvement à mes douleurs. Je me
+            sens tellement mieux depuis 3 mois !"</p>
+          <p style="font-size: 15px; font-weight: 500; color: var(--text-dark);">— Sophie, 54 ans</p>
+        </div>
+        <div
+          style="background: white; padding: 40px 30px; border-radius: var(--radius); border: 1px solid rgba(122,158,126,.15); text-align: left; box-shadow: 0 10px 30px rgba(42,37,32,.03);">
+          <div style="color: #f5b041; font-size: 20px; margin-bottom: 16px;">★★★★★</div>
+          <p
+            style="font-size: 16px; color: var(--text-mid); font-style: italic; line-height: 1.7; margin-bottom: 24px;">
+            "Un accompagnement extrêmement bienveillant. Fini l'appréhension du sport : Manon rend le Pilates et le Yoga
+            accessibles, même avec mes genoux fragiles."</p>
+          <p style="font-size: 15px; font-weight: 500; color: var(--text-dark);">— Laurent, 42 ans</p>
+        </div>
+      </div>
+
+      <div
+        style="text-align:center; margin-bottom: 40px; border-top: 1px dashed rgba(122,158,126,.2); padding-top: 50px;">
+        <h3
+          style="font-family:'Cormorant Garamond',serif; font-size: 32px; color: var(--text-dark); margin-bottom: 16px;">
+          À votre tour</h3>
+        <p style="font-size: 18px; color: var(--text-mid); line-height: 1.6;">Vos retours sont précieux ! Laissez un
+          petit mot sur votre pratique d'Activité Physique Adaptée ou de Yogathérapie ensemble.</p>
+      </div>
+
+      <div
+        style="background: white; padding: 40px; border-radius: var(--radius); border: 1px solid rgba(122,158,126,.1); box-shadow: 0 10px 40px rgba(42,37,32,.05);">
+        <form action="mailto:manon.yogapa@gmail.com?subject=Nouvel%20Avis%20Web" method="post" enctype="text/plain"
+          style="display: flex; flex-direction: column; gap: 24px;">
+
+          <div>
+            <label
+              style="display: block; font-size: 15px; font-weight: 500; color: var(--text-dark); margin-bottom: 10px;">Votre
+              Prénom</label>
+            <input type="text" name="Prenom" required
+              style="width: 100%; padding: 16px; font-family: 'DM Sans', sans-serif; font-size: 16px; border: 1px solid rgba(122,158,126,.25); border-radius: 12px; background: #fafaf8; outline: none; transition: border-color 0.2s;"
+              onfocus="this.style.borderColor='var(--sage)'" onblur="this.style.borderColor='rgba(122,158,126,.25)'">
+          </div>
+
+          <div>
+            <label
+              style="display: block; font-size: 15px; font-weight: 500; color: var(--text-dark); margin-bottom: 10px;">Votre
+              Avis</label>
+            <textarea name="Avis" rows="5" required
+              style="width: 100%; padding: 16px; font-family: 'DM Sans', sans-serif; font-size: 16px; border: 1px solid rgba(122,158,126,.25); border-radius: 12px; background: #fafaf8; outline: none; resize: vertical; transition: border-color 0.2s;"
+              onfocus="this.style.borderColor='var(--sage)'" onblur="this.style.borderColor='rgba(122,158,126,.25)'"
+              placeholder="Racontez comment se passent vos séances..."></textarea>
+          </div>
+
+          <button type="submit" class="btn-primary"
+            style="border: none; cursor: pointer; font-size: 18px; padding: 20px; width: 100%; margin-top: 8px;">Envoyer
+            mon témoignage</button>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- COMMENT CA MARCHE -->
+  <section class="how-section"
+    style="padding: 100px 24px; background: var(--warm-white); border-top: 1px solid rgba(122, 158, 126, .1); border-bottom: 1px solid rgba(122, 158, 126, .1);">
+    <div style="max-width: 1100px; margin: 0 auto;">
+      <div style="text-align:center; margin-bottom: 60px;">
+        <p class="section-label">Le studio en ligne</p>
+        <h2 class="section-title">Comment ça <em>marche ?</em></h2>
+      </div>
+      <div
+        style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 20px;">
+        <!-- Etape 1 -->
+        <div
+          style="background: var(--cream); border: 1px dashed rgba(122, 158, 126, .25); border-radius: var(--radius); padding: 40px 30px; text-align: center; position: relative; margin-top: 20px;">
+          <div
+            style="position: absolute; top: -20px; left: 50%; transform: translateX(-50%); width: 40px; height: 40px; background: var(--sage-deep); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Cormorant Garamond', serif; font-size: 24px; z-index: 1;">
+            1</div>
+          <div style="font-size: 40px; margin-bottom: 16px;">🎟️</div>
+          <h3
+            style="font-family: 'Cormorant Garamond', serif; font-size: 26px; color: var(--text-dark); margin-bottom: 12px;">
+            Je réserve ma séance</h3>
+          <p style="font-size: 16px; color: var(--text-mid); line-height: 1.6;">Choisissez le cours sur le planning et
+            prenez votre place à l'unité ou avec votre abonnement.</p>
+        </div>
+        <!-- Etape 2 -->
+        <div
+          style="background: var(--cream); border: 1px dashed rgba(122, 158, 126, .25); border-radius: var(--radius); padding: 40px 30px; text-align: center; position: relative; margin-top: 20px;">
+          <div
+            style="position: absolute; top: -20px; left: 50%; transform: translateX(-50%); width: 40px; height: 40px; background: var(--sage-deep); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Cormorant Garamond', serif; font-size: 24px; z-index: 1;">
+            2</div>
+          <div style="font-size: 40px; margin-bottom: 16px;">📧</div>
+          <h3
+            style="font-family: 'Cormorant Garamond', serif; font-size: 26px; color: var(--text-dark); margin-bottom: 12px;">
+            Je reçois le lien</h3>
+          <p style="font-size: 16px; color: var(--text-mid); line-height: 1.6;">Vous recevez l'accès à la visio par
+            e-mail sécurisé (Zoom ou Meet) la veille ou quelques heures avant le début du cours.</p>
+        </div>
+        <!-- Etape 3 -->
+        <div
+          style="background: var(--cream); border: 1px dashed rgba(122, 158, 126, .25); border-radius: var(--radius); padding: 40px 30px; text-align: center; position: relative; margin-top: 20px;">
+          <div
+            style="position: absolute; top: -20px; left: 50%; transform: translateX(-50%); width: 40px; height: 40px; background: var(--sage-deep); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Cormorant Garamond', serif; font-size: 24px; z-index: 1;">
+            3</div>
+          <div style="font-size: 40px; margin-bottom: 16px;">🧘‍♀️</div>
+          <h3
+            style="font-family: 'Cormorant Garamond', serif; font-size: 26px; color: var(--text-dark); margin-bottom: 12px;">
+            Je pratique chez moi</h3>
+          <p style="font-size: 16px; color: var(--text-mid); line-height: 1.6;">Préparez un tapis de sol, une tenue
+            souple et installez-vous confortablement 5 minutes avant l'heure prévue.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CALENDRIER -->
+  <section class="cal-section" id="planning">
+    <div class="cal-header">
+      <div class="cal-title-block">
+        <p class="section-label">Planning</p>
+        <h2>Les cours <em>de la semaine</em></h2>
+      </div>
+      <div class="week-nav">
+        <button class="nav-btn" onclick="changeWeek(-1)">‹</button>
+        <span class="week-label" id="week-label"></span>
+        <button class="nav-btn" onclick="changeWeek(1)">›</button>
+        <button class="today-btn" onclick="goToday()">Aujourd'hui</button>
+      </div>
+    </div>
+    <div class="cal-wrapper">
+      <div class="cal-grid" id="cal-grid"></div>
+    </div>
+  </section>
+
+  <!-- BIENTÔT -->
+  <section class="soon-section">
+    <div class="soon-inner">
+      <p class="section-label">En préparation</p>
+      <h2 class="section-title">Bientôt <em>disponible</em></h2>
+      <div class="soon-grid">
+        <div class="soon-card">
+          <div class="soon-icon">🧘</div>
+          <h3 class="soon-title">Yoga doux</h3>
+          <p class="soon-desc">Un cours de yoga accessible, centré sur la respiration et la mobilité.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq-section" style="padding: 100px 24px; background: var(--warm-white);">
+    <div style="max-width: 800px; margin: 0 auto;">
+      <div style="text-align:center; margin-bottom: 60px;">
+        <p class="section-label">Foire aux questions</p>
+        <h2 class="section-title">Ce qu'il faut <em>savoir</em></h2>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 16px;">
+
+        <details
+          style="background: var(--cream); border: 1px solid rgba(122, 158, 126, .15); border-radius: 16px; padding: 20px 24px; cursor: pointer;">
+          <summary
+            style="font-family: 'Cormorant Garamond', serif; font-size: 24px; color: var(--text-dark); list-style: none; font-weight: 500; display: flex; justify-content: space-between; align-items: center;">
+            <span style="flex: 1;">Je n'ai jamais fait de yoga ou d'APA, est-ce pour moi ?</span>
+            <span class="faq-icon"
+              style="color: var(--sage); font-size: 24px; line-height: 1; margin-left: 10px;">+</span>
+          </summary>
+          <div
+            style="margin-top: 16px; padding-top: 16px; border-top: 1px dashed rgba(122, 158, 126, .2); font-size: 16px; color: var(--text-mid); line-height: 1.7; font-family: 'DM Sans', sans-serif;">
+            Absolument. Les cours (notamment l'Activité Physique Adaptée) sont conçus pour s'adapter à vous, peu importe
+            votre âge ou votre souplesse. Nous adaptons systématiquement les postures en fonction de vos capacités, avec
+            bienveillance et douceur.
+          </div>
+        </details>
+
+        <details
+          style="background: var(--cream); border: 1px solid rgba(122, 158, 126, .15); border-radius: 16px; padding: 20px 24px; cursor: pointer;">
+          <summary
+            style="font-family: 'Cormorant Garamond', serif; font-size: 24px; color: var(--text-dark); list-style: none; font-weight: 500; display: flex; justify-content: space-between; align-items: center;">
+            <span style="flex: 1;">De quel matériel aurai-je besoin ?</span>
+            <span class="faq-icon"
+              style="color: var(--sage); font-size: 24px; line-height: 1; margin-left: 10px;">+</span>
+          </summary>
+          <div
+            style="margin-top: 16px; padding-top: 16px; border-top: 1px dashed rgba(122, 158, 126, .2); font-size: 16px; color: var(--text-mid); line-height: 1.7; font-family: 'DM Sans', sans-serif;">
+            Il vous suffira le plus souvent d'un tapis de yoga (ou de gymnastique), d'une tenue confortable, et
+            éventuellement d'une chaise pour certains étirements. Un ordinateur, une tablette ou un smartphone connecté
+            à Internet permettent de suivre facilement la séance.
+          </div>
+        </details>
+
+        <details
+          style="background: var(--cream); border: 1px solid rgba(122, 158, 126, .15); border-radius: 16px; padding: 20px 24px; cursor: pointer;">
+          <summary
+            style="font-family: 'Cormorant Garamond', serif; font-size: 24px; color: var(--text-dark); list-style: none; font-weight: 500; display: flex; justify-content: space-between; align-items: center;">
+            <span style="flex: 1;">Quelle est la politique d'annulation ?</span>
+            <span class="faq-icon"
+              style="color: var(--sage); font-size: 24px; line-height: 1; margin-left: 10px;">+</span>
+          </summary>
+          <div
+            style="margin-top: 16px; padding-top: 16px; border-top: 1px dashed rgba(122, 158, 126, .2); font-size: 16px; color: var(--text-mid); line-height: 1.7; font-family: 'DM Sans', sans-serif;">
+            Afin de bien nous organiser, vous pouvez annuler sans frais votre séance jusqu'à 24h avant le début du
+            cours. En cas d'annulation tardive ou d'absence, le cours sera dû ou décompté de votre carnet.
+          </div>
+        </details>
+
+        <details
+          style="background: var(--cream); border: 1px solid rgba(122, 158, 126, .15); border-radius: 16px; padding: 20px 24px; cursor: pointer;">
+          <summary
+            style="font-family: 'Cormorant Garamond', serif; font-size: 24px; color: var(--text-dark); list-style: none; font-weight: 500; display: flex; justify-content: space-between; align-items: center;">
+            <span style="flex: 1;">Comment utiliser mon abonnement ou mon carnet ?</span>
+            <span class="faq-icon"
+              style="color: var(--sage); font-size: 24px; line-height: 1; margin-left: 10px;">+</span>
+          </summary>
+          <div
+            style="margin-top: 16px; padding-top: 16px; border-top: 1px dashed rgba(122, 158, 126, .2); font-size: 16px; color: var(--text-mid); line-height: 1.7; font-family: 'DM Sans', sans-serif;">
+            Lorsque vous avez un abonnement ou un carnet en cours de validité, il vous suffit de cliquer sur le cours
+            qui vous intéresse dans le planning (ci-dessus) puis de réserver votre place par e-mail en cliquant sur le
+            bouton prévu à cet effet.
+          </div>
+        </details>
+
+        <details
+          style="background: var(--cream); border: 1px solid rgba(122, 158, 126, .15); border-radius: 16px; padding: 20px 24px; cursor: pointer;">
+          <summary
+            style="font-family: 'Cormorant Garamond', serif; font-size: 24px; color: var(--text-dark); list-style: none; font-weight: 500; display: flex; justify-content: space-between; align-items: center;">
+            <span style="flex: 1;">Sur quelle application se font les cours (Zoom, etc.) ?</span>
+            <span class="faq-icon"
+              style="color: var(--sage); font-size: 24px; line-height: 1; margin-left: 10px;">+</span>
+          </summary>
+          <div
+            style="margin-top: 16px; padding-top: 16px; border-top: 1px dashed rgba(122, 158, 126, .2); font-size: 16px; color: var(--text-mid); line-height: 1.7; font-family: 'DM Sans', sans-serif;">
+            Nous utilisons généralement un outil de visioconférence sécurisé tel que Zoom ou Google Meet. Il n'est pas
+            nécessaire de créer un profil : vous cliquez simplement sur le lien que nous vous envoyons et la fenêtre
+            vidéo s'ouvre !
+          </div>
+        </details>
+
+      </div>
+    </div>
+
+    <style>
+      details>summary::-webkit-details-marker {
+        display: none;
+      }
+
+      details[open] summary .faq-icon {
+        transform: rotate(45deg);
+        transition: transform 0.2s;
+      }
+
+      details summary .faq-icon {
+        transition: transform 0.2s;
+      }
+    </style>
+  </section>
+
+  <!-- FOOTER -->
+  <footer
+    style="background: var(--warm-white); padding: 80px 24px 40px; border-top: 1px solid rgba(122, 158, 126, .1);">
+    <div
+      style="max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; margin-bottom: 60px; text-align: left;">
+
+      <div>
+        <div class="footer-logo" style="margin-bottom: 16px; text-align: left;">
+          <img src="LOGO.png" alt="Studio YOGAPA" style="height: 60px; object-fit: contain;">
+        </div>
+        <p class="footer-sub"
+          style="font-size: 14px; color: var(--text-mid); line-height: 1.6; text-transform: none; letter-spacing: normal; text-align: left;">
+          Studio en ligne d'Activité Physique Adaptée & Yogathérapie. Bougez en toute bienveillance depuis chez vous.
+        </p>
+      </div>
+
+      <div>
+        <h4
+          style="font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 300; margin-bottom: 20px; color: var(--text-dark);">
+          Contact</h4>
+        <p style="font-size: 15px; color: var(--text-mid); margin-bottom: 12px;">📧 manon.yogapa@gmail.com</p>
+        <p style="font-size: 15px; color: var(--text-mid);">📍 Visio (France & International)</p>
+        <p style="font-size: 15px; margin-top: 12px;"><a href="../html/index.html"
+            style="color: var(--sage-deep); text-decoration: none; font-weight: 500;">🌐 manon-yogapa.fr</a></p>
+      </div>
+
+      <div>
+        <h4
+          style="font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 300; margin-bottom: 20px; color: var(--text-dark);">
+          Réseaux Sociaux</h4>
+        <a href="https://instagram.com" target="_blank"
+          style="display: block; font-size: 15px; color: var(--sage-deep); text-decoration: none; font-weight: 500;">📸
+          Instagram</a>
+      </div>
+
+    </div>
+
+    <div style="text-align: center; border-top: 1px solid rgba(122, 158, 126, .15); padding-top: 30px;">
+      <p style="font-size: 13px; color: var(--text-light);">© 2026 Studio YOGAPA par Manon. Tous droits réservés.</p>
+      <div style="margin-top: 16px; display: flex; justify-content: center; gap: 24px;">
+        <a href="mentions-legales.html"
+          style="font-size: 12px; color: var(--text-light); text-decoration: none; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 500;">Mentions
+          Légales</a>
+        <a href="cgv.html"
+          style="font-size: 12px; color: var(--text-light); text-decoration: none; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 500;">CGV</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MODAL -->
+  <div class="modal-overlay" id="modal" onclick="closeModalOutside(event)">
+    <div class="modal">
+      <button class="modal-close" onclick="closeModal()">✕</button>
+      <div class="modal-icon">🌿</div>
+      <span class="modal-tag">Cours visio · Hebdomadaire</span>
+      <h2 class="modal-title">Abdos &<br><em>Gainage</em></h2>
+      <p class="modal-datetime" id="modal-datetime"></p>
+      <p class="modal-desc">Un cours de renforcement musculaire profond, pensé pour travailler les abdominaux et la
+        sangle abdominale en douceur. Accessible à tous les niveaux, avec ou sans matériel, et entièrement adaptable
+        selon votre condition physique.</p>
+      <div class="modal-infos">
+        <div class="info-block">
+          <p class="info-label">Durée</p>
+          <p class="info-value" id="modal-duration">1 heure</p>
+        </div>
+        <div class="info-block">
+          <p class="info-label">Niveau</p>
+          <p class="info-value">Tous niveaux</p>
+        </div>
+        <div class="info-block">
+          <p class="info-label">Format</p>
+          <p class="info-value">Visio en direct</p>
+        </div>
+        <div class="info-block">
+          <p class="info-label">Places</p>
+          <p class="info-value" id="modal-places">8 maximum</p>
+        </div>
+      </div>
+      <div class="modal-adapt">
+        <strong>♿ Cours adapté</strong>
+        Ce cours est entièrement adaptable. Si vous ne pouvez pas vous allonger au sol, des variantes en position assise
+        ou debout sont proposées. Vous indiquerez vos besoins lors de l'inscription.
+      </div>
+      <div class="modal-actions" style="flex-direction: column;">
+        <a href="https://buy.stripe.com/cNieV63e00KPaag3mu3ZK00" target="_blank" class="btn-primary"
+          style="margin-bottom: 8px;">Payer à la séance
+          (15€) →</a>
+        <a href="#" id="btn-resa-carnet" class="btn-secondary">💳 J'ai un carnet : Réserver ma place par e-mail</a>
+        <p style="font-size: 13px; color: var(--text-light); text-align: center; margin-top: 12px;">
+          <strong style="color: var(--clay);">Information importante :</strong> Si c'est votre premier cours, il est
+          obligatoire de remplir le <a
+            href="https://docs.google.com/forms/d/1at4rplrCMWKNEbQkeqa64aGWwfVRyT9I7gDx2evKuAQ/viewform" target="_blank"
+            style="color: var(--sage); text-decoration: underline;">formulaire de santé</a>.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // ════════════════════════════════════════════
+    // CONFIGURATION — modifiez ici vos cours
+    // jour : 0=Lun 1=Mar 2=Mer 3=Jeu 4=Ven 5=Sam 6=Dim
+    // heureDebut / heureFin en décimal (9.5 = 9h30)
+    // ════════════════════════════════════════════
+    const COURS = [
+      { jour: 2, heureDebut: 8.5, heureFin: 9.5, nom: 'Abdos & Gainage', places: 8, placesRestantes: 8, type: 'abdos' },
+      { jour: 3, heureDebut: 9, heureFin: 10, nom: 'Cours APA', places: 8, placesRestantes: 8, type: 'apa' },
+    ];
+
+    const HEURE_DEBUT = 7;
+    const HEURE_FIN = 20;
+    const SLOT_H = 60; // px par heure
+    const JOURS_COURTS = ['Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam', 'Dim'];
+
+    const launchLundi = new Date(2026, 2, 30); // 30 Mars 2026 (1ère sem d'avril)
+    let offsetSemaine = 0;
+
+    // Calcul de l'offset pour afficher avril directement si on visite le site en avance
+    const currentLundi = new Date();
+    currentLundi.setDate(currentLundi.getDate() + (currentLundi.getDay() === 0 ? -6 : 1 - currentLundi.getDay()));
+    currentLundi.setHours(0, 0, 0, 0);
+    if (currentLundi < launchLundi) {
+      offsetSemaine = Math.round((launchLundi - currentLundi) / (1000 * 60 * 60 * 24 * 7));
+    }
+
+    function getLundi(offset) {
+      const d = new Date();
+      const dow = d.getDay();
+      const diff = dow === 0 ? -6 : 1 - dow;
+      d.setDate(d.getDate() + diff + offset * 7);
+      d.setHours(0, 0, 0, 0);
+      return d;
+    }
+
+    function fmt(d) {
+      return d.toLocaleDateString('fr-FR', { day: 'numeric', month: 'long' });
+    }
+
+    function sameDay(a, b) {
+      return a.getFullYear() === b.getFullYear() && a.getMonth() === b.getMonth() && a.getDate() === b.getDate();
+    }
+
+    function hToStr(h) {
+      const hh = Math.floor(h), mm = Math.round((h - hh) * 60);
+      return hh + 'h' + (mm > 0 ? String(mm).padStart(2, '0') : '');
+    }
+
+    function buildCalendar() {
+      const lundi = getLundi(offsetSemaine);
+      const dimanche = new Date(lundi); dimanche.setDate(lundi.getDate() + 6);
+      const today = new Date();
+      const nbH = HEURE_FIN - HEURE_DEBUT;
+
+      document.getElementById('week-label').textContent = fmt(lundi) + ' – ' + fmt(dimanche);
+
+      const grid = document.getElementById('cal-grid');
+      grid.innerHTML = '';
+
+      // Coin vide
+      const corner = document.createElement('div');
+      corner.className = 'cal-corner';
+      corner.style.cssText = 'grid-row:1;grid-column:1;';
+      grid.appendChild(corner);
+
+      // En-têtes jours
+      for (let d = 0; d < 7; d++) {
+        const date = new Date(lundi); date.setDate(lundi.getDate() + d);
+        const hdr = document.createElement('div');
+        hdr.className = 'day-header';
+        hdr.style.cssText = `grid-row:1;grid-column:${d + 2};`;
+        hdr.innerHTML = `<div class="day-name">${JOURS_COURTS[d]}</div>
+      <div class="${sameDay(date, today) ? 'day-num today' : 'day-num'}">${date.getDate()}</div>`;
+        grid.appendChild(hdr);
+      }
+
+      // Colonne heures
+      for (let h = 0; h < nbH; h++) {
+        const slot = document.createElement('div');
+        slot.className = 'time-slot';
+        slot.style.cssText = `grid-row:${h + 2};grid-column:1;`;
+        slot.textContent = (HEURE_DEBUT + h) + 'h';
+        grid.appendChild(slot);
+      }
+
+      // Colonnes jours
+      for (let d = 0; d < 7; d++) {
+        const date = new Date(lundi); date.setDate(lundi.getDate() + d);
+        const col = document.createElement('div');
+        col.className = 'day-col';
+        col.style.cssText = `grid-row:2 / ${nbH + 2};grid-column:${d + 2};position:relative;`;
+
+        // Cellules fond
+        for (let h = 0; h < nbH; h++) {
+          const cell = document.createElement('div');
+          cell.className = 'day-cell';
+          cell.style.height = SLOT_H + 'px';
+          col.appendChild(cell);
+        }
+
+        // Ligne heure actuelle
+        if (sameDay(date, today) && offsetSemaine === 0) {
+          const now = new Date();
+          const hNow = now.getHours() + now.getMinutes() / 60;
+          if (hNow >= HEURE_DEBUT && hNow <= HEURE_FIN) {
+            const topPx = (hNow - HEURE_DEBUT) * SLOT_H;
+            const line = document.createElement('div');
+            line.className = 'now-line';
+            line.style.top = topPx + 'px';
+            line.innerHTML = '<div class="now-dot"></div>';
+            col.appendChild(line);
+          }
+        }
+
+        // Cours
+        COURS.forEach(c => {
+          if (c.jour !== d) return;
+          const topPx = (c.heureDebut - HEURE_DEBUT) * SLOT_H;
+          const height = (c.heureFin - c.heureDebut) * SLOT_H - 4;
+          const timeStr = hToStr(c.heureDebut) + '–' + hToStr(c.heureFin);
+
+          const block = document.createElement('div');
+          block.className = `cours-block ${c.type}`;
+          block.style.cssText = `top:${topPx + 2}px;height:${height}px;`;
+          block.innerHTML = `
+        <div class="cours-block-name">${c.nom}</div>
+        <div class="cours-block-time">${timeStr}</div>
+        <div class="cours-block-places">${c.placesRestantes} place${c.placesRestantes > 1 ? 's' : ''} restante${c.placesRestantes > 1 ? 's' : ''}</div>
+      `;
+          block.addEventListener('click', () => openModal(c, date, timeStr));
+          col.appendChild(block);
+        });
+
+        grid.appendChild(col);
+      }
+    }
+
+    function openModal(c, date, timeStr) {
+      const dateStr = date.toLocaleDateString('fr-FR', { weekday: 'long', day: 'numeric', month: 'long' });
+      document.getElementById('modal-datetime').textContent = dateStr + ' · ' + timeStr;
+      document.getElementById('modal-places').textContent =
+        c.placesRestantes + ' place' + (c.placesRestantes > 1 ? 's' : '') + ' restante' + (c.placesRestantes > 1 ? 's' : '');
+
+      // Email dynamique pour réservation carnet
+      const subject = encodeURIComponent("Réservation : " + c.nom);
+      const hStr = Math.floor(c.heureDebut) + "h" + (c.heureDebut % 1 !== 0 ? "30" : "00");
+      const body = encodeURIComponent("Bonjour Manon,\n\nJe souhaite réserver ma place pour " + c.nom + " le " + dateStr + " à " + hStr + ".\n(J'utilise mon carnet ou mon abonnement en cours).\n\nMerci !");
+      document.getElementById('btn-resa-carnet').href = 'mailto:manon.yogapa@gmail.com?subject=' + subject + '&body=' + body;
+
+      if (c.type === 'apa') {
+        document.querySelector('.modal-icon').textContent = '🌿';
+        document.querySelector('.modal-tag').textContent = 'Cours APA · Hebdomadaire';
+        document.querySelector('.modal-title').innerHTML = 'Activité Physique<br><em>Adaptée</em>';
+        document.querySelector('.modal-desc').textContent = "Un cours doux et bienveillant conçu pour les personnes ayant des besoins spécifiques de santé. Chaque exercice est adapté à votre condition, qu'il s'agisse d'une pathologie chronique, d'une rééducation ou d'une fragilité particulière. Pratique en visio, à votre rythme.";
+        document.getElementById('modal-duration').textContent = '1 heure';
+        document.querySelector('.modal-adapt strong').textContent = '♿ Cours 100 % adapté';
+        document.querySelector('.modal-adapt').childNodes[document.querySelector('.modal-adapt').childNodes.length - 1].textContent =
+          " Ce cours est spécialement conçu pour s'adapter à chaque participant. Debout, assis ou allongé, les exercices sont personnalisés selon vos capacités et vos contraintes de santé.";
+      } else {
+        document.querySelector('.modal-icon').textContent = '🌿';
+        document.querySelector('.modal-tag').textContent = 'Cours visio · Hebdomadaire';
+        document.querySelector('.modal-title').innerHTML = 'Abdos &<br><em>Gainage</em>';
+        document.querySelector('.modal-desc').textContent = "Un cours de renforcement musculaire profond, pensé pour travailler les abdominaux et la sangle abdominale en douceur. Accessible à tous les niveaux, avec ou sans matériel, et entièrement adaptable selon votre condition physique.";
+        document.getElementById('modal-duration').textContent = '1 heure';
+        document.querySelector('.modal-adapt strong').textContent = '♿ Cours adapté';
+        document.querySelector('.modal-adapt').childNodes[document.querySelector('.modal-adapt').childNodes.length - 1].textContent =
+          " Ce cours est entièrement adaptable. Si vous ne pouvez pas vous allonger au sol, des variantes en position assise ou debout sont proposées. Vous indiquerez vos besoins lors de l'inscription.";
+      }
+
+      document.getElementById('modal').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      document.getElementById('modal').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    function closeModalOutside(e) {
+      if (e.target === document.getElementById('modal')) closeModal();
+    }
+
+    function changeWeek(d) { offsetSemaine += d; buildCalendar(); }
+
+    function goToday() {
+      offsetSemaine = 0;
+      const todayLundi = new Date();
+      todayLundi.setDate(todayLundi.getDate() + (todayLundi.getDay() === 0 ? -6 : 1 - todayLundi.getDay()));
+      todayLundi.setHours(0, 0, 0, 0);
+      if (todayLundi < launchLundi) {
+        offsetSemaine = Math.round((launchLundi - todayLundi) / (1000 * 60 * 60 * 24 * 7));
+      }
+      buildCalendar();
+    }
+
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+    buildCalendar();
+
+    // Effet d'apparition au scroll pour le bouton sticky
+    const stickyBtn = document.querySelector('.sticky-cta');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 400) {
+        stickyBtn.style.opacity = '1';
+        stickyBtn.style.pointerEvents = 'all';
+        stickyBtn.style.transform = window.innerWidth <= 600 ? 'translateY(0)' : 'translateY(0)';
+      } else {
+        stickyBtn.style.opacity = '0';
+        stickyBtn.style.pointerEvents = 'none';
+        stickyBtn.style.transform = 'translateY(20px)';
+      }
+    });
+
+  </script>
+
+  <!-- STICKY CTA -->
+  <a href="#planning" class="sticky-cta">Voir le planning & Réserver</a>
+  <style>
+    .sticky-cta {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: var(--clay);
+      color: white;
+      padding: 16px 28px;
+      border-radius: 100px;
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      box-shadow: 0 8px 30px rgba(196, 132, 90, 0.4);
+      z-index: 90;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(20px);
+    }
+
+    .sticky-cta::before {
+      content: '📅';
+      font-size: 16px;
+    }
+
+    .sticky-cta:hover {
+      box-shadow: 0 12px 40px rgba(196, 132, 90, 0.5);
+      background: #b3734a;
+    }
+
+    @media(max-width:600px) {
+      .sticky-cta {
+        bottom: 20px;
+        left: 20px;
+        right: 20px;
+        justify-content: center;
+        text-align: center;
+        font-size: 15px;
+        padding: 18px 24px;
+      }
+    }
+  </style>
+</body>
+
+</html>
