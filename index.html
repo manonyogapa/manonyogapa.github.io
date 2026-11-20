@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Manon Monin – Activité Physique Adaptée & Yogathérapie | Carcassonne, Narbonne & visio</title>
     <meta name="description"
-        content="Enseignante en Activité Physique Adaptée (Licence STAPS APA) et yogathérapeute. Séances à domicile autour de Carcassonne et Narbonne (Aude) ou en visio partout en France. Douleurs chroniques, pathologies, seniors, entreprises. Appel découverte gratuit.">
+        content="Enseignante en Activité Physique Adaptée (Licence STAPS APA) et yogathérapeute. Séances à domicile autour de Carcassonne et Narbonne (Aude) ou en visio partout en France. Douleurs chroniques, pathologies, seniors, entreprises. Séances dès 30 €, cours collectifs en visio à 10 €.">
     <link rel="canonical" href="https://manonyogapa.github.io/">
     <meta name="theme-color" content="#FAF7F2">
 
@@ -16,7 +16,7 @@
     <meta property="og:site_name" content="Yogapa – Manon Monin">
     <meta property="og:title" content="Retrouver le mouvement, même avec des douleurs ou une pathologie">
     <meta property="og:description"
-        content="Activité Physique Adaptée & Yogathérapie à domicile (Aude) ou en visio. Appel découverte gratuit de 30 minutes.">
+        content="Activité Physique Adaptée & Yogathérapie à domicile (Aude) ou en visio. Séances individuelles dès 30 €, cours collectifs à 10 €.">
     <meta property="og:url" content="https://manonyogapa.github.io/">
     <meta property="og:image" content="https://manonyogapa.github.io/img/og-image.jpg">
     <meta name="twitter:card" content="summary_large_image">
@@ -41,7 +41,7 @@
         "logo": "https://manonyogapa.github.io/img/logo.png",
         "telephone": "+33662651292",
         "email": "manon.yogapa@gmail.com",
-        "priceRange": "15€ - 120€",
+        "priceRange": "10€ - 90€",
         "address": {
             "@type": "PostalAddress",
             "streetAddress": "Domaine Mille Petits",
@@ -166,7 +166,6 @@
         .brand img { height: 40px; width: auto; }
         .brand span { font-size: .72rem; line-height: 1.3; color: var(--texte-2); letter-spacing: .04em; border-left: 1px solid var(--sable); padding-left: 10px; display: none; }
 
-        .nav-links { display: none; }
         .header-cta { display: none; }
 
         .burger {
@@ -200,13 +199,11 @@
         .mobile-menu .menu-contact { margin-top: 20px; color: var(--texte-2); font-size: .95rem; }
         body.menu-open { overflow: hidden; }
 
-        @media (min-width: 1000px) {
-            .burger, .mobile-menu { display: none; }
+        .header-right { display: flex; align-items: center; gap: 12px; }
+        @media (min-width: 700px) {
             .brand span { display: block; }
-            .nav-links { display: flex; gap: 26px; }
-            .nav-links a { text-decoration: none; font-size: .92rem; font-weight: 500; color: var(--texte-2); white-space: nowrap; padding: 6px 0; border-bottom: 2px solid transparent; }
-            .nav-links a:hover, .nav-links a.active { color: var(--texte); border-color: var(--terracotta); }
             .header-cta { display: inline-flex; min-height: 44px; padding: 8px 20px; font-size: .9rem; }
+            .mobile-menu { left: auto; width: 420px; box-shadow: -10px 0 30px rgba(63, 56, 48, .1); }
         }
 
         /* =========================================================
@@ -302,9 +299,11 @@
            ========================================================= */
         .services { display: grid; gap: 22px; }
         @media (min-width: 750px) { .services { grid-template-columns: 1fr 1fr; } }
+        @media (min-width: 1000px) { .services.three { grid-template-columns: repeat(3, 1fr); } }
 
         .service { background: #fff; border-radius: var(--rayon); overflow: hidden; box-shadow: var(--ombre); display: flex; flex-direction: column; }
         .service img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; }
+        .service img.wide { aspect-ratio: 2 / 1; object-fit: contain; background: #F1EFEA; }
         .service-body { padding: 24px; display: flex; flex-direction: column; flex: 1; }
         .service .meta { display: flex; flex-wrap: wrap; gap: 8px; margin: 6px 0 12px; }
         .chip { font-size: .76rem; font-weight: 600; background: var(--fond-2); color: var(--terracotta-fonce); padding: 4px 10px; border-radius: 999px; }
@@ -327,30 +326,8 @@
         .pro-band .section-head { margin-bottom: 28px; }
 
         /* =========================================================
-           7. Pourquoi
-           ========================================================= */
-        .why { background: #6F7F67; color: #fff; }
-        .why h2 { color: #fff; }
-        .why .eyebrow { color: #F1F4EE; }
-        .why-grid { display: grid; gap: 14px; }
-        @media (min-width: 700px) { .why-grid { grid-template-columns: 1fr 1fr; } }
-        @media (min-width: 1000px) { .why-grid { grid-template-columns: repeat(3, 1fr); } }
-        .why-item { background: rgba(255, 255, 255, .12); border-radius: 16px; padding: 18px 20px; display: flex; gap: 12px; align-items: flex-start; }
-        .why-item svg { flex: none; width: 24px; height: 24px; margin-top: 2px; }
-        .why-item p { font-size: .95rem; line-height: 1.55; }
-        .why-item strong { display: block; font-size: 1rem; }
-
-        /* =========================================================
            8. Tarifs
            ========================================================= */
-        .tabs { display: flex; justify-content: center; gap: 8px; margin-bottom: 32px; }
-        .tab {
-            font: 600 .92rem 'Montserrat', sans-serif; padding: 10px 20px; min-height: 46px;
-            border-radius: 999px; border: 2px solid var(--terracotta-clair); background: transparent; color: var(--texte-2); cursor: pointer;
-        }
-        .tab[aria-selected="true"] { background: var(--terracotta-fonce); border-color: var(--terracotta-fonce); color: #fff; }
-        .tab-panel[hidden] { display: none; }
-
         .prices { display: grid; gap: 22px; }
         @media (min-width: 650px) { .prices { grid-template-columns: 1fr 1fr; } }
         @media (min-width: 1000px) { .prices { grid-template-columns: repeat(3, 1fr); } }
@@ -379,6 +356,7 @@
         .price li { position: relative; padding-left: 24px; font-size: .9rem; color: var(--texte-2); }
         .price li::before { content: "✓"; position: absolute; left: 0; color: #6F7F67; font-weight: 700; }
         .price .btn { margin-top: auto; width: 100%; }
+        .price .amount + .btn { margin-top: 18px; }
 
         .info-box {
             margin-top: 28px; background: var(--fond-2); border-radius: var(--rayon); padding: 26px 24px;
@@ -559,31 +537,25 @@
                 <span>Activité Physique Adaptée<br>& Yogathérapie</span>
             </a>
 
-            <nav class="nav-links" aria-label="Navigation principale">
-                <a href="#pour-qui">Pour qui ?</a>
-                <a href="#prestations">Prestations</a>
-                <a href="#tarifs">Tarifs</a>
-                <a href="#apropos">À propos</a>
-                <a href="#faq">FAQ</a>
-                <a href="studio-yogapa.html">Studio en ligne</a>
-            </nav>
-
-            <a href="#contact" class="btn btn-primary header-cta">Appel découverte offert</a>
+            <div class="header-right">
+            <a href="#contact" class="btn btn-primary header-cta">Prendre rendez-vous</a>
 
             <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobile-menu">
                 <span></span><span></span><span></span>
             </button>
+            </div>
         </div>
     </header>
 
-    <nav class="mobile-menu" id="mobile-menu" aria-label="Menu mobile">
+    <nav class="mobile-menu" id="mobile-menu" aria-label="Menu">
         <a href="#pour-qui">Pour qui ?</a>
         <a href="#prestations">Prestations</a>
         <a href="#tarifs">Tarifs</a>
         <a href="#apropos">À propos</a>
         <a href="#faq">Questions fréquentes</a>
+        <a href="#contact">Contact</a>
         <a href="studio-yogapa.html">Studio en ligne (cours visio)</a>
-        <a href="#contact" class="btn btn-primary">Réserver mon appel découverte gratuit</a>
+        <a href="#contact" class="btn btn-primary">Prendre rendez-vous</a>
         <p class="menu-contact">Ou appelez-moi : <a href="tel:+33662651292"><strong>06 62 65 12 92</strong></a></p>
     </nav>
 
@@ -600,9 +572,9 @@
                         plus apaisé, à votre rythme.</p>
 
                     <div class="hero-actions">
-                        <a href="#contact" class="btn btn-primary" data-sujet="Appel découverte gratuit">Réserver mon appel découverte gratuit</a>
+                        <a href="#contact" class="btn btn-primary">Prendre rendez-vous</a>
                         <a href="#tarifs" class="btn btn-outline">Voir les tarifs</a>
-                        <small>30 minutes, en visio ou à domicile, sans engagement.</small>
+                        <small>Séances dès 30 €, à domicile ou en visio.</small>
                     </div>
 
                     <ul class="trust">
@@ -677,8 +649,8 @@
                 </div>
 
                 <div class="center-cta reveal">
-                    <p>Vous vous reconnaissez ? Parlons-en, c'est gratuit.</p>
-                    <a href="#contact" class="btn btn-primary" data-sujet="Appel découverte gratuit">Réserver mon appel découverte</a>
+                    <p>Vous vous reconnaissez ? Parlons-en.</p>
+                    <a href="#contact" class="btn btn-primary">Prendre rendez-vous</a>
                 </div>
             </div>
         </section>
@@ -692,22 +664,22 @@
                 </div>
                 <div class="steps">
                     <div class="step reveal">
-                        <h3>On fait connaissance</h3>
-                        <p>Un échange de 30 minutes, en visio ou à domicile, pour comprendre votre situation, vos
-                            douleurs et vos objectifs.</p>
-                        <span class="tag">Gratuit et sans engagement</span>
+                        <h3>Vous me contactez</h3>
+                        <p>Par téléphone ou par message : on échange sur votre situation, vos douleurs et vos
+                            objectifs.</p>
+                        <span class="tag">Réponse rapide</span>
                     </div>
                     <div class="step reveal">
                         <h3>Le bilan physique</h3>
                         <p>90 minutes pour évaluer votre mobilité, votre force, votre équilibre et votre endurance.
-                            C'est la base de votre programme et la référence pour mesurer vos progrès.</p>
-                        <span class="tag">80 €</span>
+                            Il permet d'adapter au maximum vos séances.</p>
+                        <span class="tag">70 €</span>
                     </div>
                     <div class="step reveal">
                         <h3>Votre accompagnement</h3>
-                        <p>Séances individuelles, en duo ou en programme complet, à domicile ou en visio. On ajuste au
+                        <p>Séances individuelles, en duo ou cours collectifs, à domicile ou en visio. On ajuste au
                             fil de vos progrès, en respectant vos limites.</p>
-                        <span class="tag">À partir de 40 € la séance</span>
+                        <span class="tag">À partir de 30 € la séance</span>
                     </div>
                 </div>
             </div>
@@ -722,7 +694,7 @@
                     <p>À domicile autour de Carcassonne et Narbonne, ou en visio partout en France.</p>
                 </div>
 
-                <div class="services">
+                <div class="services three">
                     <article class="service reveal">
                         <img src="img/apa.webp" alt="Exercice de renforcement avec sangles de suspension" width="800" height="1151" loading="lazy" style="object-position: 50% 30%">
                         <div class="service-body">
@@ -746,7 +718,7 @@
                     <article class="service reveal">
                         <img src="img/yogatherapie.webp" alt="Posture de yoga en extérieur" width="800" height="597" loading="lazy">
                         <div class="service-body">
-                            <h3>Yogathérapie</h3>
+                            <h3>Yoga adapté</h3>
                             <div class="meta"><span class="chip">60 min</span><span class="chip">Domicile ou visio</span><span class="chip">Seul·e ou en duo</span></div>
                             <p>Postures, respiration et conscience corporelle pour soulager les douleurs, restaurer la
                                 mobilité et réduire le stress, avec des supports pour allier sécurité et confort.</p>
@@ -758,48 +730,29 @@
                                     <li><strong>Accompagnement personnalisé :</strong> soulager les douleurs et accompagner les pathologies en sécurité.</li>
                                 </ul>
                             </details>
-                            <a href="#contact" class="btn btn-outline" data-sujet="Yogathérapie">Réserver une séance</a>
+                            <a href="#contact" class="btn btn-outline" data-sujet="Yoga adapté">Réserver une séance</a>
                         </div>
                     </article>
 
                     <article class="service reveal">
-                        <img src="img/bilan.webp" alt="Bilan physique personnalisé" width="900" height="450" loading="lazy">
+                        <img class="wide" src="img/bilan.webp" alt="Bilan physique personnalisé" width="900" height="450" loading="lazy">
                         <div class="service-body">
                             <h3>Bilan physique personnalisé</h3>
-                            <div class="meta"><span class="chip">90 min</span><span class="chip">80 €</span></div>
+                            <div class="meta"><span class="chip">90 min</span><span class="chip">70 €</span></div>
                             <p>La première étape pour comprendre votre condition actuelle : mobilité, force, équilibre,
-                                endurance et limitations éventuelles sont évaluées pour construire votre programme.</p>
+                                endurance et limitations éventuelles sont évaluées pour adapter au maximum vos séances.</p>
                             <details class="more">
                                 <summary>En savoir plus</summary>
                                 <ul>
                                     <li><strong>Évaluation complète :</strong> des tests adaptés à votre profil.</li>
-                                    <li><strong>Personnalisation :</strong> la base d'un programme sûr et progressif.</li>
-                                    <li><strong>Suivi :</strong> une référence pour mesurer vos progrès et ajuster le programme.</li>
+                                    <li><strong>Personnalisation :</strong> des séances adaptées au maximum à votre profil.</li>
+                                    <li><strong>Suivi :</strong> une référence pour mesurer vos progrès.</li>
                                 </ul>
                             </details>
                             <a href="#contact" class="btn btn-outline" data-sujet="Bilan physique">Réserver mon bilan</a>
                         </div>
                     </article>
 
-                    <article class="service reveal">
-                        <img src="img/programme.webp" alt="Programme d'accompagnement" width="900" height="450" loading="lazy">
-                        <div class="service-body">
-                            <h3>Programmes 12, 24 ou 36 semaines</h3>
-                            <div class="meta"><span class="chip">Hybride</span><span class="chip">Suivi WhatsApp</span><span class="chip">Sur devis</span></div>
-                            <p>Un accompagnement structuré qui allie séances et autonomie : bilan initial, séance
-                                hebdomadaire (présentiel ou visio selon l'option), vidéos, fiches PDF et routines.</p>
-                            <details class="more">
-                                <summary>En savoir plus</summary>
-                                <ul>
-                                    <li><strong>Personnalisation complète :</strong> programme construit à partir du bilan initial.</li>
-                                    <li><strong>Flexibilité :</strong> sans séance, avec séance en présentiel ou avec séance en visio.</li>
-                                    <li><strong>Ressources incluses :</strong> vidéos, PDF, conseils pratiques et routines.</li>
-                                    <li><strong>Suivi et motivation :</strong> accompagnement via WhatsApp et bilan final pour mesurer vos progrès.</li>
-                                </ul>
-                            </details>
-                            <a href="#contact" class="btn btn-outline" data-sujet="Programme">Demander un devis</a>
-                        </div>
-                    </article>
                 </div>
 
                 <div class="pro-band">
@@ -809,7 +762,7 @@
                     </div>
                     <div class="services">
                         <article class="service reveal">
-                            <img src="img/entreprise.webp" alt="Atelier de prévention en entreprise" width="900" height="450" loading="lazy">
+                            <img class="wide" src="img/entreprise.webp" alt="Atelier de prévention en entreprise" width="900" height="450" loading="lazy">
                             <div class="service-body">
                                 <h3>Entreprises (QVT, prévention des TMS)</h3>
                                 <div class="meta"><span class="chip">Ateliers de 60 min</span><span class="chip">Sur devis</span></div>
@@ -821,17 +774,16 @@
                                         <li><strong>Prévention des TMS :</strong> moins de douleurs liées aux postures prolongées et aux gestes répétitifs.</li>
                                         <li><strong>Qualité de vie au travail :</strong> moins de stress, plus d'énergie, un meilleur climat d'équipe.</li>
                                         <li><strong>Performance durable :</strong> moins d'absentéisme, des collaborateurs plus engagés.</li>
-                                        <li><strong>Cycles de 12, 24 ou 36 séances :</strong> 5 %, 10 % ou 15 % de remise.</li>
                                     </ul>
                                 </details>
                                 <a href="#contact" class="btn btn-outline" data-sujet="Entreprise">Demander un devis</a>
                             </div>
                         </article>
                         <article class="service reveal">
-                            <img src="img/structures.webp" alt="Séance collective en résidence seniors" width="900" height="450" loading="lazy">
+                            <img class="wide" src="img/structures.webp" alt="Séance collective en résidence seniors" width="900" height="450" loading="lazy">
                             <div class="service-body">
                                 <h3>EHPAD, résidences seniors & structures</h3>
-                                <div class="meta"><span class="chip">60 min ou demi-journée</span><span class="chip">8 pers. max</span><span class="chip">Sur devis</span></div>
+                                <div class="meta"><span class="chip">60 min ou demi-journée</span><span class="chip">Sur devis</span></div>
                                 <p>Des séances collectives sécurisées et progressives pour préserver l'autonomie des
                                     résidents, prévenir les chutes et favoriser le lien social.</p>
                                 <details class="more">
@@ -851,24 +803,6 @@
             </div>
         </section>
 
-        <!-- ===================== POURQUOI ===================== -->
-        <section class="why">
-            <div class="container">
-                <div class="section-head reveal">
-                    <span class="eyebrow">Pourquoi un accompagnement adapté ?</span>
-                    <h2>Bouger, oui, mais pas n'importe comment</h2>
-                </div>
-                <div class="why-grid">
-                    <div class="why-item reveal"><svg aria-hidden="true"><use href="#i-check"/></svg><p><strong>Adapté à votre corps</strong>Des mouvements pensés pour vos limitations, pas un programme standard.</p></div>
-                    <div class="why-item reveal"><svg aria-hidden="true"><use href="#i-check"/></svg><p><strong>Moins de douleurs</strong>Une meilleure mobilité au quotidien, pas à pas.</p></div>
-                    <div class="why-item reveal"><svg aria-hidden="true"><use href="#i-check"/></svg><p><strong>Une professionnelle diplômée</strong>Licence STAPS Activité Physique Adaptée et Santé, formée en éducation thérapeutique.</p></div>
-                    <div class="why-item reveal"><svg aria-hidden="true"><use href="#i-check"/></svg><p><strong>Votre rythme</strong>Une progression qui respecte votre énergie et vos limites.</p></div>
-                    <div class="why-item reveal"><svg aria-hidden="true"><use href="#i-check"/></svg><p><strong>Aides financières</strong>Mutuelles, crédit d'impôt, paiement en plusieurs fois.</p></div>
-                    <div class="why-item reveal"><svg aria-hidden="true"><use href="#i-check"/></svg><p><strong>Bienveillance</strong>Une approche douce et sécurisée, sans jugement.</p></div>
-                </div>
-            </div>
-        </section>
-
         <!-- ===================== TARIFS ===================== -->
         <section id="tarifs">
             <div class="container">
@@ -877,118 +811,67 @@
                     <h2>Des formules claires, adaptées à vos besoins</h2>
                 </div>
 
-                <div class="tabs" role="tablist" aria-label="Type de tarifs">
-                    <button class="tab" role="tab" id="tab-part" aria-controls="panel-part" aria-selected="true">Particuliers</button>
-                    <button class="tab" role="tab" id="tab-pro" aria-controls="panel-pro" aria-selected="false" tabindex="-1">Professionnels</button>
-                </div>
-
-                <div class="tab-panel" id="panel-part" role="tabpanel" aria-labelledby="tab-part">
-                    <div class="prices">
-                        <div class="price featured reveal">
-                            <span class="ribbon">Pour commencer</span>
-                            <h3>Appel découverte</h3>
-                            <span class="duration">30 minutes</span>
-                            <div class="amount">Gratuit</div>
-                            <ul>
-                                <li>En visio ou à domicile</li>
-                                <li>Analyse de vos besoins</li>
-                                <li>Sans engagement</li>
-                            </ul>
-                            <a href="#contact" class="btn btn-primary" data-sujet="Appel découverte gratuit">Je réserve</a>
-                        </div>
-
-                        <div class="price reveal">
-                            <h3>Bilan physique</h3>
-                            <span class="duration">90 minutes</span>
-                            <div class="amount">80 €</div>
-                            <ul>
-                                <li>Évaluation complète</li>
-                                <li>Programme personnalisé</li>
-                                <li>Conseils adaptés</li>
-                            </ul>
-                            <a href="#contact" class="btn btn-outline" data-sujet="Bilan physique">Réserver mon bilan</a>
-                        </div>
-
-                        <div class="price reveal">
-                            <h3>Séance individuelle</h3>
-                            <span class="duration">60 minutes</span>
-                            <div class="amount"><small>dès</small> 40 €</div>
-                            <table>
-                                <thead><tr><th scope="col">Séance</th><th scope="col" style="text-align:right">Présentiel</th><th scope="col" style="text-align:right">Visio</th></tr></thead>
-                                <tbody>
-                                    <tr><th scope="row">APA</th><td>60 €</td><td>40 €</td></tr>
-                                    <tr><th scope="row">APA en duo</th><td>100 €</td><td>80 €</td></tr>
-                                    <tr><th scope="row">Yogathérapie</th><td>70 €</td><td>50 €</td></tr>
-                                    <tr><th scope="row">Yogathérapie en duo</th><td>120 €</td><td>100 €</td></tr>
-                                </tbody>
-                            </table>
-                            <a href="#contact" class="btn btn-outline" data-sujet="Séance individuelle">Réserver une séance</a>
-                        </div>
-
-                        <div class="price reveal">
-                            <h3>Cartes de séances</h3>
-                            <span class="duration">Séances individuelles</span>
-                            <div class="amount"><small>jusqu'à</small> -15 %</div>
-                            <ul>
-                                <li>12 séances : -5 %</li>
-                                <li>24 séances : -10 %</li>
-                                <li>36 séances : -15 %</li>
-                                <li>Paiement en plusieurs fois</li>
-                            </ul>
-                            <a href="#contact" class="btn btn-outline" data-sujet="Carte de séances">Je suis intéressé·e</a>
-                        </div>
-
-                        <div class="price reveal">
-                            <h3>Programmes</h3>
-                            <span class="duration">12, 24 ou 36 semaines</span>
-                            <div class="amount">Sur devis</div>
-                            <ul>
-                                <li>Option sans séance hebdomadaire</li>
-                                <li>Option avec séance en présentiel (selon lieu)</li>
-                                <li>Option avec séance en visio</li>
-                                <li>Paiement en plusieurs fois</li>
-                            </ul>
-                            <a href="#contact" class="btn btn-outline" data-sujet="Programme">Demander un devis</a>
-                        </div>
-
-                        <div class="price reveal">
-                            <h3>Cours collectifs en visio</h3>
-                            <span class="duration">60 minutes, en direct</span>
-                            <div class="amount">15 € <small>/ cours</small></div>
-                            <ul>
-                                <li>Abdos & gainage</li>
-                                <li>APA : renforcement, équilibre, coordination</li>
-                                <li>Yoga sur chaise</li>
-                            </ul>
-                            <a href="studio-yogapa.html" class="btn btn-outline">Voir le planning</a>
-                        </div>
+                <div class="prices">
+                    <div class="price reveal">
+                        <h3>Bilan physique personnalisé</h3>
+                        <span class="duration">90 minutes</span>
+                        <div class="amount">70 €</div>
+                        <ul>
+                            <li>Mobilité, force, équilibre et endurance</li>
+                            <li>Des séances adaptées au maximum</li>
+                        </ul>
+                        <a href="#contact" class="btn btn-outline" data-sujet="Bilan physique">Réserver mon bilan</a>
                     </div>
-                </div>
 
-                <div class="tab-panel" id="panel-pro" role="tabpanel" aria-labelledby="tab-pro" hidden>
-                    <div class="prices">
-                        <div class="price">
-                            <h3>Entreprises</h3>
-                            <span class="duration">Ateliers de 60 minutes</span>
-                            <div class="amount">Sur devis</div>
-                            <ul>
-                                <li>12 séances : -5 %</li>
-                                <li>24 séances : -10 %</li>
-                                <li>36 séances : -15 %</li>
-                            </ul>
-                            <a href="#contact" class="btn btn-primary" data-sujet="Entreprise">Demander un devis</a>
-                        </div>
-                        <div class="price">
-                            <h3>EHPAD & structures</h3>
-                            <span class="duration">60 min ou demi-journée (2 h ou 3 h)</span>
-                            <div class="amount">Sur devis</div>
-                            <ul>
-                                <li>Groupes de 8 personnes maximum</li>
-                                <li>Suivi individualisé au sein du groupe</li>
-                                <li>Ouverte à vos projets</li>
-                            </ul>
-                            <a href="#contact" class="btn btn-primary" data-sujet="Structure / établissement">Demander un devis</a>
-                        </div>
+                    <div class="price featured reveal">
+                        <h3>Séance APA ou yoga adapté</h3>
+                        <span class="duration">60 minutes</span>
+                        <div class="amount"><small>dès</small> 30 €</div>
+                        <table>
+                            <thead><tr><th scope="col"></th><th scope="col" style="text-align:right">Présentiel</th><th scope="col" style="text-align:right">Visio</th></tr></thead>
+                            <tbody>
+                                <tr><th scope="row">Seul·e</th><td>50 €</td><td>30 €</td></tr>
+                                <tr><th scope="row">En duo</th><td>90 €</td><td>70 €</td></tr>
+                            </tbody>
+                        </table>
+                        <a href="#contact" class="btn btn-primary" data-sujet="Séance individuelle">Réserver une séance</a>
+                    </div>
+
+                    <div class="price reveal">
+                        <h3>Cours collectifs en visio</h3>
+                        <span class="duration">APA ou yoga adapté, 60 minutes</span>
+                        <div class="amount">10 € <small>/ cours</small></div>
+                        <ul>
+                            <li>Abdos & gainage</li>
+                            <li>APA : renforcement, équilibre, coordination</li>
+                            <li>Yoga sur chaise</li>
+                        </ul>
+                        <a href="studio-yogapa.html" class="btn btn-outline">Voir le planning</a>
+                    </div>
+
+                    <div class="price reveal">
+                        <h3>Abonnement cours collectifs</h3>
+                        <span class="duration">Au mois ou au trimestre</span>
+                        <div class="amount">30 €</div>
+                        <ul>
+                            <li>Cours collectifs en visio</li>
+                            <li>Paiement en plusieurs fois possible</li>
+                        </ul>
+                        <a href="#contact" class="btn btn-outline" data-sujet="Abonnement">Je m'abonne</a>
+                    </div>
+
+                    <div class="price reveal">
+                        <h3>Entreprises</h3>
+                        <span class="duration">QVT, prévention des TMS · ateliers de 60 min</span>
+                        <div class="amount">Sur devis</div>
+                        <a href="#contact" class="btn btn-outline" data-sujet="Entreprise">Demander un devis</a>
+                    </div>
+
+                    <div class="price reveal">
+                        <h3>EHPAD & structures</h3>
+                        <span class="duration">Résidences seniors, médico-social · 60 min ou demi-journée (2 à 3 h)</span>
+                        <div class="amount">Sur devis</div>
+                        <a href="#contact" class="btn btn-outline" data-sujet="Structure / établissement">Demander un devis</a>
                     </div>
                 </div>
 
@@ -1008,7 +891,7 @@
                     </div>
                     <div>
                         <h3>Paiement en plusieurs fois</h3>
-                        <p>Disponible sur les cartes de séances et les programmes.</p>
+                        <p>Disponible sur les abonnements.</p>
                     </div>
                 </div>
             </div>
@@ -1059,7 +942,7 @@
                         j'accompagne les personnes qui pensent que bouger n'est plus possible pour elles.</p>
                     <p>Même avec des douleurs, une pathologie ou des limitations, il est possible de retrouver un corps
                         fonctionnel et apaisé. Mon approche associe la rigueur scientifique de l'APA, la dimension
-                        globale de la yogathérapie et le renforcement doux du Pilates.</p>
+                        globale du yoga adapté et le renforcement doux du Pilates.</p>
 
                     <ul class="certifs">
                         <li><svg aria-hidden="true"><use href="#i-cap"/></svg>Licence STAPS Activité Physique Adaptée et Santé</li>
@@ -1070,7 +953,7 @@
 
                     <div class="values">
                         <p><strong>Bienveillance :</strong> respect de votre rythme et de vos limites.</p>
-                        <p><strong>Adaptation :</strong> chaque corps est unique, chaque programme aussi.</p>
+                        <p><strong>Adaptation :</strong> chaque corps est unique, chaque séance aussi.</p>
                         <p><strong>Professionnalisme :</strong> une approche fondée sur les sciences et l'expérience.</p>
                     </div>
                 </div>
@@ -1092,11 +975,11 @@
                             peuvent se faire assis, debout ou au sol selon ce qui vous convient.</div>
                     </details>
                     <details>
-                        <summary>Quelle différence entre APA et yogathérapie ?</summary>
+                        <summary>Quelle différence entre APA et yoga adapté ?</summary>
                         <div class="answer">L'APA travaille surtout la force, l'équilibre, la mobilité et l'endurance avec des
-                            exercices progressifs. La yogathérapie s'appuie sur les postures, la respiration et la
-                            conscience corporelle, avec un effet marqué sur la détente et le stress. Lors de l'appel
-                            découverte, on choisit ensemble ce qui vous correspond, et les deux se combinent très bien.</div>
+                            exercices progressifs. Le yoga adapté s'appuie sur les postures, la respiration et la
+                            conscience corporelle, avec un effet marqué sur la détente et le stress. Lors de notre premier
+                            échange, on choisit ensemble ce qui vous correspond, et les deux se combinent très bien.</div>
                     </details>
                     <details>
                         <summary>Faut-il une ordonnance ?</summary>
@@ -1109,7 +992,7 @@
                         <div class="answer">Certaines mutuelles prennent en charge l'APA : renseignez-vous auprès de la vôtre.
                             Vous pouvez aussi bénéficier de <strong>50 % de crédit d'impôt</strong> en réservant via
                             <a href="https://www.sportsantedomicile.fr/carte-france/coach/manon-monin" target="_blank" rel="noopener">Sport Santé Domicile</a>.
-                            Le paiement en plusieurs fois est possible sur les cartes et les programmes.</div>
+                            Le paiement en plusieurs fois est possible sur les abonnements.</div>
                     </details>
                     <details>
                         <summary>Où se déroulent les séances ?</summary>
@@ -1125,7 +1008,7 @@
                     <details>
                         <summary>Intervenez-vous en entreprise ou en EHPAD ?</summary>
                         <div class="answer">Oui : ateliers de prévention des TMS et de qualité de vie au travail pour les
-                            entreprises, et séances collectives (8 personnes maximum) pour les EHPAD, résidences seniors et
+                            entreprises, et séances collectives pour les EHPAD, résidences seniors et
                             établissements médico-sociaux. <a href="#contact" data-sujet="Entreprise">Demandez un devis</a>.</div>
                     </details>
                 </div>
@@ -1162,7 +1045,7 @@
             <div class="container">
                 <div class="section-head reveal">
                     <span class="eyebrow">Contact</span>
-                    <h2>Réservez votre appel découverte gratuit</h2>
+                    <h2>Prenons rendez-vous</h2>
                     <p>Laissez-moi un message, je vous recontacte rapidement. Vous pouvez aussi m'appeler directement.</p>
                 </div>
 
@@ -1217,14 +1100,12 @@
                         <div class="field">
                             <label for="sujet">Votre demande</label>
                             <select id="sujet" name="sujet">
-                                <option>Appel découverte gratuit</option>
                                 <option>Bilan physique</option>
                                 <option>Activité Physique Adaptée</option>
-                                <option>Yogathérapie</option>
+                                <option>Yoga adapté</option>
                                 <option>Séance individuelle</option>
-                                <option>Carte de séances</option>
-                                <option>Programme</option>
                                 <option>Cours collectifs en visio</option>
+                                <option>Abonnement</option>
                                 <option>Entreprise</option>
                                 <option>Structure / établissement</option>
                                 <option>Autre question</option>
@@ -1282,7 +1163,7 @@
     <!-- Barre d'action fixe sur mobile -->
     <div class="mobile-bar" id="mobile-bar">
         <a href="tel:+33662651292" class="btn btn-outline" aria-label="Appeler Manon"><svg aria-hidden="true"><use href="#i-phone"/></svg> Appeler</a>
-        <a href="#contact" class="btn btn-primary" data-sujet="Appel découverte gratuit">Appel découverte offert</a>
+        <a href="#contact" class="btn btn-primary">Prendre rendez-vous</a>
     </div>
 
     <script>
@@ -1323,38 +1204,7 @@
                 a.addEventListener('click', function () { select.value = a.getAttribute('data-sujet'); });
             });
 
-            // Onglets des tarifs
-            var tabs = Array.prototype.slice.call(document.querySelectorAll('.tab'));
-            function selectTab(tab) {
-                tabs.forEach(function (t) {
-                    var on = t === tab;
-                    t.setAttribute('aria-selected', on);
-                    t.tabIndex = on ? 0 : -1;
-                    document.getElementById(t.getAttribute('aria-controls')).hidden = !on;
-                });
-            }
-            tabs.forEach(function (t, i) {
-                t.addEventListener('click', function () { selectTab(t); });
-                t.addEventListener('keydown', function (e) {
-                    if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
-                        var next = tabs[(i + (e.key === 'ArrowRight' ? 1 : tabs.length - 1)) % tabs.length];
-                        selectTab(next); next.focus();
-                    }
-                });
-            });
-
             if ('IntersectionObserver' in window) {
-                // Lien actif dans le menu (ordinateur)
-                var links = document.querySelectorAll('.nav-links a[href^="#"]');
-                var spy = new IntersectionObserver(function (entries) {
-                    entries.forEach(function (en) {
-                        if (en.isIntersecting) {
-                            links.forEach(function (l) { l.classList.toggle('active', l.getAttribute('href') === '#' + en.target.id); });
-                        }
-                    });
-                }, { rootMargin: '-45% 0px -50% 0px' });
-                document.querySelectorAll('main section[id]').forEach(function (s) { spy.observe(s); });
-
                 // Apparition douce
                 var io = new IntersectionObserver(function (entries) {
                     entries.forEach(function (en) {
