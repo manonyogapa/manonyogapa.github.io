@@ -1208,7 +1208,7 @@
 
       <!-- Colonne gauche : photo + nom -->
       <div class="bio-left">
-        <img src="photo-studio.jpg" class="bio-photo" alt="Manon">
+        <img src="img/manon-accueil.webp" class="bio-photo" alt="Manon">
         <div class="bio-name-card">
           <p class="bio-name"><em>Manon</em></p>
           <p class="bio-role">Enseignante APA &amp; Yoga Adapté</p>
@@ -1292,7 +1292,7 @@
           <div
             style="font-size: 48px; font-family: 'DM Sans', sans-serif; font-weight: 300; color: var(--sage-deep); margin-bottom: 32px;">
             13€ <span style="font-size: 16px; color: var(--text-light);">/ séance</span></div>
-          <a href="https://buy.stripe.com/00w3cxbum8Z6g3a7iZaIM04" target="_blank" class="btn-secondary only-open"
+          <a href="https://buy.stripe.com/00w3cxbum8Z6g3a7iZaIM04" target="_blank" rel="noopener" class="btn-secondary only-open"
             style="width: 100%;">Acheter une séance</a>
           <a href="#preinscription" class="btn-secondary only-pre" style="width: 100%;">Je me pré-inscris</a>
           <p class="only-pre" style="font-size: 14px; color: var(--clay); margin-top: 14px; font-weight: 500;">🎁 Pré-inscrits : votre 1er cours offert</p>
@@ -1309,7 +1309,7 @@
           <div style="font-size: 48px; font-family: 'DM Sans', sans-serif; font-weight: 300; margin-bottom: 32px;">30€
             <span style="font-size: 16px; color: var(--sage-pale);">/ mois</span>
           </div>
-          <a href="https://buy.stripe.com/eVq28teGy8Z67wEbzfaIM05" target="_blank" class="btn-primary only-open only-subs"
+          <a href="https://buy.stripe.com/eVq28teGy8Z67wEbzfaIM05" target="_blank" rel="noopener" class="btn-primary only-open only-subs"
             style="width: 100%; background: white; color: var(--sage-deep);">Souscrire</a>
           <span class="btn-primary only-open only-nosubs btn-disabled"
             style="width: 100%; background: white; color: var(--sage-deep);">Disponible le 4 janvier</span>
@@ -1517,7 +1517,7 @@
         </div>
         <div>
           <label class="lbl" for="pre-msg">Un mot sur vous (optionnel)</label>
-          <textarea id="pre-msg" name="Message" rows="3" placeholder="Douleurs, pathologie, objectifs… pour que j'adapte au mieux les cours."></textarea>
+          <textarea id="pre-msg" name="Message" rows="3" placeholder="Vos objectifs, vos questions… (inutile d'indiquer des informations médicales détaillées, nous en parlerons ensemble)"></textarea>
         </div>
         <p style="font-size: 13px; color: var(--text-light); margin: 0;">Vos informations servent uniquement à vous recontacter
           pour l'ouverture du studio. <a href="politique-confidentialite.html" style="color: var(--sage-deep);">Politique de confidentialité</a>.</p>
@@ -1665,7 +1665,7 @@
         <h4
           style="font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 300; margin-bottom: 20px; color: var(--text-dark);">
           Réseaux Sociaux</h4>
-        <a href="https://instagram.com" target="_blank"
+        <a href="https://instagram.com/manon_yogapa" target="_blank" rel="noopener"
           style="display: block; font-size: 15px; color: var(--sage-deep); text-decoration: none; font-weight: 500;">📸
           Instagram</a>
       </div>
@@ -1720,14 +1720,14 @@
       </div>
       <div class="modal-actions" style="flex-direction: column;">
         <a href="#preinscription" id="btn-pre-modal" class="btn-primary only-pre" style="margin-bottom: 8px;">Je me pré-inscris à ce cours →</a>
-        <a href="https://buy.stripe.com/00w3cxbum8Z6g3a7iZaIM04" target="_blank" class="btn-primary only-open"
+        <a href="https://buy.stripe.com/00w3cxbum8Z6g3a7iZaIM04" target="_blank" rel="noopener" class="btn-primary only-open"
           style="margin-bottom: 8px;">Payer à la séance
           (13€) →</a>
         <a href="#" id="btn-resa-carnet" class="btn-secondary only-open only-subs">💳 Je suis abonné·e : réserver ma place par e-mail</a>
         <p style="font-size: 13px; color: var(--text-light); text-align: center; margin-top: 12px;">
           <strong style="color: var(--clay);">Information importante :</strong> Si c'est votre premier cours, il est
           obligatoire de remplir le <a
-            href="https://docs.google.com/forms/d/1at4rplrCMWKNEbQkeqa64aGWwfVRyT9I7gDx2evKuAQ/viewform" target="_blank"
+            href="https://docs.google.com/forms/d/1at4rplrCMWKNEbQkeqa64aGWwfVRyT9I7gDx2evKuAQ/viewform" target="_blank" rel="noopener"
             style="color: var(--sage); text-decoration: underline;">formulaire de santé</a>.
         </p>
       </div>
@@ -1906,7 +1906,7 @@
           block.innerHTML = `
         <div class="cours-block-name">${c.nom}</div>
         <div class="cours-block-time">${timeStr}</div>
-        <div class="cours-block-places">${c.placesRestantes} place${c.placesRestantes > 1 ? 's' : ''} restante${c.placesRestantes > 1 ? 's' : ''}</div>
+        <div class="cours-block-places">${c.places} places max</div>
       `;
           block.addEventListener('click', () => openModal(c, date, timeStr));
           col.appendChild(block);
@@ -1919,8 +1919,7 @@
     function openModal(c, date, timeStr) {
       const dateStr = date.toLocaleDateString('fr-FR', { weekday: 'long', day: 'numeric', month: 'long' });
       document.getElementById('modal-datetime').textContent = dateStr + ' · ' + timeStr;
-      document.getElementById('modal-places').textContent =
-        c.placesRestantes + ' place' + (c.placesRestantes > 1 ? 's' : '') + ' restante' + (c.placesRestantes > 1 ? 's' : '');
+      document.getElementById('modal-places').textContent = c.places + ' maximum';
 
       // Email dynamique pour réservation carnet
       const subject = encodeURIComponent("Réservation : " + c.nom);
