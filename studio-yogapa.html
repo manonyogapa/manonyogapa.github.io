@@ -440,6 +440,28 @@
       border-left-color: var(--clay) !important;
     }
 
+    .cours-block.senior {
+      background: rgba(201, 162, 74, .1);
+      border: 1px solid rgba(201, 162, 74, .28);
+      border-left-color: #B08A2E !important;
+    }
+
+    .cours-block.senior .cours-block-name,
+    .cours-block.senior .cours-block-places {
+      color: #8A6A1E;
+    }
+
+    .cours-block.yoga {
+      background: rgba(143, 120, 170, .1);
+      border: 1px solid rgba(143, 120, 170, .25);
+      border-left-color: #7D6699 !important;
+    }
+
+    .cours-block.yoga .cours-block-name,
+    .cours-block.yoga .cours-block-places {
+      color: #654F80;
+    }
+
     .cours-block:hover {
       transform: translateY(-1px) scale(1.01);
       box-shadow: 0 6px 20px rgba(42, 37, 32, .1);
@@ -1387,21 +1409,6 @@
     </div>
   </section>
 
-  <!-- BIENTÔT -->
-  <section class="soon-section">
-    <div class="soon-inner">
-      <p class="section-label">En préparation</p>
-      <h2 class="section-title">Bientôt <em>disponible</em></h2>
-      <div class="soon-grid">
-        <div class="soon-card">
-          <div class="soon-icon">🧘</div>
-          <h3 class="soon-title">Yoga doux</h3>
-          <p class="soon-desc">Un cours de yoga accessible, centré sur la respiration et la mobilité.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- FAQ -->
   <section class="faq-section" style="padding: 100px 24px; background: var(--warm-white);">
     <div style="max-width: 800px; margin: 0 auto;">
@@ -1615,8 +1622,39 @@
     // heureDebut / heureFin en décimal (9.5 = 9h30)
     // ════════════════════════════════════════════
     const COURS = [
-      { jour: 3, heureDebut: 9, heureFin: 10, nom: 'Groupe sénior', places: 12, placesRestantes: 12, type: 'apa' },
+      { jour: 0, heureDebut: 18,   heureFin: 19,   nom: 'Yoga doux',            places: 12, placesRestantes: 12, type: 'yoga' },
+      { jour: 2, heureDebut: 9,    heureFin: 10,   nom: 'APA ouvert à tous',    places: 12, placesRestantes: 12, type: 'apa' },
+      { jour: 2, heureDebut: 10.5, heureFin: 11.5, nom: 'Cours senior',         places: 12, placesRestantes: 12, type: 'senior' },
+      { jour: 3, heureDebut: 18,   heureFin: 19,   nom: 'Abdos / Dos',          places: 12, placesRestantes: 12, type: 'abdos' },
     ];
+
+    // Description de chaque type de cours (affichée quand on clique sur un cours)
+    const INFOS_COURS = {
+      apa: {
+        icon: '🌿', tag: 'Cours APA · Hebdomadaire', titre: 'APA<br><em>ouvert à tous</em>',
+        desc: "Renforcement, équilibre, mobilité et coordination dans un cours accessible à tous, quel que soit votre niveau ou votre état de santé. Chaque exercice est adapté à vos capacités.",
+        adaptTitre: '♿ Cours 100 % adapté',
+        adapt: " Debout, assis ou allongé : les exercices sont ajustés selon vos capacités et vos contraintes de santé."
+      },
+      senior: {
+        icon: '🌸', tag: 'Cours senior · Hebdomadaire', titre: 'Cours<br><em>senior</em>',
+        desc: "Un cours pensé pour les seniors : équilibre, prévention des chutes, mobilité et renforcement en douceur, pour garder son autonomie au quotidien.",
+        adaptTitre: '♿ Cours 100 % adapté',
+        adapt: " Tous les exercices peuvent se faire assis ou debout, avec une chaise. Aucun passage au sol n'est obligatoire."
+      },
+      yoga: {
+        icon: '🧘', tag: 'Yoga adapté · Hebdomadaire', titre: 'Yoga<br><em>doux</em>',
+        desc: "Un yoga accessible, centré sur la respiration, la mobilité et la détente. Idéal pour relâcher les tensions et bien commencer la semaine.",
+        adaptTitre: '♿ Cours adapté',
+        adapt: " Les postures sont proposées avec des variantes (chaise, coussins, sangle) pour que chacun pratique en confort."
+      },
+      abdos: {
+        icon: '💪', tag: 'Cours visio · Hebdomadaire', titre: 'Abdos<br><em>& dos</em>',
+        desc: "Renforcement des abdominaux et du dos en douceur, pour soulager les tensions et protéger le dos au quotidien. Accessible à tous les niveaux.",
+        adaptTitre: '♿ Cours adapté',
+        adapt: " Si vous ne pouvez pas vous allonger au sol, des variantes en position assise ou debout sont proposées."
+      }
+    };
 
     const HEURE_DEBUT = 7;
     const HEURE_FIN = 20;
@@ -1757,25 +1795,15 @@
       const body = encodeURIComponent("Bonjour Manon,\n\nJe souhaite réserver ma place pour " + c.nom + " le " + dateStr + " à " + hStr + ".\n(Je suis abonné·e).\n\nMerci !");
       document.getElementById('btn-resa-carnet').href = 'mailto:manon.yogapa@gmail.com?subject=' + subject + '&body=' + body;
 
-      if (c.type === 'apa') {
-        document.querySelector('.modal-icon').textContent = '🌿';
-        document.querySelector('.modal-tag').textContent = 'Cours APA · Hebdomadaire';
-        document.querySelector('.modal-title').innerHTML = 'Activité Physique<br><em>Adaptée</em>';
-        document.querySelector('.modal-desc').textContent = "Un cours doux et bienveillant conçu pour les personnes ayant des besoins spécifiques de santé. Chaque exercice est adapté à votre condition, qu'il s'agisse d'une pathologie chronique, d'une rééducation ou d'une fragilité particulière. Pratique en visio, à votre rythme.";
-        document.getElementById('modal-duration').textContent = '1 heure';
-        document.querySelector('.modal-adapt strong').textContent = '♿ Cours 100 % adapté';
-        document.querySelector('.modal-adapt').childNodes[document.querySelector('.modal-adapt').childNodes.length - 1].textContent =
-          " Ce cours est spécialement conçu pour s'adapter à chaque participant. Debout, assis ou allongé, les exercices sont personnalisés selon vos capacités et vos contraintes de santé.";
-      } else {
-        document.querySelector('.modal-icon').textContent = '🌿';
-        document.querySelector('.modal-tag').textContent = 'Cours visio · Hebdomadaire';
-        document.querySelector('.modal-title').innerHTML = 'Abdos &<br><em>Gainage</em>';
-        document.querySelector('.modal-desc').textContent = "Un cours de renforcement musculaire profond, pensé pour travailler les abdominaux et la sangle abdominale en douceur. Accessible à tous les niveaux, avec ou sans matériel, et entièrement adaptable selon votre condition physique.";
-        document.getElementById('modal-duration').textContent = '1 heure';
-        document.querySelector('.modal-adapt strong').textContent = '♿ Cours adapté';
-        document.querySelector('.modal-adapt').childNodes[document.querySelector('.modal-adapt').childNodes.length - 1].textContent =
-          " Ce cours est entièrement adaptable. Si vous ne pouvez pas vous allonger au sol, des variantes en position assise ou debout sont proposées. Vous indiquerez vos besoins lors de l'inscription.";
-      }
+      const info = INFOS_COURS[c.type] || INFOS_COURS.apa;
+      document.querySelector('.modal-icon').textContent = info.icon;
+      document.querySelector('.modal-tag').textContent = info.tag;
+      document.querySelector('.modal-title').innerHTML = info.titre;
+      document.querySelector('.modal-desc').textContent = info.desc;
+      document.getElementById('modal-duration').textContent = hToStr(c.heureFin - c.heureDebut).replace(/^1h$/, '1 heure');
+      document.querySelector('.modal-adapt strong').textContent = info.adaptTitre;
+      const adaptNodes = document.querySelector('.modal-adapt').childNodes;
+      adaptNodes[adaptNodes.length - 1].textContent = info.adapt;
 
       document.getElementById('modal').classList.add('open');
       document.body.style.overflow = 'hidden';
@@ -1809,7 +1837,7 @@
 
     // Effet d'apparition au scroll pour le bouton sticky
     const stickyBtn = document.querySelector('.sticky-cta');
-    window.addEventListener('scroll', () => {
+    if (stickyBtn) window.addEventListener('scroll', () => {
       if (window.scrollY > 400) {
         stickyBtn.style.opacity = '1';
         stickyBtn.style.pointerEvents = 'all';
