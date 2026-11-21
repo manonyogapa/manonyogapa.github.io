@@ -1122,7 +1122,50 @@
         aspect-ratio: 4/5;
       }
     }
+
+    /* ===== Pré-inscription (jusqu'à l'ouverture) ===== */
+    html.prelaunch .only-open { display: none !important; }
+    html:not(.prelaunch) .only-pre { display: none !important; }
+
+    .launch-badge {
+      display: inline-flex; align-items: center; gap: 10px; flex-wrap: wrap; justify-content: center;
+      margin-top: 28px; padding: 12px 22px; border-radius: 100px;
+      background: rgba(196, 132, 90, .12); color: var(--clay); font-weight: 500; font-size: 16px;
+    }
+    .pause-note {
+      max-width: 1100px; margin: 0 auto 20px; padding: 14px 20px; border-radius: 14px;
+      background: rgba(122, 158, 126, .1); color: var(--sage-deep); font-size: 15px; text-align: center;
+    }
+    .cal-pause {
+      position: absolute; inset: 0; display: flex; align-items: flex-start; justify-content: flex-start;
+      padding: 40px 16px; text-align: left; font-family: 'Cormorant Garamond', serif; font-size: 22px;
+      color: var(--sage-deep); background: rgba(250, 247, 242, .85); z-index: 4; pointer-events: none;
+    }
+    .pre-section { padding: 100px 24px; background: var(--cream); }
+    .pre-inner { max-width: 720px; margin: 0 auto; }
+    .pre-form {
+      background: white; padding: 40px; border-radius: var(--radius);
+      border: 1px solid rgba(122,158,126,.12); box-shadow: 0 10px 40px rgba(42,37,32,.05);
+      display: flex; flex-direction: column; gap: 22px;
+    }
+    .pre-form label.lbl { display: block; font-size: 15px; font-weight: 500; color: var(--text-dark); margin-bottom: 10px; }
+    .pre-form input[type=text], .pre-form input[type=email], .pre-form input[type=tel], .pre-form select, .pre-form textarea {
+      width: 100%; padding: 15px; font-family: 'DM Sans', sans-serif; font-size: 16px;
+      border: 1px solid rgba(122,158,126,.25); border-radius: 12px; background: #fafaf8; color: var(--text-dark);
+    }
+    .pre-form input:focus, .pre-form select:focus, .pre-form textarea:focus { outline: none; border-color: var(--sage); }
+    .pre-checks { display: grid; gap: 10px; }
+    .pre-checks label { display: flex; gap: 12px; align-items: center; padding: 12px 14px; border: 1px solid rgba(122,158,126,.2); border-radius: 12px; cursor: pointer; font-size: 15px; color: var(--text-mid); }
+    .pre-checks input { width: 20px; height: 20px; accent-color: var(--sage-deep); flex: none; }
+    .pre-row { display: grid; gap: 22px; }
+    @media (min-width: 640px) { .pre-row { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 600px) { .pre-form { padding: 26px 20px; } }
   </style>
+  <script>
+    // Date d'ouverture du studio : avant cette date, le site est en mode « pré-inscription »
+    var OUVERTURE_STUDIO = new Date(2026, 11, 7); // 7 décembre 2026 (mois 11 = décembre)
+    if (new Date() < OUVERTURE_STUDIO) document.documentElement.classList.add('prelaunch');
+  </script>
 </head>
 
 <body>
@@ -1143,8 +1186,10 @@
       <p class="studio-tagline">Studio d'activité physique adaptée &amp; yoga adapté</p>
       <p class="hero-desc">Des cours en visio, doux et adaptés à chacun, pour prendre soin de votre corps où que vous
         soyez.</p>
+      <div class="launch-badge only-pre">✨ Ouverture le lundi 7 décembre · Pré-inscriptions ouvertes</div>
       <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-top: 40px;">
-        <a href="#planning" class="btn-primary" style="font-size:16px; padding:18px 36px;">Découvrir le planning ↓</a>
+        <a href="#preinscription" class="btn-primary only-pre" style="font-size:16px; padding:18px 36px;">Je me pré-inscris ↓</a>
+        <a href="#planning" class="btn-primary only-open" style="font-size:16px; padding:18px 36px;">Découvrir le planning ↓</a>
         <a href="index.html" class="btn-secondary" style="font-size:16px; padding:18px 36px;">Visiter mon site
           internet</a>
       </div>
@@ -1241,8 +1286,9 @@
           <div
             style="font-size: 48px; font-family: 'DM Sans', sans-serif; font-weight: 300; color: var(--sage-deep); margin-bottom: 32px;">
             13€ <span style="font-size: 16px; color: var(--text-light);">/ séance</span></div>
-          <a href="https://buy.stripe.com/00w3cxbum8Z6g3a7iZaIM04" target="_blank" class="btn-secondary"
+          <a href="https://buy.stripe.com/00w3cxbum8Z6g3a7iZaIM04" target="_blank" class="btn-secondary only-open"
             style="width: 100%;">Acheter une séance</a>
+          <a href="#preinscription" class="btn-secondary only-pre" style="width: 100%;">Je me pré-inscris</a>
         </div>
 
         <div class="tarif-card"
@@ -1256,8 +1302,10 @@
           <div style="font-size: 48px; font-family: 'DM Sans', sans-serif; font-weight: 300; margin-bottom: 32px;">30€
             <span style="font-size: 16px; color: var(--sage-pale);">/ mois</span>
           </div>
-          <a href="https://buy.stripe.com/eVq28teGy8Z67wEbzfaIM05" target="_blank" class="btn-primary"
+          <a href="https://buy.stripe.com/eVq28teGy8Z67wEbzfaIM05" target="_blank" class="btn-primary only-open"
             style="width: 100%; background: white; color: var(--sage-deep);">Souscrire</a>
+          <a href="#preinscription" class="btn-primary only-pre"
+            style="width: 100%; background: white; color: var(--sage-deep);">Je me pré-inscris</a>
         </div>
 
         <div class="tarif-card"
@@ -1275,6 +1323,9 @@
         </div>
 
       </div>
+
+      <p class="pause-note" style="margin-top: 40px;">🎄 Pause des fêtes du 21 décembre au 3 janvier inclus · reprise des cours le lundi 4 janvier</p>
+      <p class="pause-note only-pre">Les paiements ouvriront le 7 décembre. En attendant, pré-inscrivez-vous pour être prévenu·e en premier.</p>
 
       <!-- Sécurité paiement -->
       <div
@@ -1404,8 +1455,64 @@
         <button class="today-btn" onclick="goToday()">Aujourd'hui</button>
       </div>
     </div>
+    <p class="pause-note">🎄 Pause des fêtes du 21 décembre au 3 janvier inclus · reprise le lundi 4 janvier</p>
     <div class="cal-wrapper">
       <div class="cal-grid" id="cal-grid"></div>
+    </div>
+  </section>
+
+  <!-- PRÉ-INSCRIPTION (visible uniquement avant l'ouverture) -->
+  <section class="pre-section only-pre" id="preinscription">
+    <div class="pre-inner">
+      <div style="text-align:center; margin-bottom: 40px;">
+        <p class="section-label">Ouverture le lundi 7 décembre</p>
+        <h2 class="section-title">Je me <em>pré-inscris</em></h2>
+        <p style="font-size: 17px; color: var(--text-mid); line-height: 1.6; margin-top: 16px;">Gratuit et sans engagement.
+          Vous serez prévenu·e en premier à l'ouverture, avec le lien pour réserver votre place.</p>
+      </div>
+      <form class="pre-form" id="pre-form" action="https://formspree.io/f/xrealwrg" method="POST">
+        <input type="hidden" name="_subject" value="Nouvelle pré-inscription au studio en ligne">
+        <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute; left:-5000px;">
+        <div class="pre-row">
+          <div>
+            <label class="lbl" for="pre-nom">Prénom et nom *</label>
+            <input type="text" id="pre-nom" name="Nom" autocomplete="name" required>
+          </div>
+          <div>
+            <label class="lbl" for="pre-tel">Téléphone</label>
+            <input type="tel" id="pre-tel" name="Telephone" autocomplete="tel">
+          </div>
+        </div>
+        <div>
+          <label class="lbl" for="pre-email">E-mail *</label>
+          <input type="email" id="pre-email" name="email" autocomplete="email" required>
+        </div>
+        <fieldset style="border:0; padding:0; margin:0;">
+          <legend class="lbl" style="display:block; font-size:15px; font-weight:500; color:var(--text-dark); margin-bottom:10px;">Les cours qui vous intéressent</legend>
+          <div class="pre-checks">
+            <label><input type="checkbox" name="Cours" value="Yoga doux (lundi 18h)"> 🧘 Yoga doux · lundi 18h – 19h</label>
+            <label><input type="checkbox" name="Cours" value="APA ouvert à tous (mercredi 9h)"> 🌿 APA ouvert à tous · mercredi 9h – 10h</label>
+            <label><input type="checkbox" name="Cours" value="Cours senior (mercredi 10h30)"> 🌸 Cours senior · mercredi 10h30 – 11h30</label>
+            <label><input type="checkbox" name="Cours" value="Abdos / Dos (jeudi 18h)"> 💪 Abdos / Dos · jeudi 18h – 19h</label>
+          </div>
+        </fieldset>
+        <div>
+          <label class="lbl" for="pre-formule">Formule envisagée</label>
+          <select id="pre-formule" name="Formule">
+            <option>Je ne sais pas encore</option>
+            <option>À la séance (13 €)</option>
+            <option>Abonnement mensuel (30 €/mois)</option>
+          </select>
+        </div>
+        <div>
+          <label class="lbl" for="pre-msg">Un mot sur vous (optionnel)</label>
+          <textarea id="pre-msg" name="Message" rows="3" placeholder="Douleurs, pathologie, objectifs… pour que j'adapte au mieux les cours."></textarea>
+        </div>
+        <p style="font-size: 13px; color: var(--text-light); margin: 0;">Vos informations servent uniquement à vous recontacter
+          pour l'ouverture du studio. <a href="politique-confidentialite.html" style="color: var(--sage-deep);">Politique de confidentialité</a>.</p>
+        <button type="submit" class="btn-primary" style="border: none; cursor: pointer; font-size: 17px; padding: 18px; width: 100%;">Je me pré-inscris</button>
+        <p id="pre-status" role="status" aria-live="polite" style="margin:0; text-align:center; font-weight:500;"></p>
+      </form>
     </div>
   </section>
 
@@ -1601,10 +1708,11 @@
         ou debout sont proposées. Vous indiquerez vos besoins lors de l'inscription.
       </div>
       <div class="modal-actions" style="flex-direction: column;">
-        <a href="https://buy.stripe.com/00w3cxbum8Z6g3a7iZaIM04" target="_blank" class="btn-primary"
+        <a href="#preinscription" id="btn-pre-modal" class="btn-primary only-pre" style="margin-bottom: 8px;">Je me pré-inscris à ce cours →</a>
+        <a href="https://buy.stripe.com/00w3cxbum8Z6g3a7iZaIM04" target="_blank" class="btn-primary only-open"
           style="margin-bottom: 8px;">Payer à la séance
           (13€) →</a>
-        <a href="#" id="btn-resa-carnet" class="btn-secondary">💳 Je suis abonné·e : réserver ma place par e-mail</a>
+        <a href="#" id="btn-resa-carnet" class="btn-secondary only-open">💳 Je suis abonné·e : réserver ma place par e-mail</a>
         <p style="font-size: 13px; color: var(--text-light); text-align: center; margin-top: 12px;">
           <strong style="color: var(--clay);">Information importante :</strong> Si c'est votre premier cours, il est
           obligatoire de remplir le <a
@@ -1661,7 +1769,10 @@
     const SLOT_H = 60; // px par heure
     const JOURS_COURTS = ['Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam', 'Dim'];
 
-    const launchLundi = new Date(2026, 2, 30); // 30 Mars 2026 (1ère sem d'avril)
+    const launchLundi = new Date(2026, 11, 7); // Ouverture : lundi 7 décembre 2026
+    // Pause des fêtes (aucun cours entre ces deux dates incluses)
+    const PAUSE_DEBUT = new Date(2026, 11, 21);
+    const PAUSE_FIN = new Date(2027, 0, 3, 23, 59);
     let offsetSemaine = 0;
 
     // Calcul de l'offset pour afficher avril directement si on visite le site en avance
@@ -1760,9 +1871,20 @@
           }
         }
 
+        // Pause des fêtes
+        const enPause = date >= PAUSE_DEBUT && date <= PAUSE_FIN;
+        if (enPause && d === 0) {
+          const ov = document.createElement('div');
+          ov.className = 'cal-pause';
+          ov.style.cssText = 'left:0;width:700%;';
+          ov.textContent = '🎄 Pause des fêtes · reprise le lundi 4 janvier';
+          col.appendChild(ov);
+        }
+
         // Cours
         COURS.forEach(c => {
           if (c.jour !== d) return;
+          if (date < launchLundi || enPause) return;
           const topPx = (c.heureDebut - HEURE_DEBUT) * SLOT_H;
           const height = (c.heureFin - c.heureDebut) * SLOT_H - 4;
           const timeStr = hToStr(c.heureDebut) + '–' + hToStr(c.heureFin);
@@ -1795,6 +1917,7 @@
       const body = encodeURIComponent("Bonjour Manon,\n\nJe souhaite réserver ma place pour " + c.nom + " le " + dateStr + " à " + hStr + ".\n(Je suis abonné·e).\n\nMerci !");
       document.getElementById('btn-resa-carnet').href = 'mailto:manon.yogapa@gmail.com?subject=' + subject + '&body=' + body;
 
+      document.getElementById('btn-pre-modal').dataset.cours = c.nom;
       const info = INFOS_COURS[c.type] || INFOS_COURS.apa;
       document.querySelector('.modal-icon').textContent = info.icon;
       document.querySelector('.modal-tag').textContent = info.tag;
@@ -1901,6 +2024,42 @@
     }
   </style>
   <script>
+    // Pré-inscription : bouton de la fiche cours -> coche le cours et descend au formulaire
+    (function () {
+      var btn = document.getElementById('btn-pre-modal');
+      if (btn) btn.addEventListener('click', function () {
+        var nom = btn.dataset.cours || '';
+        document.querySelectorAll('#pre-form input[name="Cours"]').forEach(function (cb) {
+          if (nom && cb.value.indexOf(nom) === 0) cb.checked = true;
+        });
+        closeModal();
+      });
+
+      var form = document.getElementById('pre-form');
+      if (!form || !window.fetch) return;
+      var status = document.getElementById('pre-status');
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var submit = form.querySelector('button[type="submit"]');
+        submit.disabled = true; submit.textContent = 'Envoi en cours…';
+        status.textContent = '';
+        var data = new FormData(form);
+        var cours = data.getAll('Cours'); data.delete('Cours'); data.append('Cours', cours.join(', ') || 'Non précisé');
+        fetch(form.action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } })
+          .then(function (res) {
+            if (!res.ok) throw new Error('envoi');
+            form.reset();
+            status.style.color = 'var(--sage-deep)';
+            status.textContent = 'Merci, votre pré-inscription est bien enregistrée ! Je vous recontacte avant l\'ouverture du 7 décembre.';
+          })
+          .catch(function () {
+            status.style.color = '#A2463A';
+            status.textContent = "L'envoi n'a pas fonctionné. Vous pouvez m'écrire à manon.yogapa@gmail.com.";
+          })
+          .then(function () { submit.disabled = false; submit.textContent = 'Je me pré-inscris'; });
+      });
+    })();
+
     (function () {
       var form = document.getElementById('avis-form');
       if (!form || !window.fetch) return;

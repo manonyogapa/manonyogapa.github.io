@@ -497,6 +497,15 @@
         .mobile-bar svg { width: 18px; height: 18px; }
         @media (min-width: 1000px) { .mobile-bar { display: none; } }
 
+        /* Annonce pré-inscription (masquée automatiquement après l'ouverture) */
+        html:not(.prelaunch) .only-pre { display: none !important; }
+        .launch-pill {
+            display: inline-flex; align-items: center; gap: 8px; margin-bottom: 18px;
+            padding: 8px 16px; border-radius: 999px; background: #fff; color: var(--terracotta-fonce);
+            font-size: .85rem; font-weight: 600; text-decoration: none; box-shadow: var(--ombre); line-height: 1.4;
+        }
+        .launch-pill:hover { background: var(--fond-2); }
+
         /* Apparition douce au défilement (désactivée si l'utilisateur préfère moins d'animations) */
         .js .reveal { opacity: 0; transform: translateY(18px); transition: opacity .7s ease, transform .7s ease; }
         .js .reveal.visible { opacity: 1; transform: none; }
@@ -506,7 +515,11 @@
             *, *::before, *::after { transition-duration: 0s !important; }
         }
     </style>
-    <script>document.documentElement.classList.add('js');</script>
+    <script>
+        document.documentElement.classList.add('js');
+        // Avant l'ouverture du studio (7 décembre 2026), on affiche l'annonce de pré-inscription
+        if (new Date() < new Date(2026, 11, 7)) document.documentElement.classList.add('prelaunch');
+    </script>
 </head>
 
 <body>
@@ -563,6 +576,7 @@
         <section class="hero" id="accueil">
             <div class="container">
                 <div>
+                    <a class="launch-pill only-pre" href="studio-yogapa.html#preinscription">✨ Nouveau : studio en ligne, ouverture le 7 décembre · Je me pré-inscris →</a><br>
                     <span class="eyebrow">Activité Physique Adaptée & Yoga Adapté</span>
                     <h1>Retrouver le <em>mouvement</em>, même avec des douleurs ou une pathologie</h1>
                     <p class="lead">Je m'appelle Manon, enseignante en Activité Physique Adaptée et en Yoga Adapté.
