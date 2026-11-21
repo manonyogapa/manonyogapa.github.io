@@ -1126,6 +1126,9 @@
     /* ===== Pré-inscription (jusqu'à l'ouverture) ===== */
     html.prelaunch .only-open { display: none !important; }
     html:not(.prelaunch) .only-pre { display: none !important; }
+    html:not(.subs-open) .only-subs { display: none !important; }
+    html.subs-open .only-nosubs { display: none !important; }
+    .btn-disabled { opacity: .75; pointer-events: none; cursor: default; }
 
     .launch-badge {
       display: inline-flex; align-items: center; gap: 10px; flex-wrap: wrap; justify-content: center;
@@ -1165,6 +1168,9 @@
     // Date d'ouverture du studio : avant cette date, le site est en mode « pré-inscription »
     var OUVERTURE_STUDIO = new Date(2026, 11, 7); // 7 décembre 2026 (mois 11 = décembre)
     if (new Date() < OUVERTURE_STUDIO) document.documentElement.classList.add('prelaunch');
+    // Ouverture de l'abonnement mensuel : lundi 4 janvier 2027 (en décembre, cours à l'unité uniquement)
+    var OUVERTURE_ABONNEMENT = new Date(2027, 0, 4);
+    if (new Date() >= OUVERTURE_ABONNEMENT) document.documentElement.classList.add('subs-open');
   </script>
 </head>
 
@@ -1186,7 +1192,7 @@
       <p class="studio-tagline">Studio d'activité physique adaptée &amp; yoga adapté</p>
       <p class="hero-desc">Des cours en visio, doux et adaptés à chacun, pour prendre soin de votre corps où que vous
         soyez.</p>
-      <div class="launch-badge only-pre">✨ Ouverture le lundi 7 décembre · Pré-inscriptions ouvertes</div>
+      <div class="launch-badge only-pre">✨ Ouverture le lundi 7 décembre · 1er cours offert aux pré-inscrits</div>
       <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-top: 40px;">
         <a href="#preinscription" class="btn-primary only-pre" style="font-size:16px; padding:18px 36px;">Je me pré-inscris ↓</a>
         <a href="#planning" class="btn-primary only-open" style="font-size:16px; padding:18px 36px;">Découvrir le planning ↓</a>
@@ -1289,6 +1295,7 @@
           <a href="https://buy.stripe.com/00w3cxbum8Z6g3a7iZaIM04" target="_blank" class="btn-secondary only-open"
             style="width: 100%;">Acheter une séance</a>
           <a href="#preinscription" class="btn-secondary only-pre" style="width: 100%;">Je me pré-inscris</a>
+          <p class="only-pre" style="font-size: 14px; color: var(--clay); margin-top: 14px; font-weight: 500;">🎁 Pré-inscrits : votre 1er cours offert</p>
         </div>
 
         <div class="tarif-card"
@@ -1297,15 +1304,18 @@
             style="position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background: var(--clay); color: white; padding: 6px 16px; border-radius: 100px; font-size: 12px; font-weight: 500; text-transform: uppercase;">
             Le plus choisi</div>
           <h3 style="font-family:'Cormorant Garamond',serif; font-size: 32px; margin-bottom: 8px;">Abonnement mensuel</h3>
-          <p style="font-size:16px; color:var(--sage-pale); margin-bottom: 24px;">Cours collectifs en visio · sans engagement, résiliable à tout moment
+          <p style="font-size:16px; color:var(--sage-pale); margin-bottom: 24px;">1 cours collectif par semaine au choix, soit 7,50 € le cours · sans engagement, résiliable à tout moment
           </p>
           <div style="font-size: 48px; font-family: 'DM Sans', sans-serif; font-weight: 300; margin-bottom: 32px;">30€
             <span style="font-size: 16px; color: var(--sage-pale);">/ mois</span>
           </div>
-          <a href="https://buy.stripe.com/eVq28teGy8Z67wEbzfaIM05" target="_blank" class="btn-primary only-open"
+          <a href="https://buy.stripe.com/eVq28teGy8Z67wEbzfaIM05" target="_blank" class="btn-primary only-open only-subs"
             style="width: 100%; background: white; color: var(--sage-deep);">Souscrire</a>
+          <span class="btn-primary only-open only-nosubs btn-disabled"
+            style="width: 100%; background: white; color: var(--sage-deep);">Disponible le 4 janvier</span>
           <a href="#preinscription" class="btn-primary only-pre"
             style="width: 100%; background: white; color: var(--sage-deep);">Je me pré-inscris</a>
+          <p class="only-nosubs" style="font-size: 14px; color: var(--sage-pale); margin-top: 14px;">Ouverture de l'abonnement le lundi 4 janvier. En décembre, les cours sont à l'unité.</p>
         </div>
 
         <div class="tarif-card"
@@ -1314,7 +1324,7 @@
             style="font-family:'Cormorant Garamond',serif; font-size: 32px; color: var(--text-dark); margin-bottom: 8px;">
             Bilan physique</h3>
           <p style="font-size:16px; color:var(--text-light); margin-bottom: 24px;">1h30 pour évaluer mobilité, force, équilibre
-            et endurance, et adapter au maximum vos séances
+            et endurance, et adapter au maximum vos séances · 20 € déduits si vous réservez 5 séances
           </p>
           <div
             style="font-size: 48px; font-family: 'DM Sans', sans-serif; font-weight: 300; color: var(--sage-deep); margin-bottom: 32px;">
@@ -1469,6 +1479,7 @@
         <h2 class="section-title">Je me <em>pré-inscris</em></h2>
         <p style="font-size: 17px; color: var(--text-mid); line-height: 1.6; margin-top: 16px;">Gratuit et sans engagement.
           Vous serez prévenu·e en premier à l'ouverture, avec le lien pour réserver votre place.</p>
+        <p style="display:inline-block; margin-top: 18px; padding: 10px 20px; border-radius: 100px; background: rgba(196,132,90,.12); color: var(--clay); font-weight: 500;">🎁 Pré-inscrits : votre 1er cours offert</p>
       </div>
       <form class="pre-form" id="pre-form" action="https://formspree.io/f/xrealwrg" method="POST">
         <input type="hidden" name="_subject" value="Nouvelle pré-inscription au studio en ligne">
@@ -1501,7 +1512,7 @@
           <select id="pre-formule" name="Formule">
             <option>Je ne sais pas encore</option>
             <option>À la séance (13 €)</option>
-            <option>Abonnement mensuel (30 €/mois)</option>
+            <option>Abonnement mensuel (30 €/mois, à partir du 4 janvier)</option>
           </select>
         </div>
         <div>
@@ -1712,7 +1723,7 @@
         <a href="https://buy.stripe.com/00w3cxbum8Z6g3a7iZaIM04" target="_blank" class="btn-primary only-open"
           style="margin-bottom: 8px;">Payer à la séance
           (13€) →</a>
-        <a href="#" id="btn-resa-carnet" class="btn-secondary only-open">💳 Je suis abonné·e : réserver ma place par e-mail</a>
+        <a href="#" id="btn-resa-carnet" class="btn-secondary only-open only-subs">💳 Je suis abonné·e : réserver ma place par e-mail</a>
         <p style="font-size: 13px; color: var(--text-light); text-align: center; margin-top: 12px;">
           <strong style="color: var(--clay);">Information importante :</strong> Si c'est votre premier cours, il est
           obligatoire de remplir le <a

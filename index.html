@@ -499,6 +499,7 @@
 
         /* Annonce pré-inscription (masquée automatiquement après l'ouverture) */
         html:not(.prelaunch) .only-pre { display: none !important; }
+        html.subs-open .only-nosubs { display: none !important; }
         .launch-pill {
             display: inline-flex; align-items: center; gap: 8px; margin-bottom: 18px;
             padding: 8px 16px; border-radius: 999px; background: #fff; color: var(--terracotta-fonce);
@@ -519,6 +520,8 @@
         document.documentElement.classList.add('js');
         // Avant l'ouverture du studio (7 décembre 2026), on affiche l'annonce de pré-inscription
         if (new Date() < new Date(2026, 11, 7)) document.documentElement.classList.add('prelaunch');
+        // L'abonnement mensuel ouvre le lundi 4 janvier 2027
+        if (new Date() >= new Date(2027, 0, 4)) document.documentElement.classList.add('subs-open');
     </script>
 </head>
 
@@ -576,7 +579,7 @@
         <section class="hero" id="accueil">
             <div class="container">
                 <div>
-                    <a class="launch-pill only-pre" href="studio-yogapa.html#preinscription">✨ Nouveau : studio en ligne, ouverture le 7 décembre · Je me pré-inscris →</a><br>
+                    <a class="launch-pill only-pre" href="studio-yogapa.html#preinscription">✨ Nouveau : studio en ligne, ouverture le 7 décembre · 1er cours offert aux pré-inscrits →</a><br>
                     <span class="eyebrow">Activité Physique Adaptée & Yoga Adapté</span>
                     <h1>Retrouver le <em>mouvement</em>, même avec des douleurs ou une pathologie</h1>
                     <p class="lead">Je m'appelle Manon, enseignante en Activité Physique Adaptée et en Yoga Adapté.
@@ -826,6 +829,7 @@
                         <ul>
                             <li>Mobilité, force, équilibre et endurance</li>
                             <li>Des séances adaptées au maximum</li>
+                            <li>20 € déduits si vous réservez 5 séances</li>
                         </ul>
                         <a href="#contact" class="btn btn-outline" data-sujet="Bilan physique">Réserver mon bilan</a>
                     </div>
@@ -837,8 +841,8 @@
                         <table>
                             <thead><tr><th scope="col"></th><th scope="col" style="text-align:right">Présentiel</th><th scope="col" style="text-align:right">Visio</th></tr></thead>
                             <tbody>
-                                <tr><th scope="row">Seul·e</th><td>50 €</td><td>30 €</td></tr>
-                                <tr><th scope="row">En duo</th><td>90 €</td><td>70 €</td></tr>
+                                <tr><th scope="row">Seul·e</th><td>55 €</td><td>30 €</td></tr>
+                                <tr><th scope="row">En duo</th><td>90 €</td><td>50 €</td></tr>
                             </tbody>
                         </table>
                         <a href="#contact" class="btn btn-primary" data-sujet="Séance individuelle">Réserver une séance</a>
@@ -861,8 +865,9 @@
                         <span class="duration">Cours collectifs en visio</span>
                         <div class="amount">30 € <small>/ mois</small></div>
                         <ul>
-                            <li>Cours APA et yoga adapté en visio</li>
+                            <li>1 cours par semaine au choix, soit 7,50 € le cours</li>
                             <li>Sans engagement, résiliable à tout moment</li>
+                            <li class="only-nosubs"><strong>Disponible à partir du 4 janvier</strong></li>
                         </ul>
                         <a href="studio-yogapa.html#tarifs" class="btn btn-outline">Je m'abonne</a>
                     </div>
