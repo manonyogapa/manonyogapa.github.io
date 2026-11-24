@@ -501,6 +501,17 @@
         /* Annonce pré-inscription (masquée automatiquement après l'ouverture) */
         html:not(.prelaunch) .only-pre { display: none !important; }
         html.subs-open .only-nosubs { display: none !important; }
+        html:not(.salle-on) .only-salle { display: none !important; }
+        html.salle-apres-essai .only-essai { display: none !important; }
+        .salle { background: var(--fond-2); }
+        .salle-grid { display: grid; gap: 28px; align-items: start; }
+        @media (min-width: 900px) { .salle-grid { grid-template-columns: 1.1fr .9fr; gap: 48px; } }
+        .salle-infos { display: grid; gap: 12px; margin-top: 22px; }
+        .salle-infos li { background: #fff; border: 1px solid #EFE7DB; border-radius: 14px; padding: 14px 16px; font-size: .95rem; }
+        .salle-infos strong { display: block; font-size: .78rem; text-transform: uppercase; letter-spacing: .08em; color: var(--terracotta-fonce); margin-bottom: 2px; }
+        .salle-essai { background: var(--terracotta-fonce); color: #fff; border-radius: var(--rayon); padding: 22px 24px; margin-top: 22px; }
+        .salle-essai h3 { color: #fff; font-size: 1.4rem; margin-bottom: 4px; }
+        .salle-essai p { color: #F6EDE4; font-size: .95rem; }
         .launch-pill {
             display: inline-flex; align-items: center; gap: 8px; margin-bottom: 18px;
             padding: 8px 16px; border-radius: 999px; background: #fff; color: var(--terracotta-fonce);
@@ -523,6 +534,10 @@
         if (new Date() < new Date(2026, 11, 7)) document.documentElement.classList.add('prelaunch');
         // L'abonnement mensuel ouvre le lundi 4 janvier 2027
         if (new Date() >= new Date(2027, 0, 4)) document.documentElement.classList.add('subs-open');
+        // Cours en salle (Hangar Blanc) : annoncé sur le site à partir du mardi 8 décembre 2026
+        if (new Date() >= new Date(2026, 11, 8)) document.documentElement.classList.add('salle-on');
+        // Après la séance découverte du 15 décembre, on n'affiche plus que la reprise de janvier
+        if (new Date() >= new Date(2026, 11, 16)) document.documentElement.classList.add('salle-apres-essai');
     </script>
 </head>
 
@@ -566,6 +581,7 @@
         <a href="#pour-qui">Pour qui ?</a>
         <a href="#prestations">Prestations</a>
         <a href="#tarifs">Tarifs</a>
+        <a href="#cours-en-salle" class="only-salle">Cours en salle (Carcassonne)</a>
         <a href="#apropos">À propos</a>
         <a href="#faq">Questions fréquentes</a>
         <a href="#contact">Contact</a>
@@ -912,6 +928,40 @@
             </div>
         </section>
 
+        <!-- ===================== COURS EN SALLE (HANGAR BLANC) =====================
+             Visible automatiquement à partir du 8 décembre 2026. -->
+        <section class="salle only-salle" id="cours-en-salle">
+            <div class="container salle-grid">
+                <div class="reveal">
+                    <span class="eyebrow">Nouveau · En salle à Carcassonne</span>
+                    <h2>Renforcement musculaire doux</h2>
+                    <p style="color:var(--texte-2);margin-top:14px">Un cours pour renforcer les jambes, le dos, les abdos et les bras, en douceur et en sécurité.
+                        Chaque exercice a sa variante, plus facile ou plus difficile, pour que chacun progresse à son rythme,
+                        quel que soit son niveau ou son état de santé.</p>
+                    <ul class="salle-infos">
+                        <li><strong>Quand</strong>Le mardi de 18h30 à 19h30, à partir du 5 janvier</li>
+                        <li><strong>Où</strong>Le Hangar Blanc, Carcassonne · salle climatisée, 10 personnes maximum</li>
+                        <li><strong>Matériel</strong>Tout est fourni sur place. Vous pouvez aussi apporter le vôtre.</li>
+                        <li><strong>Paiement</strong>Chèque, virement ou espèces</li>
+                    </ul>
+                    <div class="salle-essai only-essai">
+                        <h3>Séance découverte gratuite</h3>
+                        <p>Mardi 15 décembre à 18h30, sur inscription (10 places).</p>
+                    </div>
+                </div>
+                <div class="price featured reveal">
+                    <h3>Tarifs du cours en salle</h3>
+                    <span class="duration">60 minutes · petit groupe</span>
+                    <div class="amount">15 € <small>la séance</small></div>
+                    <ul>
+                        <li>Abonnement : 40 €/mois, 1 cours par semaine, soit 10 € le cours</li>
+                        <li>Paiement par chèque, virement ou espèces</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-primary" data-sujet="Cours en salle (Hangar Blanc)">Je réserve ma place</a>
+                </div>
+            </div>
+        </section>
+
         <!-- ===================== TÉMOIGNAGES =====================
              Section prête mais masquée. Pour l'activer :
              1. remplacez les 3 avis ci-dessous par de VRAIS avis (avec l'accord des personnes) ;
@@ -1118,6 +1168,7 @@
                                 <option>Yoga adapté</option>
                                 <option>Séance individuelle</option>
                                 <option>Cours collectifs en visio</option>
+                                <option>Cours en salle (Hangar Blanc)</option>
                                 <option>Abonnement</option>
                                 <option>Entreprise</option>
                                 <option>Structure / établissement</option>
