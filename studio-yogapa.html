@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description"
-    content="Découvrez le Studio YOGAPA par Manon. Cours d'Activité Physique Adaptée (APA) et de Yoga Adapté en visio. Prenez soin de vous, à votre rythme.">
+    content="Studio YOGAPA par Manon : cours collectifs d'Activité Physique Adaptée (APA) et de Yoga Adapté en visio, et en salle à Carcassonne (cours santé de la femme). Prenez soin de vous, à votre rythme.">
   <link rel="icon" type="image/png" href="logo-studio.png">
   <title>Studio YOGAPA — par Manon</title>
   <link
@@ -1163,6 +1163,20 @@
     .pre-row { display: grid; gap: 22px; }
     @media (min-width: 640px) { .pre-row { grid-template-columns: 1fr 1fr; } }
     @media (max-width: 600px) { .pre-form { padding: 26px 20px; } }
+    .salle-section { padding: 100px 24px; background: var(--warm-white); border-top: 1px solid rgba(122,158,126,.1); }
+    .salle-inner { max-width: 900px; margin: 0 auto; }
+    .salle-card { background: #fff; border-radius: var(--radius); border: 1px solid rgba(122,62,101,.18); border-left: 8px solid #7A3E65; padding: 40px; }
+    .salle-card h3 { font-family: 'Cormorant Garamond', serif; font-size: clamp(30px, 6vw, 44px); font-weight: 400; color: #7A3E65; line-height: 1.1; margin-bottom: 14px; }
+    .salle-card .salle-intro { color: var(--text-mid); font-size: 17px; line-height: 1.65; margin-bottom: 26px; }
+    .salle-infos { display: grid; gap: 14px; margin: 0 0 26px; }
+    @media (min-width: 640px) { .salle-infos { grid-template-columns: 1fr 1fr; } }
+    .salle-infos div { background: #f8f1f5; border-radius: 14px; padding: 14px 16px; font-size: 15px; line-height: 1.5; color: var(--text-dark); }
+    .salle-infos b { display: block; font-size: 12px; letter-spacing: .15em; text-transform: uppercase; color: #7A3E65; margin-bottom: 4px; font-weight: 500; }
+    .salle-decouverte { background: #7A3E65; color: #fff; border-radius: 14px; padding: 18px 20px; font-size: 16px; line-height: 1.55; margin-bottom: 26px; }
+    .salle-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+    .btn-prune { display: inline-block; background: #7A3E65; color: #fff; text-decoration: none; padding: 15px 26px; border-radius: 100px; font-weight: 500; }
+    .btn-prune-outline { display: inline-block; border: 1.5px solid #7A3E65; color: #7A3E65; text-decoration: none; padding: 14px 24px; border-radius: 100px; font-weight: 500; }
+    .salle-note { font-size: 13px; color: var(--text-light); margin-top: 18px; line-height: 1.6; }
   </style>
   <script>
     // Date d'ouverture du studio : avant cette date, le site est en mode « pré-inscription »
@@ -1184,18 +1198,19 @@
     <div class="deco-ring ring-1"></div>
     <div class="deco-ring ring-2"></div>
     <div class="header-content">
-      <div class="logo-tag">Studio en ligne</div>
+      <div class="logo-tag">En visio &amp; à Carcassonne</div>
       <h1 style="margin: 24px 0;"><img src="logo-studio.png" alt="Studio YOGAPA"
           style="width: 100%; max-width: 500px; max-height: 200px; object-fit: contain; margin: 0 auto; display: block; animation: fadeUp .8s ease .1s both;">
       </h1>
       <p class="byline">par Manon</p>
       <p class="studio-tagline">Studio d'activité physique adaptée &amp; yoga adapté</p>
-      <p class="hero-desc">Des cours en visio, doux et adaptés à chacun, pour prendre soin de votre corps où que vous
-        soyez.</p>
+      <p class="hero-desc">Des cours collectifs doux et adaptés à chacun : en visio, où que vous soyez, et en salle à
+        Carcassonne.</p>
       <div class="launch-badge only-pre">✨ Ouverture le lundi 7 décembre · 1er cours offert aux pré-inscrits</div>
       <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-top: 40px;">
         <a href="#preinscription" class="btn-primary only-pre" style="font-size:16px; padding:18px 36px;">Je me pré-inscris ↓</a>
         <a href="#planning" class="btn-primary only-open" style="font-size:16px; padding:18px 36px;">Découvrir le planning ↓</a>
+        <a href="#carcassonne" class="btn-secondary" style="font-size:16px; padding:18px 36px;">Cours à Carcassonne ↓</a>
         <a href="index.html" class="btn-secondary" style="font-size:16px; padding:18px 36px;">Visiter mon site
           internet</a>
       </div>
@@ -1470,6 +1485,37 @@
     <p class="pause-note">🎄 Pause des fêtes du 21 décembre au 3 janvier inclus · reprise le lundi 4 janvier</p>
     <div class="cal-wrapper">
       <div class="cal-grid" id="cal-grid"></div>
+    </div>
+  </section>
+
+  <!-- COURS À CARCASSONNE (en salle) -->
+  <section class="salle-section" id="carcassonne">
+    <div class="salle-inner">
+      <div style="text-align:center; margin-bottom: 50px;">
+        <p class="section-label">En salle, à Carcassonne</p>
+        <h2 class="section-title" style="margin-bottom: 0;">Les cours <em>à Carcassonne</em></h2>
+      </div>
+      <article class="salle-card">
+        <h3>Santé de la femme</h3>
+        <p class="salle-intro">Un cours en petit groupe pour les femmes qui vivent avec des troubles gynécologiques :
+          endométriose, SOPK, adénomyose, règles douloureuses, troubles de la ménopause… Mobilité du bassin, renforcement
+          doux, respiration et relâchement, pour mieux vivre avec les douleurs, la fatigue et le stress. Chaque exercice
+          s'adapte à vos symptômes du jour.</p>
+        <div class="salle-infos">
+          <div><b>Quand</b>Le mardi de 18h30 à 19h30<br>à partir du 12 janvier 2027</div>
+          <div><b>Où</b>Le Hangar Blanc<br>10 rue Pierre Germain, Carcassonne</div>
+          <div><b>Tarifs</b>15 € la séance<br>ou 40 € par mois (1 cours par semaine)</div>
+          <div><b>Pratique</b>10 personnes maximum · salle climatisée<br>Matériel fourni · paiement par chèque, virement ou espèces</div>
+        </div>
+        <p class="salle-decouverte">✨ <strong>Séance découverte le mardi 5 janvier 2027 à 18h30</strong> : 5 € par personne,
+          sur inscription, pour essayer avant de vous engager.</p>
+        <div class="salle-actions">
+          <a class="btn-prune" href="mailto:manon.yogapa@gmail.com?subject=Inscription%20cours%20sant%C3%A9%20de%20la%20femme">Je m'inscris par e-mail</a>
+          <a class="btn-prune-outline" href="tel:+33662651292">06 62 65 12 92</a>
+        </div>
+        <p class="salle-note">Le paiement de ce cours se fait sur place, pas en ligne : les liens de paiement du studio en
+          visio ne concernent que les cours en visio.</p>
+      </article>
     </div>
   </section>
 
